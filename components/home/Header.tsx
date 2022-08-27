@@ -2,22 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import Box from "@mui/material/Box";
 
-const StyledNavBar = styled.div`
+const StyledHeader = styled.div`
   background-color: blue;
   height: 100vh;
 `;
 
-const NavBars: React.FC<React.PropsWithChildren> = (props) => {
+const Header: React.FC<React.PropsWithChildren> = (props) => {
   const { children } = props;
   return (
-    <StyledNavBar>
+    <StyledHeader>
       <Box sx={{ backgroundColor: "orange", height: "50vh" }}>
-        hi layout
-        <br />
-        {children}
+        {/* {children} */}
+        Example Text
       </Box>
-    </StyledNavBar>
+    </StyledHeader>
   );
 };
 
-export default NavBars;
+export default Header;
