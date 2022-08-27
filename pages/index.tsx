@@ -3,10 +3,7 @@ import { NextPage } from "next";
 import { Home } from "../components/home";
 
 const HomePage: NextPage = () => {
-  return <div>div home</div>;
-  {
-    /* <Home />; */
-  }
+  return <Home />;
 };
 
 export default HomePage;
