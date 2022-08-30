@@ -14,8 +14,18 @@ const StyledCoverImage = styled.div`
   margin-right: 20px;
 `;
 
-const HeaderTitle: React.FC<React.PropsWithChildren> = (props) => {
-  const { children } = props;
+const StyledCallToAction = styled.div`
+  border: 3px dashed purple;
+`;
+
+type HeroSegmentContentProps = {
+  title?: string;
+  description?: string;
+  callToAction?: React.ReactElement;
+};
+
+const HeroSegmentContent: React.FC<HeroSegmentContentProps> = (props) => {
+  const { title, description, callToAction } = props;
   return (
     <StyledCoverImage>
       <h1
@@ -29,7 +39,7 @@ const HeaderTitle: React.FC<React.PropsWithChildren> = (props) => {
           /* textAlign: "start", */
         }}
       >
-        {`MEGBÍZHATÓSÁG, SZAKÉRTELEM`}
+        {`${title}`}
       </h1>
       <h3
         style={{
@@ -41,9 +51,11 @@ const HeaderTitle: React.FC<React.PropsWithChildren> = (props) => {
           /* textAlign: "start", */
         }}
       >
-        {`BÍZZA OTTHONÁT, GYORS, PRECIZ, HOZZÁÉRTŐ SZAKEMBEREKRE!`}
+        {`${description}`}
       </h3>
+
+      <StyledCallToAction>{callToAction}</StyledCallToAction>
     </StyledCoverImage>
   );
 };
-export default HeaderTitle;
+export default HeroSegmentContent;

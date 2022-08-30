@@ -1,3 +1,3 @@
-export { default as HeaderTitle } from "./HeaderTitle";
-export { default as Header} from "./Header";
+export { default as HeroSegmentContent } from "./HeroSegmentContent";
+export { default as HeroSegment} from "./HeroSegment";
 export { default as Home } from "./Home";
