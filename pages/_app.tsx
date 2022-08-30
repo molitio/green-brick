@@ -1,8 +1,8 @@
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Layout from "components/common/Layout";
+import Layout from "../components/common/Layout";
+import "./style.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function GreenBrick({ Component, pageProps }: AppProps) {
   return (
     <Layout>
       <Component {...pageProps} />
@@ -10,4 +10,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default GreenBrick;

@@ -1,10 +1,9 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import React from "react";
+import { NextPage } from "next";
+import Home from "../components/home/Home";
 
-const Home: NextPage = () => {
-  return <>hello home page</>;
+const HomePage: NextPage = () => {
+  return <Home></Home>;
 };
 
 export default Home;
