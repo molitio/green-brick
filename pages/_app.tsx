@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import Layout from "../components/common/Layout";
+import "./style.css";
 
 function GreenBrick({ Component, pageProps }: AppProps) {
   return (
