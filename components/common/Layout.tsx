@@ -23,6 +23,7 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
       <AppHeader />
       <NavBar
         height={"5em"}
+        state={"header"}
         externalSegments={[
           <NavSegment
             key={"ext"}

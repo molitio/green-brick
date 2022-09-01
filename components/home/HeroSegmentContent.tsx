@@ -15,7 +15,7 @@ const StyledCoverImage = styled.div`
 `;
 
 const StyledCallToAction = styled.div`
-  border: 3px dashed purple;
+  /* border: 3px dashed purple; */
 `;
 
 type HeroSegmentContentProps = {
@@ -36,7 +36,6 @@ const HeroSegmentContent: React.FC<HeroSegmentContentProps> = (props) => {
           color: "white",
           margin: "0",
           textAlign: "center",
-          /* textAlign: "start", */
         }}
       >
         {`${title}`}
@@ -48,7 +47,7 @@ const HeroSegmentContent: React.FC<HeroSegmentContentProps> = (props) => {
           color: "white",
           margin: "0",
           textAlign: "center",
-          /* textAlign: "start", */
+          marginBottom: "100px",
         }}
       >
         {`${description}`}

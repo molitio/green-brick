@@ -8,18 +8,16 @@ import { Button } from "@mui/material";
 const StyledHeroSegment = styled.div`
   position: relative;
   margin-top: -5em;
-  z-index: 100;
-  border: 3px dashed purple;
+  /* z-index: 100; */
 `;
 
-const StyledButton = styled.div`
+const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const StyledContentAlign = styled.div`
-  position: relative;
+  background-color: rgba(112, 60, 216, 0.6);
+  padding: 10px 5px 10px 5px;
+  border: 1px solid white;
 `;
 
 const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
@@ -50,27 +48,7 @@ const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
             description={
               "BÍZZA OTTHONÁT, GYORS, PRECIZ, HOZZÁÉRTŐ SZAKEMBEREKRE!"
             }
-            callToAction={
-              <StyledButton>
-                <Button
-                  variant="contained"
-                  color="success"
-                  sx={{
-                    display: "flex",
-                    borderRadius: "0",
-                    border: "solid white 1px",
-                    padding: "10px 5px  10px 5px   ",
-                    position: "relative",
-                    /* top: "64vh", */
-                    backgroundColor: "rgba(36, 171, 14,0.6)",
-                    justifyContent: "flex-end",
-                    marginTop: "14%",
-                  }}
-                >
-                  {`KAPCSOLATFELVÉTEL`}
-                </Button>
-              </StyledButton>
-            }
+            callToAction={<StyledButton>{`KAPCSOLATFELVÉTEL`}</StyledButton>}
           />
         </div>
 

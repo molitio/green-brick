@@ -18,7 +18,7 @@ const CardBox: React.FC<React.PropsWithChildren> = (props) => {
             fontFamily: "Impact, Haettenschweiler",
           }}
         >
-          SZOLGÁLTATÁSAINK
+          {`SZOLGÁLTATÁSAINK`}
         </h1>
       </Box>
     </StyledCardBox>
