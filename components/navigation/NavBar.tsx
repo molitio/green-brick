@@ -80,7 +80,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
           visible
           minWidth={logoSizeRem}
           minHeight={logoSizeRem}
-          padding="1em"
+          padding="1em 1em 1.5em 1.5em"
           centered={navBarMenuState === "collapsed"}
         >
           <ImageContainer>

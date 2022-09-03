@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import HeroSegment from "./HeroSegment";
-import CardBox from "./CardBox";
+import HeroSegment from "../common/HeroSegment";
+import CardBox from "../common/CardBox";
 
 const StyledHomePage = styled.div``;
 

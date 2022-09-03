@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Box from "@mui/material/Box";
 import Image from "next/image";
-import HeroSegmentContent from "./HeroSegmentContent";
-import { Button } from "@mui/material";
+import HeroSegmentContent from "../common/HeroSegmentContent";
 
 const StyledHeroSegment = styled.div`
   position: relative;
@@ -15,7 +14,9 @@ const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(112, 60, 216, 0.6);
+  background-color: rgba(36, 171, 14, 0.5);
+  color: white;
+  z-index: 9000;
   padding: 10px 5px 10px 5px;
   border: 1px solid white;
 `;
@@ -26,12 +27,11 @@ const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
     <StyledHeroSegment>
       <Box
         sx={{
-          backgroundColor: "black",
+          backgroundColor: "rgba(45, 45, 45, 0.8)",
           height: "700px",
           margin: "0",
           padding: "0",
           zIndex: "100",
-          opacity: "0.85",
         }}
       >
         <div
@@ -53,7 +53,7 @@ const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
         </div>
 
         <Image
-          style={{ zIndex: "-1", opacity: "0.3" }}
+          style={{ zIndex: "-1", opacity: "1" }}
           objectFit="cover"
           layout="fill"
           src={`https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/hero_4k.jpg`}
