@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "./Header";
-import CardBox from "./CardBox";
+import HeroSegment from "../common/HeroSegment";
+import CardBox from "../common/CardBox";
 
 const StyledHomePage = styled.div``;
 
@@ -9,7 +9,7 @@ const Home: React.FC<React.PropsWithChildren> = (props) => {
   const { children } = props;
   return (
     <StyledHomePage>
-      <Header />
+      <HeroSegment />
       <CardBox />
     </StyledHomePage>
   );
