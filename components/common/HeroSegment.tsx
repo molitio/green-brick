@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import HeroSegmentContent from "../common/HeroSegmentContent";
+import { StyledTheme } from "./types";
+import { useTheme } from "@mui/material";
 
 const StyledHeroSegment = styled.div`
   position: relative;
@@ -10,11 +12,19 @@ const StyledHeroSegment = styled.div`
   /* z-index: 100; */
 `;
 
-const StyledButton = styled.button`
+const StyledBox = styled.div<StyledTheme>`
+  background-color: ${(props) => props.theme.palette.background.default};
+  height: 700px;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+`;
+
+const StyledButton = styled.button<StyledTheme>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(36, 171, 14, 0.5);
+  background-color: ${(props) => props.theme?.palette?.primary?.main};
   color: white;
   z-index: 9000;
   padding: 10px 5px 10px 5px;
@@ -23,17 +33,14 @@ const StyledButton = styled.button`
 
 const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
   const { children } = props;
+  const theme = useTheme();
+
+  console.log("theme", theme.palette.primary.main);
+  console.log("background", theme.palette.background.default);
+
   return (
     <StyledHeroSegment>
-      <Box
-        sx={{
-          backgroundColor: "rgba(45, 45, 45, 0.8)",
-          height: "700px",
-          margin: "0",
-          padding: "0",
-          zIndex: "100",
-        }}
-      >
+      <StyledBox theme={theme}>
         <div
           style={{
             display: "flex",
@@ -48,7 +55,9 @@ const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
             description={
               "BÍZZA OTTHONÁT, GYORS, PRECIZ, HOZZÁÉRTŐ SZAKEMBEREKRE!"
             }
-            callToAction={<StyledButton>{`KAPCSOLATFELVÉTEL`}</StyledButton>}
+            callToAction={
+              <StyledButton theme={theme}>{`KAPCSOLATFELVÉTEL`}</StyledButton>
+            }
           />
         </div>
 
@@ -59,7 +68,7 @@ const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
           src={`https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/hero_4k.jpg`}
           alt="cover"
         />
-      </Box>
+      </StyledBox>
     </StyledHeroSegment>
   );
 };
