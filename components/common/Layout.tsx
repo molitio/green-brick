@@ -3,7 +3,12 @@ import styled from "styled-components";
 import AppHeader from "./Header";
 import { NavBar, NavSegment } from "../navigation";
 import { GreenBrickContext, GreenBrickContextProvider } from "../context";
-import { createTheme, ThemeProvider } from "@mui/material";
+import {
+  createTheme,
+  Theme,
+  ThemeProvider,
+  TypeBackground,
+} from "@mui/material";
 
 const StyledLayout = styled.div`
   top: 0;
@@ -18,15 +23,18 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
   const { children } = props;
   const context = React.useContext(GreenBrickContext);
 
-  console.log("context", context);
+  console.log("context: ", context.appName);
 
-  const defaultTheme = createTheme({
+  const defaultTheme = createTheme();
+
+  const appTheme = createTheme(defaultTheme, {
     palette: {
       primary: {
         main: "rgba(36, 171, 14, 0.5)",
       },
       background: {
         default: "rgba(45, 45, 45, 0.8)",
+        inverse: "#fff",
       },
       text: {
         primary: "#fff",
@@ -36,7 +44,7 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
 
   return (
     <GreenBrickContextProvider>
-      <ThemeProvider theme={defaultTheme}>
+      <ThemeProvider theme={appTheme}>
         <StyledLayout>
           <AppHeader />
           <NavBar

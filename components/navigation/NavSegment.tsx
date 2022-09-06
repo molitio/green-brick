@@ -1,6 +1,7 @@
-import { useTheme } from "@mui/material";
 import React from "react";
 import styled, { css } from "styled-components";
+import { useTheme } from "@mui/material";
+import { nanoid } from "nanoid";
 import { StyledTheme } from "../common/types";
 import { Dimensions } from "./types/Dimensions";
 import { Spacing } from "./types/Spacing";
@@ -19,7 +20,7 @@ const StyledNavSegment = styled.li<NavSegmentProps>`
   ${(props) =>
     props.color
       ? css`
-          color: ${props.color};
+          color: ${props?.color};
         `
       : css`
           color: ${props.theme.palette?.text?.primary};
@@ -61,7 +62,8 @@ export type NavSegmentProps = React.LiHTMLAttributes<HTMLUListElement> &
 const NavSegment: React.FC<NavSegmentProps & React.PropsWithChildren> = (
   props
 ) => {
-  const { key, children, visible, centered, padding } = props;
+  const defaultId = nanoid();
+  const { key = defaultId, children, visible, centered, padding } = props;
 
   const theme = useTheme();
   return (
