@@ -1,5 +1,7 @@
+import { useTheme } from "@mui/material";
 import React from "react";
 import styled, { css } from "styled-components";
+import { StyledTheme } from "../common/types";
 import { Dimensions } from "./types/Dimensions";
 import { Spacing } from "./types/Spacing";
 import { Typeography } from "./types/Typeography";
@@ -20,7 +22,7 @@ const StyledNavSegment = styled.li<NavSegmentProps>`
           color: ${props.color};
         `
       : css`
-          color: aliceblue;
+          color: ${props.theme.palette?.text?.primary};
         `};
   ${(props) =>
     props.backgroundColor
@@ -28,7 +30,7 @@ const StyledNavSegment = styled.li<NavSegmentProps>`
           background-color: ${props.backgroundColor};
         `
       : css`
-          background-color: rgba(0, 0, 0, 0);
+          background-color: ${props.theme.palette?.background?.default};
         `};
 
   ${(props) =>
@@ -44,6 +46,7 @@ const StyledNavSegment = styled.li<NavSegmentProps>`
 `;
 
 export type NavSegmentProps = React.LiHTMLAttributes<HTMLUListElement> &
+  StyledTheme &
   Dimensions &
   Spacing &
   Typeography & {
@@ -59,16 +62,19 @@ const NavSegment: React.FC<NavSegmentProps & React.PropsWithChildren> = (
   props
 ) => {
   const { key, children, visible, centered, padding } = props;
+
+  const theme = useTheme();
   return (
     <StyledNavSegment
       key={key}
       visible={visible}
       centered={centered}
       padding={padding}
+      theme={theme}
     >
       {children}
     </StyledNavSegment>
   );
 };
 
-export default StyledNavSegment;
+export default NavSegment;
