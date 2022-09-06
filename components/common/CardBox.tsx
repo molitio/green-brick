@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Box from "@mui/material/Box";
+import CardBoxCards from "./CardBoxCards";
 
 const StyledCardBox = styled.div`
   display: flex;
@@ -8,20 +9,20 @@ const StyledCardBox = styled.div`
   align-items: center;
 `;
 
-const CardBox: React.FC<React.PropsWithChildren> = (props) => {
-  const { children } = props;
+const StyledCardTitle = styled.h1`
+  font-family: Impact, Haettenschweiler;
+  padding: 170px;
+  font-size: 300%;
+`;
+
+const CardBox: React.FC = () => {
   return (
-    <StyledCardBox>
-      <Box>
-        <h1
-          style={{
-            fontFamily: "Impact, Haettenschweiler",
-          }}
-        >
-          {`SZOLGÁLTATÁSAINK`}
-        </h1>
-      </Box>
-    </StyledCardBox>
+    <Box>
+      <StyledCardBox>
+        <StyledCardTitle>{`SZOLGÁLTATÁSAINK`}</StyledCardTitle>
+      </StyledCardBox>
+      <CardBoxCards />
+    </Box>
   );
 };
 

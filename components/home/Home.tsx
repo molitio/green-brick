@@ -10,7 +10,6 @@ const Home: React.FC<React.PropsWithChildren> = (props) => {
   return (
     <StyledHomePage>
       <HeroSegment />
-      <CardBox />
     </StyledHomePage>
   );
 };

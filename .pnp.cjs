@@ -44,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/styled-components", "npm:5.1.26"],\
             ["eslint", "npm:8.22.0"],\
             ["eslint-config-next", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:12.2.5"],\
+            ["nanoid", "npm:4.0.0"],\
             ["next", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:12.2.5"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:18.2.0"],\
@@ -2916,6 +2917,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/styled-components", "npm:5.1.26"],\
             ["eslint", "npm:8.22.0"],\
             ["eslint-config-next", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:12.2.5"],\
+            ["nanoid", "npm:4.0.0"],\
             ["next", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:12.2.5"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:18.2.0"],\
@@ -3706,6 +3708,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/nanoid-npm-3.3.4-3d250377d6-2fddd6dee9.zip/node_modules/nanoid/",\
           "packageDependencies": [\
             ["nanoid", "npm:3.3.4"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/nanoid-npm-4.0.0-924f5c6312-7d5946df5c.zip/node_modules/nanoid/",\
+          "packageDependencies": [\
+            ["nanoid", "npm:4.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
