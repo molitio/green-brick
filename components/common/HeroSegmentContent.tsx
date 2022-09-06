@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const StyledCoverImage = styled.div`
   position: relative;
-  /* top: 29vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;

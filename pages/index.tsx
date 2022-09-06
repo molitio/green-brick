@@ -11,8 +11,8 @@ const HomePage: NextPage = () => {
   return (
     <StyledAppSchaffolding>
       <Home />
-      <Contact />
       <Services />
+      <Contact />
     </StyledAppSchaffolding>
   );
 };

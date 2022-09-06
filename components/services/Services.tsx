@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import CardBox from "../common/CardBox";
+import { CardBoxCard } from "../common";
 
 const StyledServices = styled.div`
-  background-color: orangered;
-  height: 90vh;
+  background-color: white;
+  height: auto;
 `;
 
 const Servcies: React.FC = () => {
   return (
     <StyledServices>
-      <h1>Services</h1>
+      <CardBox />
     </StyledServices>
   );
 };
