@@ -1,0 +1,1 @@
+export { cardContentMock } from "./cardContent";

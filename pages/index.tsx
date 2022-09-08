@@ -1,10 +1,20 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import React from "react";
+import { NextPage } from "next";
+import styled from "styled-components";
+import { Home, Services, Contact } from "../components/";
 
-const Home: NextPage = () => {
-  return <>hello home page</>;
+const StyledAppSchaffolding = styled.div`
+  display: block;
+`;
+
+const HomePage: NextPage = () => {
+  return (
+    <StyledAppSchaffolding>
+      <Home />
+      <Services />
+      <Contact />
+    </StyledAppSchaffolding>
+  );
 };
 
-export default Home;
+export default HomePage;
