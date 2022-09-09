@@ -60,9 +60,9 @@ const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
             }
           />
         </div>
-
         <img
           style={{ zIndex: "-1", opacity: "1" }}
+
           src={`https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/hero_4k.jpg`}
           alt="cover"
         />
