@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 import { StyledTheme } from "./types";
 import { cardContentMock } from "./mock";
 import { useTheme } from "@mui/material";
@@ -69,7 +68,7 @@ const CardBoxCard: React.FC = () => {
           <StyledCardContainer key={cardData.title}>
             <StyledCardImageContainer theme={theme}>
               <StyledImage theme={theme}>
-                <Image
+                <img
                   style={{ opacity: "0.4" }}
                   width={92.15}
                   height={76.02}
