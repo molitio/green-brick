@@ -12,7 +12,7 @@ export const cardContentMock = [
   {
     title: "BURKOLÁS",
     content: "Lorem Ipsum is simply dummy text of the printing.",
-    url: "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/icons/wheelbarrow.png",
+    url: "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/icons/tile.png",
   },
   {
     title: "JAVÍTÁS",

@@ -9,7 +9,6 @@ import { useTheme } from "@mui/material";
 const StyledHeroSegment = styled.div`
   position: relative;
   margin-top: -5em;
-  /* z-index: 100; */
 `;
 
 const StyledBox = styled.div<StyledTheme>`
