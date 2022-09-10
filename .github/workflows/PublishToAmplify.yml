@@ -5,7 +5,7 @@ name: Build and Publish App on pilot
 
 on:
   push:
-    branches: ["pilot"]
+    branches: ["pilot", "main"]
 
 jobs:
   build:
