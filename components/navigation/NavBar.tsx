@@ -79,11 +79,9 @@ const NavBar: React.FC<NavBarProps> = (props) => {
           centered={navBarMenuState === "collapsed"}
         >
           <ImageContainer>
-            <Image
+            <img
               src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/logo/logo_white.svg"
               alt="logo"
-              layout="fill"
-              objectFit="contain"
             />
           </ImageContainer>
         </NavSegment>
