@@ -11,8 +11,9 @@ const StyledCardBox = styled.div`
 
 const StyledCardTitle = styled.h1`
   font-family: Impact, Haettenschweiler;
-  padding: 170px;
+  padding: 100px 0px 100px 0px;
   font-size: 300%;
+  margin: 0;
 `;
 
 const CardBox: React.FC = () => {

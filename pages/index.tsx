@@ -1,7 +1,7 @@
 import React from "react";
 import { NextPage } from "next";
 import styled from "styled-components";
-import { Home, Services, Contact } from "../components/";
+import { Home, Services, Contact, About } from "../components/";
 
 const StyledAppSchaffolding = styled.div`
   display: block;
@@ -12,6 +12,7 @@ const HomePage: NextPage = () => {
     <StyledAppSchaffolding>
       <Home />
       <Services />
+      <About />
       <Contact />
     </StyledAppSchaffolding>
   );

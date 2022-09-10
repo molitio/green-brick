@@ -6,14 +6,11 @@ import { useTheme } from "@mui/material";
 
 const StyledCardBoxCards = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  @media screen and (max-width: 1200px) {
-    padding-left: 200px;
-    padding-right: 200px;
-  }
+  margin-bottom: 100px;
 `;
 
 const StyledImage = styled.div<StyledTheme>`
@@ -28,8 +25,18 @@ const StyledImage = styled.div<StyledTheme>`
 
 const StyledCardContainer = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 275px;
-  margin: 0;
+  margin-bottom: 40px;
+  flex: 25%;
+
+  @media (max-width: 1075px) {
+    flex: 50%;
+  }
+  @media (max-width: 800px) {
+    flex: 100%;
+  }
 `;
 
 const StyledCardImageContainer = styled.div<StyledTheme>`
@@ -41,6 +48,7 @@ const StyledCardImageContainer = styled.div<StyledTheme>`
   width: 130px;
   height: 130px;
   margin-right: 15px;
+  justify-content: center;
 `;
 
 const StyledCardContent = styled.div`
@@ -56,6 +64,7 @@ const StyledCardTitle = styled.h2`
 
 const StyledCardText = styled.p`
   margin-top: 0;
+  text-align: initial;
 `;
 
 const CardBoxCard: React.FC = () => {
