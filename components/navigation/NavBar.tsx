@@ -23,11 +23,6 @@ const StyleNavBarContainer = styled.ul`
   height: 100%;
 `;
 
-const StyledMenuButtton = styled.button`
-  background-color: rgba(0, 0, 0, 0);
-  color: "white";
-`;
-
 const ImageContainer = styled.div`
   width: 5em;
   height: 100%;
