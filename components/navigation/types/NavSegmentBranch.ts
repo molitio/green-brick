@@ -1,6 +1,6 @@
 import { NavSegmentLeaf } from "./NavSegmentLeaf";
 export type NavSegmentBranch = {
-  name: string;
   path: string;
-  leafs?: NavSegmentLeaf[];
+  label?: string;
+  leafs?: Record<string, NavSegmentLeaf>;
 };

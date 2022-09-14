@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Box from "@mui/material/Box";
-import Image from "next/image";
 import HeroSegmentContent from "../common/HeroSegmentContent";
 import { StyledTheme } from "./types";
 import { useTheme } from "@mui/material";

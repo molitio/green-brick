@@ -9,11 +9,12 @@ const StyledServices = styled.div<StyledTheme>`
   height: auto;
 `;
 
-const Servcies: React.FC = () => {
+const Servcies: React.FC<React.HTMLProps<HTMLDivElement>> = (props) => {
+  const { id } = props;
   const theme = useTheme();
 
   return (
-    <StyledServices theme={theme}>
+    <StyledServices theme={theme} id={id}>
       <CardBox />
     </StyledServices>
   );

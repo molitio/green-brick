@@ -1,13 +1,13 @@
 import React from "react";
-import Image from "next/image";
 import styled from "styled-components";
-import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
 import NavSegment from "./NavSegment";
 import { NavBarMenuState } from "./types/NavBarMenuState";
 import { Spacing } from "./types/Spacing";
 import { Typeography } from "./types/Typeography";
 import { GreenBrickContext } from "../context";
+import { StyledTheme } from "../common";
+import { useTheme } from "@mui/material";
 
 const StyledNavBar = styled.nav<NavBarProps>`
   top: 0;
@@ -30,6 +30,11 @@ const ImageContainer = styled.div`
   position: relative;
 `;
 
+const StyledAnchor = styled.a<StyledTheme>`
+  color: ${(props) => props.theme?.palette?.text?.primary};
+  padding: 1em;
+`;
+
 export type NavBarProps = {
   height?: string;
   state?: NavBarMenuState;
@@ -43,6 +48,10 @@ const NavBar: React.FC<NavBarProps> = (props) => {
   const [navBarMenuState, setNavBarMenuState] = React.useState<NavBarMenuState>(
     state ?? "header"
   );
+
+  const navTree = greenBrickContext.navTree ?? {};
+
+  const theme = useTheme();
 
   const handleMenuClick = () => {
     console.log(`handleMenuClick: ${navBarMenuState}`);
@@ -65,28 +74,14 @@ const NavBar: React.FC<NavBarProps> = (props) => {
     fontSize: "1.4em",
   };
 
-  console.log("greenBrickContext", greenBrickContext.navTree);
-
   return (
     <StyledNavBar height={height}>
       <StyleNavBarContainer>
-        {greenBrickContext?.navTree
-          ? Object.keys(greenBrickContext.navTree).map((branch) => (
-              <NavSegment
-                onClick={handleMenuClick}
-                key={branch}
-                visible={false}
-              >
-                <MenuIcon sx={{ fontSize: 40 }} />
-              </NavSegment>
-            ))
-          : null}
-
-        <NavSegment onClick={handleMenuClick} key={"menu"} visible={false}>
+        <NavSegment onClick={handleMenuClick} keyParam={"menu"} visible={false}>
           <MenuIcon sx={{ fontSize: 40 }} />
         </NavSegment>
         <NavSegment
-          key="logo"
+          keyParam="logo"
           flex={1}
           visible
           minWidth={logoSizeRem}
@@ -101,34 +96,16 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             />
           </ImageContainer>
         </NavSegment>
-        <NavSegment
-          key="home"
-          visible={navBarMenuState === "header"}
-          {...defaultSpacing}
-        >
-          {` FŐOLDAL `}
-        </NavSegment>
-        <NavSegment
-          key="services"
-          visible={navBarMenuState === "header"}
-          {...defaultSpacing}
-        >
-          {` SZOLGÁLTATÁSOK `}
-        </NavSegment>
-        <NavSegment
-          key="about"
-          visible={navBarMenuState === "header"}
-          {...defaultSpacing}
-        >
-          {` RÓLUNK `}
-        </NavSegment>
-        <NavSegment
-          key="contact"
-          visible={navBarMenuState === "header"}
-          {...defaultSpacing}
-        >
-          {` KAPCSOLAT `}
-        </NavSegment>
+
+        {navTree
+          ? Object.keys(navTree).map((branch) => (
+              <NavSegment key={branch} visible={navBarMenuState === "header"}>
+                <StyledAnchor href={navTree[branch].path} theme={theme}>
+                  {`${navTree[branch].label}`}
+                </StyledAnchor>
+              </NavSegment>
+            ))
+          : null}
       </StyleNavBarContainer>
     </StyledNavBar>
   );

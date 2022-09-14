@@ -25,9 +25,9 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
 
   console.log("context: ", context.appName);
 
-  const defaultTheme = createTheme();
+  const muiDefault = createTheme();
 
-  const appTheme = createTheme(defaultTheme, {
+  const appTheme = createTheme(muiDefault, {
     palette: {
       primary: {
         main: "rgba(36, 171, 14, 0.5)",

@@ -3,17 +3,15 @@ import { NextPage } from "next";
 import styled from "styled-components";
 import { Home, Services, Contact, About } from "../components/";
 
-const StyledAppSchaffolding = styled.div`
-  /* display: block; */
-`;
+const StyledAppSchaffolding = styled.div``;
 
 const HomePage: NextPage = () => {
   return (
     <StyledAppSchaffolding>
-      <Home />
-      <Services />
-      <About />
-      <Contact />
+      <Home id="home" />
+      <Services id="services" />
+      <About id="about" />
+      <Contact id="contact" />
     </StyledAppSchaffolding>
   );
 };

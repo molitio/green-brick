@@ -89,12 +89,12 @@ const StyledImageLayer = styled.div`
   height: 170px;
 `;
 
-const About: React.FC<React.PropsWithChildren> = (props) => {
-  const { children } = props;
+const About: React.FC<React.HTMLProps<HTMLDivElement>> = (props) => {
+  const { id } = props;
   const theme = useTheme();
 
   return (
-    <StyledAbout>
+    <StyledAbout id={id}>
       <StyledAboutImage>
         <StyledContent>
           <StyledTitle>{`RÓLUNK`}</StyledTitle>

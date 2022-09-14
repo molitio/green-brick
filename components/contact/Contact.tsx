@@ -55,9 +55,10 @@ const StyledImage = styled.section`
   transform: scaleX(-1);
 `;
 
-const Contact: React.FC = () => {
+const Contact: React.FC<React.HTMLProps<HTMLDivElement>> = (props) => {
+  const { id } = props;
   return (
-    <StyledContact>
+    <StyledContact id={id}>
       <StyledImage>
         <StyledContent>
           <StyledTitle>{`KAPCSOLAT`}</StyledTitle>

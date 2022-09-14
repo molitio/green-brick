@@ -51,7 +51,7 @@ export type NavSegmentProps = React.LiHTMLAttributes<HTMLUListElement> &
   Dimensions &
   Spacing &
   Typeography & {
-    key: string;
+    keyParam?: string;
     flex?: number;
     color?: string;
     visible?: boolean;
@@ -62,12 +62,11 @@ export type NavSegmentProps = React.LiHTMLAttributes<HTMLUListElement> &
 const NavSegment: React.FC<NavSegmentProps & React.PropsWithChildren> = (
   props
 ) => {
-  const { key, children, visible, centered, padding } = props;
-
+  const { keyParam, children, visible, centered, padding } = props;
   const theme = useTheme();
   return (
     <StyledNavSegment
-      key={key ?? nanoid()}
+      keyParam={keyParam ?? nanoid()}
       visible={visible}
       centered={centered}
       padding={padding}
