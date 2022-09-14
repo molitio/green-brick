@@ -1,8 +1,10 @@
 import { Theme } from "@mui/material";
+import { NavSegmentBranch} from "../../navigation"
 
 export type AppContext = {
   appName: string;
   theme?: Theme;
+  navTree: Record<string, NavSegmentBranch>
   devHighlight?:
     | "3px dashed purple"
     | "3px dashed green"

@@ -13,10 +13,9 @@ const StyledHeroSegment = styled.div`
 
 const StyledBox = styled.div<StyledTheme>`
   background-color: ${(props) => props.theme.palette.background.default};
-  height: 700px;
+  height: 920px;
   margin: 0;
   padding: 0;
-  z-index: 100;
 `;
 
 const StyledButton = styled.button<StyledTheme>`
@@ -25,9 +24,25 @@ const StyledButton = styled.button<StyledTheme>`
   align-items: center;
   background-color: ${(props) => props.theme?.palette?.primary?.main};
   color: white;
-  z-index: 9000;
-  padding: 10px 5px 10px 5px;
+  padding: 15px 10px 15px 10px;
   border: 1px solid white;
+`;
+
+const StyledImg = styled.section<StyledTheme>`
+  object-fit: fill;
+  background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/hero_4k.jpg);
+  height: 920px;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+`;
+
+const HeroSegmentContiner = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 30vh;
+  justify-content: flex-end;
 `;
 
 const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
@@ -39,32 +54,21 @@ const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
 
   return (
     <StyledHeroSegment>
-      <StyledBox theme={theme}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            position: "relative",
-            top: "30vh",
-            justifyContent: "flex-end",
-          }}
-        >
-          <HeroSegmentContent
-            title={"MEGBÍZHATÓSÁG, SZAKÉRTELEM"}
-            description={
-              "BÍZZA OTTHONÁT, GYORS, PRECIZ, HOZZÁÉRTŐ SZAKEMBEREKRE!"
-            }
-            callToAction={
-              <StyledButton theme={theme}>{`KAPCSOLATFELVÉTEL`}</StyledButton>
-            }
-          />
-        </div>
-        <img
-          style={{ zIndex: "-1", opacity: "1" }}
-          src={`https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/hero_4k.jpg`}
-          alt="cover"
-        />
-      </StyledBox>
+      <StyledImg>
+        <StyledBox theme={theme}>
+          <HeroSegmentContiner>
+            <HeroSegmentContent
+              title={"MEGBÍZHATÓSÁG, SZAKÉRTELEM"}
+              description={
+                "BÍZZA OTTHONÁT, GYORS, PRECIZ, HOZZÁÉRTŐ SZAKEMBEREKRE!"
+              }
+              callToAction={
+                <StyledButton theme={theme}>{`KAPCSOLATFELVÉTEL`}</StyledButton>
+              }
+            />
+          </HeroSegmentContiner>
+        </StyledBox>
+      </StyledImg>
     </StyledHeroSegment>
   );
 };

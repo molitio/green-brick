@@ -6,16 +6,12 @@ const StyledCoverImage = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  opacity: "1";
   margin-left: 20px;
   margin-right: 20px;
 `;
 
-const StyledCallToAction = styled.div`
-  /* border: 3px dashed purple; */
-`;
+const StyledCallToAction = styled.div``;
 
 type HeroSegmentContentProps = {
   title?: string;
@@ -23,34 +19,31 @@ type HeroSegmentContentProps = {
   callToAction?: React.ReactElement;
 };
 
+const StyledMainTitle = styled.h1`
+  display: flex;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: white;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 400%;
+`;
+const StyledDescription = styled.h3`
+  display: flex;
+  font-family: Helvetica, sans-serif;
+  color: white;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 150px;
+  font-size: 120%;
+`;
+
 const HeroSegmentContent: React.FC<HeroSegmentContentProps> = (props) => {
   const { title, description, callToAction } = props;
   return (
     <StyledCoverImage>
-      <h1
-        style={{
-          display: "flex",
-          fontFamily: "Impact, Haettenschweiler",
-          fontSize: "370%",
-          color: "white",
-          margin: "0",
-          textAlign: "center",
-        }}
-      >
-        {`${title}`}
-      </h1>
-      <h3
-        style={{
-          display: "flex",
-          fontFamily: " 'Roboto', sans-serif",
-          color: "white",
-          margin: "0",
-          textAlign: "center",
-          marginBottom: "100px",
-        }}
-      >
-        {`${description}`}
-      </h3>
+      <StyledMainTitle>{`${title}`}</StyledMainTitle>
+      <StyledDescription>{`${description}`}</StyledDescription>
 
       <StyledCallToAction>{callToAction}</StyledCallToAction>
     </StyledCoverImage>

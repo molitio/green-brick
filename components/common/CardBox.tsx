@@ -11,8 +11,8 @@ const StyledCardBox = styled.div`
 
 const StyledCardTitle = styled.h1`
   font-family: Impact, Haettenschweiler;
-  padding: 100px 0px 100px 0px;
-  font-size: 300%;
+  padding: 130px 0px 130px 0px;
+  font-size: 350%;
   margin: 0;
 `;
 

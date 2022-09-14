@@ -10,7 +10,7 @@ const StyledCardBoxCards = styled.div`
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
 `;
 
 const StyledImage = styled.div<StyledTheme>`
@@ -28,7 +28,7 @@ const StyledCardContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 275px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   flex: 25%;
 
   @media (max-width: 1075px) {
@@ -88,7 +88,7 @@ const CardBoxCard: React.FC = () => {
             </StyledCardImageContainer>
             <StyledCardContent>
               <StyledCardTitle>{cardData.title}</StyledCardTitle>
-              <StyledCardText style={{}}>{cardData.content}</StyledCardText>
+              <StyledCardText>{cardData.content}</StyledCardText>
             </StyledCardContent>
           </StyledCardContainer>
         );

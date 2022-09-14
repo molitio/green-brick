@@ -47,15 +47,7 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
       <ThemeProvider theme={appTheme}>
         <StyledLayout>
           <AppHeader />
-          <NavBar
-            height={"5em"}
-            state={"header"}
-            externalSegments={[
-              <NavSegment key={"ext"} flex={1}>
-                segment
-              </NavSegment>,
-            ]}
-          />
+          <NavBar height={"5em"} state={"header"} />
           {children}
         </StyledLayout>
       </ThemeProvider>

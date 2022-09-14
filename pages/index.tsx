@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Home, Services, Contact, About } from "../components/";
 
 const StyledAppSchaffolding = styled.div`
-  display: block;
+  /* display: block; */
 `;
 
 const HomePage: NextPage = () => {

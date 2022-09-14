@@ -62,13 +62,12 @@ export type NavSegmentProps = React.LiHTMLAttributes<HTMLUListElement> &
 const NavSegment: React.FC<NavSegmentProps & React.PropsWithChildren> = (
   props
 ) => {
-  const defaultId = nanoid();
-  const { key = defaultId, children, visible, centered, padding } = props;
+  const { key, children, visible, centered, padding } = props;
 
   const theme = useTheme();
   return (
     <StyledNavSegment
-      key={key}
+      key={key ?? nanoid()}
       visible={visible}
       centered={centered}
       padding={padding}

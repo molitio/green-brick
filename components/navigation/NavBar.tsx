@@ -7,6 +7,7 @@ import NavSegment from "./NavSegment";
 import { NavBarMenuState } from "./types/NavBarMenuState";
 import { Spacing } from "./types/Spacing";
 import { Typeography } from "./types/Typeography";
+import { GreenBrickContext } from "../context";
 
 const StyledNavBar = styled.nav<NavBarProps>`
   top: 0;
@@ -32,11 +33,12 @@ const ImageContainer = styled.div`
 export type NavBarProps = {
   height?: string;
   state?: NavBarMenuState;
-  externalSegments?: React.ReactElement[];
 };
 
 const NavBar: React.FC<NavBarProps> = (props) => {
-  const { externalSegments, height, state } = props;
+  const { height, state } = props;
+
+  const greenBrickContext = React.useContext(GreenBrickContext);
 
   const [navBarMenuState, setNavBarMenuState] = React.useState<NavBarMenuState>(
     state ?? "header"
@@ -63,9 +65,23 @@ const NavBar: React.FC<NavBarProps> = (props) => {
     fontSize: "1.4em",
   };
 
+  console.log("greenBrickContext", greenBrickContext.navTree);
+
   return (
     <StyledNavBar height={height}>
       <StyleNavBarContainer>
+        {greenBrickContext?.navTree
+          ? Object.keys(greenBrickContext.navTree).map((branch) => (
+              <NavSegment
+                onClick={handleMenuClick}
+                key={branch}
+                visible={false}
+              >
+                <MenuIcon sx={{ fontSize: 40 }} />
+              </NavSegment>
+            ))
+          : null}
+
         <NavSegment onClick={handleMenuClick} key={"menu"} visible={false}>
           <MenuIcon sx={{ fontSize: 40 }} />
         </NavSegment>
@@ -113,9 +129,6 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         >
           {` KAPCSOLAT `}
         </NavSegment>
-        {navBarMenuState === "header"
-          ? externalSegments?.map((segment) => segment)
-          : null}
       </StyleNavBarContainer>
     </StyledNavBar>
   );

@@ -1,17 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
+import { StyledTheme } from "../common";
+import { useTheme } from "@mui/material";
 
 const StyledAbout = styled.div`
-  height: 100vh;
+  height: auto;
   position: relative;
 `;
-1;
+
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100vh;
+  height: 920px;
   width: 50vw;
   background-color: rgba(45, 45, 45, 0.8); ;
 `;
@@ -27,8 +28,6 @@ const StyledTitle = styled.h1`
 const StyledTextContainer = styled.div`
   text-align: left;
   padding: 0px 100px 0px 70px;
-  margin-top: -250px;
-  margin-bottom: -100px;
   width: 60%;
 `;
 
@@ -44,39 +43,86 @@ const StyledLogo = styled.div`
   align-items: flex-end;
 `;
 
+const StyledAboutImage = styled.section`
+  object-fit: fill;
+  background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/grindingmachine.jpg);
+  height: 920px;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+`;
+
+const StyledParagraph = styled.p`
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  text-align: start;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin: 0;
+`;
+
+const StyledLeaderImage = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  object-fit: fill;
+  background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg);
+  height: 920px;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+`;
+
+const StyledLiderContent = styled.div<StyledTheme>`
+  padding: 0 100px 0 100px;
+  height: 170px;
+  background-color: ${(props) => props.theme?.palette?.primary?.main};
+`;
+
+const StyledLiderName = styled.h3`
+  text-align: end;
+`;
+
+const StyledImageLayer = styled.div`
+  background-color: #2d2d2d;
+  height: 170px;
+`;
+
 const About: React.FC<React.PropsWithChildren> = (props) => {
   const { children } = props;
+  const theme = useTheme();
+
   return (
     <StyledAbout>
-      <StyledContent>
-        <StyledTitle>{`RÓLUNK`}</StyledTitle>
-        <StyledTextContainer>
-          <StyledText>{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus tortor, ullamcorper in pharetra congue, posuere nec neque. Donec semper, magna sed pellentesque fringilla, quam leo porttitor ante, et fringilla nunc velit eu arcu. Nam sit amet felis tortor.`}</StyledText>
-        </StyledTextContainer>
-        <StyledLogo>
-          <Image
-            src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/logo/logo_white.svg"
-            alt="logo"
-            width={100}
-            height={100}
-            objectFit="contain"
-          />
-        </StyledLogo>
-      </StyledContent>
-      <Image
-        style={{ opacity: "1", zIndex: "-1" }}
-        objectFit="cover"
-        layout="fill"
-        src={`https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/grindingmachine.jpg`}
-        alt="cover-about"
-      />
-      <Image
-        style={{ opacity: "1", zIndex: "-1" }}
-        objectFit="cover"
-        layout="fill"
-        src={`https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/grindingmachine.jpg`}
-        alt="cover-about"
-      />
+      <StyledAboutImage>
+        <StyledContent>
+          <StyledTitle>{`RÓLUNK`}</StyledTitle>
+          <StyledTextContainer>
+            <StyledText>{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus tortor, ullamcorper in pharetra congue, posuere nec neque. Donec semper, magna sed pellentesque fringilla, quam leo porttitor ante, et fringilla nunc velit eu arcu. Nam sit amet felis tortor.`}</StyledText>
+          </StyledTextContainer>
+          <StyledLogo>
+            <img
+              src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/logo/logo_white.svg"
+              alt="logo"
+              width={100}
+              height={100}
+            />
+          </StyledLogo>
+        </StyledContent>
+      </StyledAboutImage>
+      <StyledLeaderImage>
+        <StyledImageLayer>
+          <StyledLiderContent theme={theme}>
+            <StyledParagraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus
+              tortor, ullamcorper in pharetra congue, posuere nec neque.
+            </StyledParagraph>
+            <StyledLiderName>Kiss József, műszakvezető</StyledLiderName>
+          </StyledLiderContent>
+        </StyledImageLayer>
+      </StyledLeaderImage>
     </StyledAbout>
   );
 };
