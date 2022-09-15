@@ -5,7 +5,7 @@ name: Build and Publish App on pilot
 
 on:
   pull_request:
-    branches: ["pilot", "main", "release"]
+    branches: ["main", "pilot", "release"]
 
 jobs:
   build:
