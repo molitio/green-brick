@@ -25,14 +25,14 @@ const StyledNavSegment = styled.li<NavSegmentProps>`
       : css`
           color: ${props.theme.palette?.text?.primary};
         `};
-  ${(props) =>
+  /* ${(props) =>
     props.backgroundColor
       ? css`
           background-color: ${props.backgroundColor};
         `
       : css`
           background-color: ${props.theme.palette?.background?.default};
-        `};
+        `}; */
 
   ${(props) =>
     props.centered

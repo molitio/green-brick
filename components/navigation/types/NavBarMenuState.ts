@@ -1,1 +1,0 @@
-export type NavBarMenuState = "header" | "collapsed" | "mini"

@@ -28,7 +28,7 @@ const StyledButton = styled.button<StyledTheme>`
 
 const StyledImg = styled.section<StyledTheme>`
   object-fit: fill;
-  background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/hero_4k.jpg);
+  background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/hero.jpg);
   height: 920px;
   background-size: cover;
   background-position: center;

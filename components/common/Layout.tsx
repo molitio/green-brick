@@ -47,7 +47,7 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
       <ThemeProvider theme={appTheme}>
         <StyledLayout>
           <AppHeader />
-          <NavBar height={"5em"} state={"header"} />
+          <NavBar height={"5em"} menuState={"collapsed"} />
           {children}
         </StyledLayout>
       </ThemeProvider>
