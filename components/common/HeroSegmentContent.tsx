@@ -9,9 +9,9 @@ const StyledCoverImage = styled.div`
   align-items: center;
   margin-left: 20px;
   margin-right: 20px;
-  @media screen and (max-width: 830px) {
+  /*   @media screen and (max-width: 830px) {
     display: none;
-  }
+  } */
 `;
 
 const StyledCallToAction = styled.div``;

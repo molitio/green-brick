@@ -25,14 +25,17 @@ const StyledNavSegment = styled.li<NavSegmentProps>`
       : css`
           color: ${props.theme.palette?.text?.primary};
         `};
-  /* ${(props) =>
-    props.backgroundColor
-      ? css`
-          background-color: ${props.backgroundColor};
-        `
-      : css`
-          background-color: ${props.theme.palette?.background?.default};
-        `}; */
+
+  @media screen and (max-width: 830px) {
+    ${(props) =>
+      props.backgroundColor
+        ? css`
+            background-color: ${props.backgroundColor};
+          `
+        : css`
+            background-color: ${props.theme.palette?.background?.default};
+          `};
+  }
 
   ${(props) =>
     props.centered
@@ -67,7 +70,7 @@ const NavSegment: React.FC<NavSegmentProps & React.PropsWithChildren> = (
   return (
     <StyledNavSegment
       keyParam={keyParam ?? nanoid()}
-      visible={visible}
+      visible={visible ?? true}
       centered={centered}
       padding={padding}
       theme={theme}

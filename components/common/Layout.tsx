@@ -35,6 +35,7 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
       background: {
         default: "rgba(45, 45, 45, 0.8)",
         inverse: "#fff",
+        menu: "rgba(45, 45, 45, 0.95)",
       },
       text: {
         primary: "#fff",
@@ -47,6 +48,7 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
       <ThemeProvider theme={appTheme}>
         <StyledLayout>
           <AppHeader />
+
           <NavBar height={"5em"} menuState={"collapsed"} />
           {children}
         </StyledLayout>
