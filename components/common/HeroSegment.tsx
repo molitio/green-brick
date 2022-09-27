@@ -49,10 +49,6 @@ const HeroSegmentContainer = styled.div`
 
 const HeroSegment: React.FC = (props) => {
   const theme = useTheme();
-
-  console.log("theme", theme.palette.primary.main);
-  console.log("background", theme.palette.background.default);
-
   return (
     <StyledHeroSegment>
       <StyledImg>

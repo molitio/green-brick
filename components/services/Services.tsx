@@ -6,7 +6,6 @@ import { StyledTheme } from "../common/types";
 
 const StyledServices = styled.div<StyledTheme>`
   background-color: ${(props) => props?.theme?.palette?.background.inverse};
-  height: auto;
 `;
 
 const Servcies: React.FC<React.HTMLProps<HTMLDivElement>> = (props) => {

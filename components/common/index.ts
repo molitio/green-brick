@@ -4,4 +4,5 @@ export { default as CardBoxCards } from "./CardBoxCards";
 export { default as Header } from "./Header";
 export { default as HeroSegment } from "./HeroSegment";
 export { default as HeroSegmentContent } from "./HeroSegmentContent";
+export { default as Page } from "./Page";
 export * from "./types";

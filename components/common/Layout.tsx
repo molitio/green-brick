@@ -42,6 +42,14 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
         primary: "#fff",
       },
     },
+    spacing: {
+      page: {
+        height: "calc(100vh - 5em)",
+      },
+      header: {
+        height: "5em",
+      },
+    },
   });
 
   return (
