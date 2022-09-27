@@ -15,16 +15,24 @@ const StyledContent = styled.div`
   height: 900px;
   width: 50vw;
   background-color: rgba(45, 45, 45, 0.8);
+
+  @media (max-width: 834px) {
+    width: 100vw;
+  }
 `;
 
 const StyledTitle = styled.h1`
   color: white;
-  padding: 0px 0px 0px 70px;
+  padding: 80px 0px 0px 70px;
   font-family: Impact, Haettenschweiler;
   font-size: 300%;
   font-weight: lighter;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+
+  @media (max-width: 834px) {
+    padding: 100px 0px 40px 70px;
+  }
 `;
 
 const StyledTextContainer = styled.div`

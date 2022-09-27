@@ -24,14 +24,28 @@ type HeroSegmentContentProps = {
 
 const StyledMainTitle = styled.h1`
   display: flex;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  flex-direction: column;
+  font-family: Impact;
   color: white;
-  margin: 0;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 400%;
+  align-content: center;
+
+  margin-bottom: 0.2em;
+  font-size: 80px;
+
+  @media (max-width: 834px) {
+    margin-top: 2.8em;
+    font-size: 55px;
+  }
+
+  @media (max-width: 400px) {
+    margin-top: 2.8em;
+    font-size: 40px;
+  }
 `;
 const StyledDescription = styled.h3`
+  padding: 0 10px 0 10px;
+  font-weight: 500;
   display: flex;
   font-family: Helvetica, sans-serif;
   color: white;
@@ -39,6 +53,11 @@ const StyledDescription = styled.h3`
   text-align: center;
   margin-bottom: 150px;
   font-size: 120%;
+
+  @media (max-width: 400px) {
+    margin-top: 2em;
+    font-size: 90%;
+  }
 `;
 
 const HeroSegmentContent: React.FC<HeroSegmentContentProps> = (props) => {
@@ -47,7 +66,6 @@ const HeroSegmentContent: React.FC<HeroSegmentContentProps> = (props) => {
     <StyledCoverImage>
       <StyledMainTitle>{`${title}`}</StyledMainTitle>
       <StyledDescription>{`${description}`}</StyledDescription>
-
       <StyledCallToAction>{callToAction}</StyledCallToAction>
     </StyledCoverImage>
   );

@@ -24,18 +24,22 @@ const StyledButton = styled.button<StyledTheme>`
   color: white;
   padding: 15px 10px 15px 10px;
   border: 1px solid white;
+
+  @media (max-width: 834px) {
+    padding: 11px 7px 11px 7px;
+  }
 `;
 
 const StyledImg = styled.section<StyledTheme>`
   object-fit: fill;
-  background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/hero.jpg);
+  background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/hero.jpg);
   height: 920px;
   background-size: cover;
   background-position: center;
   width: 100vw;
 `;
 
-const HeroSegmentContiner = styled.div`
+const HeroSegmentContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -43,8 +47,7 @@ const HeroSegmentContiner = styled.div`
   justify-content: flex-end;
 `;
 
-const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
-  const { children } = props;
+const HeroSegment: React.FC = (props) => {
   const theme = useTheme();
 
   console.log("theme", theme.palette.primary.main);
@@ -54,7 +57,7 @@ const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
     <StyledHeroSegment>
       <StyledImg>
         <StyledBox theme={theme}>
-          <HeroSegmentContiner>
+          <HeroSegmentContainer>
             <HeroSegmentContent
               title={"MEGBÍZHATÓSÁG, SZAKÉRTELEM"}
               description={
@@ -64,7 +67,7 @@ const HeroSegment: React.FC<React.PropsWithChildren> = (props) => {
                 <StyledButton theme={theme}>{`KAPCSOLATFELVÉTEL`}</StyledButton>
               }
             />
-          </HeroSegmentContiner>
+          </HeroSegmentContainer>
         </StyledBox>
       </StyledImg>
     </StyledHeroSegment>

@@ -44,7 +44,7 @@ const StyledCardImageContainer = styled.div<StyledTheme>`
     props && props.theme
       ? props.theme.palette.background.default
       : "rgba(0,0,0,0.8)"};
-  z-index: 1000;
+  z-index: 1;
   width: 130px;
   height: 130px;
   margin-right: 15px;

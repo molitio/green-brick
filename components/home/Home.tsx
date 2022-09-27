@@ -9,7 +9,9 @@ const Home: React.FC<React.HTMLProps<HTMLDivElement>> = (props) => {
   const { id } = props;
   return (
     <StyledHomePage id={id}>
-      <HeroSegment />
+      <HeroSegment ctaActive={true}>
+        <h1>Home</h1>
+      </HeroSegment>
     </StyledHomePage>
   );
 };

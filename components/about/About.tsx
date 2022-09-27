@@ -14,7 +14,11 @@ const StyledContent = styled.div`
   justify-content: space-around;
   height: 920px;
   width: 50vw;
-  background-color: rgba(45, 45, 45, 0.8); ;
+  background-color: rgba(45, 45, 45, 0.8);
+
+  @media (max-width: 834px) {
+    width: 100vw;
+  }
 `;
 
 const StyledTitle = styled.h1`
@@ -23,11 +27,15 @@ const StyledTitle = styled.h1`
   font-family: Impact, Haettenschweiler;
   font-size: 300%;
   font-weight: lighter;
+
+  @media (max-width: 834px) {
+    padding: 100px 0px 0px 70px;
+  }
 `;
 
 const StyledTextContainer = styled.div`
   text-align: left;
-  padding: 0px 100px 0px 70px;
+  padding: 0px 0px 0px 70px;
   width: 60%;
 `;
 
@@ -67,6 +75,7 @@ const StyledLeaderImage = styled.section`
   flex-direction: column;
   justify-content: end;
   object-fit: fill;
+  padding-top: 4em;
   background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg);
   height: 920px;
   background-size: cover;
@@ -76,17 +85,21 @@ const StyledLeaderImage = styled.section`
 
 const StyledLiderContent = styled.div<StyledTheme>`
   padding: 0 100px 0 100px;
-  height: 170px;
+  height: auto;
   background-color: ${(props) => props.theme?.palette?.primary?.main};
 `;
 
 const StyledLiderName = styled.h3`
+  margin: 0;
   text-align: end;
+  padding: 25px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
 `;
 
 const StyledImageLayer = styled.div`
   background-color: #2d2d2d;
-  height: 170px;
+  height: auto;
 `;
 
 const About: React.FC<React.HTMLProps<HTMLDivElement>> = (props) => {
