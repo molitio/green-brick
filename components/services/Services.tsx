@@ -1,19 +1,15 @@
-import { useTheme } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import CardBox from "../common/CardBox";
 import { StyledTheme } from "../common/types";
 
-const StyledServices = styled.div<StyledTheme>`
+const StyledServices = styled.div`
   background-color: ${(props) => props?.theme?.palette?.background.inverse};
 `;
 
-const Servcies: React.FC<React.HTMLProps<HTMLDivElement>> = (props) => {
-  const { id } = props;
-  const theme = useTheme();
-
+const Servcies: React.FC = (props) => {
   return (
-    <StyledServices theme={theme} id={id}>
+    <StyledServices>
       <CardBox />
     </StyledServices>
   );

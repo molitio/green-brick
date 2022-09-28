@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { StyledTheme } from "../common";
-import { useTheme } from "@mui/material";
 
 const StyledAbout = styled.div`
-  height: auto;
   position: relative;
 `;
 
@@ -12,7 +10,7 @@ const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 920px;
+  min-height: ${(props) => props.theme.dimensions.page.height};
   width: 50vw;
   background-color: rgba(45, 45, 45, 0.8);
 
@@ -23,19 +21,20 @@ const StyledContent = styled.div`
 
 const StyledTitle = styled.h1`
   color: white;
-  padding: 0px 0px 0px 70px;
+  padding: 1em 0 0 1.5em;
   font-family: Impact, Haettenschweiler;
-  font-size: 300%;
+  font-size: 3rem;
   font-weight: lighter;
 
   @media (max-width: 834px) {
-    padding: 100px 0px 0px 70px;
+    padding: 2em 0 0 1.5em;
+    margin-bottom: 0;
   }
 `;
 
 const StyledTextContainer = styled.div`
   text-align: left;
-  padding: 0px 0px 0px 70px;
+  padding: 0 0 0 4.375em;
   width: 60%;
 `;
 
@@ -54,7 +53,6 @@ const StyledLogo = styled.div`
 const StyledAboutImage = styled.section`
   object-fit: fill;
   background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/grindingmachine.jpg);
-  height: 920px;
   background-size: cover;
   background-position: center;
   width: 100vw;
@@ -65,8 +63,8 @@ const StyledParagraph = styled.p`
   display: flex;
   flex-direction: row;
   text-align: start;
-  padding-top: 30px;
-  padding-bottom: 20px;
+  padding-top: 1.875em;
+  padding-bottom: 1.25em;
   margin: 0;
 `;
 
@@ -77,37 +75,32 @@ const StyledLeaderImage = styled.section`
   object-fit: fill;
   padding-top: 4em;
   background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg);
-  height: 920px;
+  min-height: ${(props) => props.theme.dimensions.page.height};
   background-size: cover;
   background-position: center;
   width: 100vw;
 `;
 
-const StyledLiderContent = styled.div<StyledTheme>`
-  padding: 0 100px 0 100px;
-  height: auto;
+const StyledLiderContent = styled.div`
+  padding: 0 6.25em 0 6.25em;
   background-color: ${(props) => props.theme?.palette?.primary?.main};
 `;
 
 const StyledLiderName = styled.h3`
   margin: 0;
   text-align: end;
-  padding: 25px;
+  padding: 1.56em;
   font-family: Helvetica, sans-serif;
   font-weight: 300;
 `;
 
 const StyledImageLayer = styled.div`
   background-color: #2d2d2d;
-  height: auto;
 `;
 
-const About: React.FC<React.HTMLProps<HTMLDivElement>> = (props) => {
-  const { id } = props;
-  const theme = useTheme();
-
+const About: React.FC = (props) => {
   return (
-    <StyledAbout id={id}>
+    <StyledAbout>
       <StyledAboutImage>
         <StyledContent>
           <StyledTitle>{`RÓLUNK`}</StyledTitle>
@@ -126,7 +119,7 @@ const About: React.FC<React.HTMLProps<HTMLDivElement>> = (props) => {
       </StyledAboutImage>
       <StyledLeaderImage>
         <StyledImageLayer>
-          <StyledLiderContent theme={theme}>
+          <StyledLiderContent>
             <StyledParagraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus

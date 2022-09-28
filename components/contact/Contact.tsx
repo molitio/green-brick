@@ -1,56 +1,53 @@
-import { useTheme } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { StyledTheme } from "../common";
-const StyledContact = styled.div<StyledTheme>`
-  height: ${(props) => props.theme.spacing.page.height};
+
+const StyledContact = styled.div`
+  height: ${(props) => props.theme?.dimensions?.page?.height};
   position: relative;
   display: flex;
   justify-content: flex-end;
-  border: 3px solid purple;
 `;
 
 const StyledContent = styled.div`
-  border: 3px solid orange;
-  bottom: 0px;
-
   position: relative;
-  display: flex;
-  flex-direction: column;
   width: 50vw;
+  margin-left: 50vw;
   background-color: rgba(45, 45, 45, 0.8);
-
+  height: ${(props) => props.theme?.dimensions?.page?.height};
   @media (max-width: 834px) {
+    margin-left: 0;
     width: 100vw;
   }
 `;
 
 const StyledTitle = styled.h1`
+  text-align: center;
   color: white;
-  padding: 80px 0px 0px 70px;
+  padding: 3em 0em 2em 0em;
   font-family: Impact, Haettenschweiler;
-  font-size: 300%;
+  font-size: 3rem;
   font-weight: lighter;
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+  margin: 0;
 
   @media (max-width: 834px) {
-    padding: 100px 0px 40px 70px;
+    padding: 3em 0em 2em 0em;
   }
 `;
 
 const StyledTextContainer = styled.div`
-  text-align: left;
-  padding: 0px 70px 0px 100px;
-  width: 20em;
+  text-align: center;
+  margin: 0 2em 0 2em;
 `;
-const StyledText = styled.h3`
+
+const StyledContactInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: left;
   color: white;
+  margin-left: 4em;
   font-family: Roboto, sans-serif;
   font-weight: lighter;
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  justify-content: flex-start;
 `;
 
 const StyledImageSection = styled.section`
@@ -60,21 +57,85 @@ const StyledImageSection = styled.section`
   background-size: cover;
   background-position: center;
   width: 100vw;
-  transform: scaleX(-1);
 `;
 
-const Contact: React.FC<React.HTMLProps<HTMLDivElement>> = (props) => {
-  const { id } = props;
+const StyledInlineTextNumbers = styled.p`
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin-left: 0.5em;
+`;
 
-  const theme = useTheme();
+const StyledInlineText = styled.p`
+  font-weight: 200;
+  font-size: 1.2em;
+  margin-left: 1em;
+`;
+const StyleLogoContainer = styled.div`
+  margin-top: 2.5em;
+`;
 
+const Contact: React.FC = (props) => {
   return (
-    <StyledContact theme={theme} id={id}>
+    <StyledContact>
       <StyledImageSection>
         <StyledContent>
           <StyledTitle>{`KAPCSOLAT`}</StyledTitle>
+
           <StyledTextContainer>
-            <StyledText>{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus tortor, ullamcorper in pharetra congue, posuere nec neque. Donec semper, magna sed pellentesque fringilla, quam leo porttitor ante, et fringilla nunc velit eu arcu. Nam sit amet felis tortor.`}</StyledText>
+            <StyledContactInfo>
+              <img
+                src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/mobilephone.svg"
+                alt="logo"
+                width={50}
+                height={50}
+              />
+
+              <StyledInlineTextNumbers>
+                <a href="tel:+36205603031">{`+36 20 560 3031`}</a>
+              </StyledInlineTextNumbers>
+            </StyledContactInfo>
+            <StyledContactInfo>
+              <img
+                src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/mobilephone.svg"
+                alt="logo"
+                width={50}
+                height={50}
+              />
+
+              <StyledInlineTextNumbers>
+                <a href="tel:+36202812233">{`+36 20 281 2233`}</a>
+              </StyledInlineTextNumbers>
+            </StyledContactInfo>
+            <StyledContactInfo>
+              <img
+                src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/envelope.svg"
+                alt="logo"
+                width={50}
+                height={50}
+              />
+
+              <StyledInlineText>
+                <a href="mailto:bruderbau2021@gmail.com">{`bruderbau2021@gmail.com`}</a>
+              </StyledInlineText>
+            </StyledContactInfo>
+            <StyledContactInfo>
+              <img
+                src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/house.svg"
+                alt="logo"
+                width={50}
+                height={50}
+              />
+
+              <StyledInlineText>{`2030 Érd, Járom utca 10.`}</StyledInlineText>
+            </StyledContactInfo>
+
+            <img
+              style={{ margin: "2em 0 2em 0" }}
+              src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/logo/logo_white.svg"
+              alt="logo"
+              width={100}
+              height={100}
+            />
           </StyledTextContainer>
         </StyledContent>
       </StyledImageSection>

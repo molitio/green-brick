@@ -1,14 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { createTheme, TypeBackground, ThemeProvider } from "@mui/material";
 import AppHeader from "./Header";
 import { NavBar, NavSegment } from "../navigation";
 import { GreenBrickContext, GreenBrickContextProvider } from "../context";
-import {
-  createTheme,
-  Theme,
-  ThemeProvider,
-  TypeBackground,
-} from "@mui/material";
+import StyledThemeProvider from "./StyledThemeProvider";
 
 const StyledLayout = styled.div`
   top: 0;
@@ -42,9 +38,9 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
         primary: "#fff",
       },
     },
-    spacing: {
+    dimensions: {
       page: {
-        height: "calc(100vh - 5em)",
+        height: "930px",
       },
       header: {
         height: "5em",
@@ -55,11 +51,16 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
   return (
     <GreenBrickContextProvider>
       <ThemeProvider theme={appTheme}>
-        <StyledLayout>
-          <AppHeader />
-          <NavBar height={"5em"} menuState={"collapsed"} />
-          {children}
-        </StyledLayout>
+        <StyledThemeProvider>
+          <StyledLayout>
+            <AppHeader />
+            <NavBar
+              height={appTheme.dimensions.page.height}
+              menuState={"collapsed"}
+            />
+            {children}
+          </StyledLayout>
+        </StyledThemeProvider>
       </ThemeProvider>
     </GreenBrickContextProvider>
   );

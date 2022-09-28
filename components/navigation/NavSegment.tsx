@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { useTheme } from "@mui/material";
 import { nanoid } from "nanoid";
 import { StyledTheme } from "../common/types";
 import { Dimensions } from "./types/Dimensions";
@@ -66,14 +65,12 @@ const NavSegment: React.FC<NavSegmentProps & React.PropsWithChildren> = (
   props
 ) => {
   const { keyParam, children, visible, centered, padding } = props;
-  const theme = useTheme();
   return (
     <StyledNavSegment
       keyParam={keyParam ?? nanoid()}
       visible={visible ?? true}
       centered={centered}
       padding={padding}
-      theme={theme}
     >
       {children}
     </StyledNavSegment>

@@ -6,8 +6,6 @@ import { Spacing } from "./types/Spacing";
 import { Typeography } from "./types/Typeography";
 import { GreenBrickContext } from "../context";
 import { StyledTheme, ExpandedOrCollapse } from "../common";
-import { useTheme } from "@mui/material";
-import { type } from "os";
 
 const ImageContainer = styled.div`
   width: 6em;
@@ -20,7 +18,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const StyledNavLink = styled.a<StyledTheme>`
+const StyledNavLink = styled.a`
   color: ${(props) => props.theme?.palette?.text?.primary};
   text-decoration: none;
   font-family: Helvetica;
@@ -54,7 +52,7 @@ const FixdNav = styled.div`
   box-shadow: 1px 1px #88888847;
 `;
 
-type NavBarContainerProps = StyledTheme & {
+type NavBarContainerProps = {
   extendNavBar: boolean;
 };
 
@@ -109,7 +107,7 @@ const NavBarInnerContainer = styled.div`
   display: flex;
 `;
 
-const NavBarExtendedContainer = styled.div<StyledTheme>`
+const NavBarExtendedContainer = styled.div`
   background-color: ${(props) => props.theme.palette.background.menu};
   display: flex;
   flex-direction: column;
@@ -134,7 +132,7 @@ const OpenLinksButton = styled.button`
   background: none;
   border: none;
   color: white;
-  font-size: 45px;
+  font-size: 2.8rem;
   cursor: pointer;
   position: absolute;
 
@@ -161,8 +159,6 @@ const NavBar: React.FC<NavBarProps> = (props) => {
 
   const navTree = greenBrickContext.navTree ?? {};
 
-  const theme = useTheme();
-
   const logoSizeRem = "3.6em";
   const defaultSpacing: Spacing & Typeography = {
     padding: "2em 1em 1.5em 1em",
@@ -171,7 +167,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
 
   return (
     <FixdNav>
-      <NavBarContainer theme={theme} extendNavBar={extendNavBar}>
+      <NavBarContainer extendNavBar={extendNavBar}>
         <OpenLinksButton
           onClick={() => {
             setExtendNavBar((curr) => !curr);
@@ -193,11 +189,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             <NavBarLinkContainer>
               {navTree
                 ? Object.keys(navTree).map((branch) => (
-                    <StyledNavLink
-                      key={branch}
-                      href={navTree[branch].path}
-                      theme={theme}
-                    >
+                    <StyledNavLink key={branch} href={navTree[branch].path}>
                       {`${navTree[branch].label}`}
                     </StyledNavLink>
                   ))
@@ -205,7 +197,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             </NavBarLinkContainer>
           </RightContainer>
         </NavBarInnerContainer>
-        <NavBarExtendedContainer theme={theme}>
+        <NavBarExtendedContainer>
           {extendNavBar ?? navTree
             ? Object.keys(navTree).map((branch) => (
                 <StyledNavLinkExtended
@@ -214,7 +206,6 @@ const NavBar: React.FC<NavBarProps> = (props) => {
                   }}
                   key={branch}
                   href={navTree[branch].path}
-                  theme={theme}
                 >
                   {`${navTree[branch].label}`}
                 </StyledNavLinkExtended>

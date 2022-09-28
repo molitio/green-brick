@@ -8,17 +8,17 @@ const StyledAppScaffolding = styled.div``;
 const HomePage: NextPage = () => {
   return (
     <StyledAppScaffolding>
-      <Page>
-        <Home id="home" />
+      <Page id="home">
+        <Home />
       </Page>
-      <Page>
-        <Services id="services" />
+      <Page id="services">
+        <Services />
       </Page>
-      <Page>
-        <About id="about" />
+      <Page id="about">
+        <About />
       </Page>
-      <Page>
-        <Contact id="contact" />
+      <Page id="contact">
+        <Contact />
       </Page>
     </StyledAppScaffolding>
   );

@@ -5,4 +5,5 @@ export { default as Header } from "./Header";
 export { default as HeroSegment } from "./HeroSegment";
 export { default as HeroSegmentContent } from "./HeroSegmentContent";
 export { default as Page } from "./Page";
+export { default as StyledThemeProvider } from "./StyledThemeProvider";
 export * from "./types";

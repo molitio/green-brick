@@ -2,38 +2,34 @@ import React from "react";
 import styled from "styled-components";
 import HeroSegmentContent from "../common/HeroSegmentContent";
 import { StyledTheme } from "./types";
-import { useTheme } from "@mui/material";
 
 const StyledHeroSegment = styled.div`
   position: relative;
-  margin-top: -5em;
+  //margin-top: -5em;
 `;
 
-const StyledBox = styled.div<StyledTheme>`
+const StyledBox = styled.div`
   background-color: ${(props) => props.theme.palette.background.default};
-  height: 920px;
+  min-height: ${(props) => props.theme.dimensions.page.height};
   margin: 0;
   padding: 0;
 `;
 
-const StyledButton = styled.button<StyledTheme>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const StyledButton = styled.button`
   background-color: ${(props) => props.theme?.palette?.primary?.main};
   color: white;
-  padding: 15px 10px 15px 10px;
+  padding: 0.93em 0.62em 0.93em 0.62em;
   border: 1px solid white;
 
   @media (max-width: 834px) {
-    padding: 11px 7px 11px 7px;
+    padding: 0.68em 0.43em 0.68em 0.43em;
   }
 `;
 
-const StyledImg = styled.section<StyledTheme>`
+const StyledImg = styled.section`
   object-fit: fill;
   background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/hero.jpg);
-  height: 920px;
+  min-height: ${(props) => props.theme.dimensions.page.height};
   background-size: cover;
   background-position: center;
   width: 100vw;
@@ -43,25 +39,22 @@ const HeroSegmentContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 30vh;
+  top: 12em;
   justify-content: flex-end;
 `;
 
 const HeroSegment: React.FC = (props) => {
-  const theme = useTheme();
   return (
     <StyledHeroSegment>
       <StyledImg>
-        <StyledBox theme={theme}>
+        <StyledBox>
           <HeroSegmentContainer>
             <HeroSegmentContent
               title={"MEGBÍZHATÓSÁG, SZAKÉRTELEM"}
               description={
                 "BÍZZA OTTHONÁT, GYORS, PRECIZ, HOZZÁÉRTŐ SZAKEMBEREKRE!"
               }
-              callToAction={
-                <StyledButton theme={theme}>{`KAPCSOLATFELVÉTEL`}</StyledButton>
-              }
+              callToAction={<StyledButton>{`KAPCSOLATFELVÉTEL`}</StyledButton>}
             />
           </HeroSegmentContainer>
         </StyledBox>
