@@ -1,66 +1,160 @@
-import React from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import styled from "styled-components";
-import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
 import NavSegment from "./NavSegment";
-import { NavBarMenuState } from "./types/NavBarMenuState";
 import { Spacing } from "./types/Spacing";
 import { Typeography } from "./types/Typeography";
-
-const StyledNavBar = styled.nav<NavBarProps>`
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  height: ${(props) => props.height ?? "5em"};
-`;
-
-const StyleNavBarContainer = styled.ul`
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  height: 100%;
-`;
-
-const StyledMenuButtton = styled.button`
-  background-color: rgba(0, 0, 0, 0);
-  color: "white";
-`;
+import { GreenBrickContext } from "../context";
+import { StyledTheme, ExpandedOrCollapse } from "../common";
 
 const ImageContainer = styled.div`
-  width: 5em;
+  width: 6em;
   height: 100%;
-  position: relative;
+  margin-left: 35px;
+
+  @media screen and (max-width: 834px) {
+    margin-left: 0;
+    padding-left: 16px;
+  }
+`;
+
+const StyledNavLink = styled.a`
+  color: ${(props) => props.theme?.palette?.text?.primary};
+  text-decoration: none;
+  font-family: Helvetica;
+  margin: 2em 1em 0 0;
+  font-size: large;
+  font-weight: lighter;
+
+  @media (max-width: 834px) {
+    display: none;
+  }
+`;
+
+const StyledNavLinkExtended = styled.a`
+  color: ${(props) => props.theme?.palette?.text?.primary};
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 1.8em 1em 0 0;
+  font-size: x-large;
+  font-weight: lighter;
+
+  @media (max-width: 850px) {
+    margin: 1em 0 1em 0;
+  }
+`;
+
+const FixdNav = styled.div`
+  background-color: rgba(45, 45, 45, 0.95);
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 1px 1px #88888847;
+`;
+
+type NavBarContainerProps = {
+  extendNavBar: boolean;
+};
+
+const NavBarContainer = styled.nav<NavBarContainerProps>`
+  width: 100%;
+  height: ${(props) => (props.extendNavBar ? "100vh" : "100px")};
+  background-color: ${(props) => props.theme.palette.background.menu};
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  @media (max-width: 834px) {
+    border-bottom: 0px white solid;
+    background-color: ${(props) => props.theme.palette.background.menu};
+  }
+`;
+
+const LeftContainer = styled.div`
+  display: flex;
+  flex: 30%;
+  align-items: center;
+  @media (max-width: 834px) {
+    flex: 100%;
+    justify-content: center;
+  }
+`;
+
+const RightContainer = styled.div`
+  flex: 70%;
+  display: flex;
+  justify-content: flex-end;
+  @media (max-width: 834px) {
+    flex: 0%;
+    justify-content: center;
+  }
+`;
+
+const NavBarLinkContainer = styled.div`
+  display: flex;
+  margin-right: 30px;
+  @media (max-width: 834px) {
+    margin-right: 0px;
+  }
+`;
+
+const NavBarInnerContainer = styled.div`
+  width: 100%;
+  height: 120px;
+  display: flex;
+`;
+
+const NavBarExtendedContainer = styled.div`
+  background-color: ${(props) => props.theme.palette.background.menu};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 9px;
+
+  @media (min-width: 834px) {
+    display: none;
+  }
 `;
 
 export type NavBarProps = {
   height?: string;
-  state?: NavBarMenuState;
-  externalSegments?: React.ReactElement[];
+  menuState?: ExpandedOrCollapse;
+  navBarState?: ExpandedOrCollapse;
 };
 
+const OpenLinksButton = styled.button`
+  margin: 25px;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.8rem;
+  cursor: pointer;
+  position: absolute;
+
+  @media (min-width: 834px) {
+    display: none;
+  }
+`;
+
+const ContactInfoContainer = styled.div`
+  font-family: Regular;
+  text-align: center;
+  color: white;
+  margin: 8em;
+`;
+
+const ContactInfo = styled.p``;
+
 const NavBar: React.FC<NavBarProps> = (props) => {
-  const { externalSegments, height, state } = props;
+  const { height, menuState: state } = props;
 
-  const [navBarMenuState, setNavBarMenuState] = React.useState<NavBarMenuState>(
-    state ?? "header"
-  );
+  const greenBrickContext = React.useContext(GreenBrickContext);
 
-  const handleMenuClick = () => {
-    console.log(`handleMenuClick: ${navBarMenuState}`);
+  const [extendNavBar, setExtendNavBar] = useState(false);
 
-    switch (navBarMenuState) {
-      case "header":
-        setNavBarMenuState("collapsed");
-        break;
-
-      case "collapsed":
-        setNavBarMenuState("header");
-      default:
-        break;
-    }
-  };
+  const navTree = greenBrickContext.navTree ?? {};
 
   const logoSizeRem = "3.6em";
   const defaultSpacing: Spacing & Typeography = {
@@ -69,60 +163,62 @@ const NavBar: React.FC<NavBarProps> = (props) => {
   };
 
   return (
-    <StyledNavBar height={height}>
-      <StyleNavBarContainer>
-        <NavSegment onClick={handleMenuClick} key={"menu"} visible={false}>
-          <MenuIcon sx={{ fontSize: 40 }} />
-        </NavSegment>
-        <NavSegment
-          key="logo"
-          flex={1}
-          visible
-          minWidth={logoSizeRem}
-          minHeight={logoSizeRem}
-          padding="1em 1em 1.5em 1.5em"
-          centered={navBarMenuState === "collapsed"}
+    <FixdNav>
+      <NavBarContainer extendNavBar={extendNavBar}>
+        <OpenLinksButton
+          onClick={() => {
+            setExtendNavBar((curr) => !curr);
+          }}
         >
-          <ImageContainer>
-            <img
-              src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/logo/logo_white.svg"
-              alt="logo"
-            />
-          </ImageContainer>
-        </NavSegment>
-        <NavSegment
-          key="home"
-          visible={navBarMenuState === "header"}
-          {...defaultSpacing}
-        >
-          {` FŐOLDAL `}
-        </NavSegment>
-        <NavSegment
-          key="services"
-          visible={navBarMenuState === "header"}
-          {...defaultSpacing}
-        >
-          {` SZOLGÁLTATÁSOK `}
-        </NavSegment>
-        <NavSegment
-          key="about"
-          visible={navBarMenuState === "header"}
-          {...defaultSpacing}
-        >
-          {` RÓLUNK `}
-        </NavSegment>
-        <NavSegment
-          key="contact"
-          visible={navBarMenuState === "header"}
-          {...defaultSpacing}
-        >
-          {` KAPCSOLAT `}
-        </NavSegment>
-        {navBarMenuState === "header"
-          ? externalSegments?.map((segment) => segment)
-          : null}
-      </StyleNavBarContainer>
-    </StyledNavBar>
+          {extendNavBar ? <> &#10005;</> : <> &#8801; </>}
+        </OpenLinksButton>
+        <NavBarInnerContainer>
+          <LeftContainer>
+            <ImageContainer>
+              <img
+                style={{ marginTop: "17px" }}
+                src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/logo/logo_white.svg"
+                alt="logo"
+              />
+            </ImageContainer>
+          </LeftContainer>
+          <RightContainer>
+            <NavBarLinkContainer>
+              {navTree
+                ? Object.keys(navTree).map((branch) => (
+                    <StyledNavLink key={branch} href={navTree[branch].path}>
+                      {`${navTree[branch].label}`}
+                    </StyledNavLink>
+                  ))
+                : null}
+            </NavBarLinkContainer>
+          </RightContainer>
+        </NavBarInnerContainer>
+        <NavBarExtendedContainer>
+          {extendNavBar ?? navTree
+            ? Object.keys(navTree).map((branch) => (
+                <StyledNavLinkExtended
+                  onClick={() => {
+                    setExtendNavBar((curr) => !curr);
+                  }}
+                  key={branch}
+                  href={navTree[branch].path}
+                >
+                  {`${navTree[branch].label}`}
+                </StyledNavLinkExtended>
+              ))
+            : null}
+          {extendNavBar ? (
+            <ContactInfoContainer>
+              <ContactInfo>{`+36205603031`}</ContactInfo>
+              <ContactInfo>{`+36202812233`}</ContactInfo>
+              <ContactInfo>{`bruderbau2021@gmail.com`}</ContactInfo>
+              <ContactInfo>{`2030 Érd, Járom utca 10.`}</ContactInfo>
+            </ContactInfoContainer>
+          ) : null}
+        </NavBarExtendedContainer>
+      </NavBarContainer>
+    </FixdNav>
   );
 };
 

@@ -1,16 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { StyledTheme } from "../common";
 import HeroSegment from "../common/HeroSegment";
-import CardBox from "../common/CardBox";
 
-const StyledHomePage = styled.div``;
+const StyeledDiv = styled.div``;
 
-const Home: React.FC<React.PropsWithChildren> = (props) => {
-  const { children } = props;
+const Home: React.FC = (props) => {
   return (
-    <StyledHomePage>
+    <StyeledDiv>
       <HeroSegment />
-    </StyledHomePage>
+    </StyeledDiv>
   );
 };
 

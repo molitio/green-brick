@@ -1,1 +1,1 @@
-export type NavBarMenuState = "header" | "collapsed" | "mini"
+export type ExpandedOrCollapse = "expanded" | "collapsed";
