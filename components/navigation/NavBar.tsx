@@ -60,15 +60,12 @@ const NavBarContainer = styled.nav<NavBarContainerProps>`
   width: 100%;
   height: ${(props) => (props.extendNavBar ? "100vh" : "100px")};
   background-color: ${(props) => props.theme.palette.background.menu};
-  /* background-color: rgb(44, 108, 43); */
-
   display: flex;
   flex-direction: column;
   z-index: 1;
 
   @media (max-width: 834px) {
     border-bottom: 0px white solid;
-    /* background-color: rgb(44, 108, 43); */
     background-color: ${(props) => props.theme.palette.background.menu};
   }
 `;
@@ -145,7 +142,7 @@ const ContactInfoContainer = styled.div`
   font-family: Regular;
   text-align: center;
   color: white;
-  margin: 3em;
+  margin: 8em;
 `;
 
 const ContactInfo = styled.p``;

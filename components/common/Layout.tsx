@@ -31,6 +31,7 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
       background: {
         default: "rgba(45, 45, 45, 0.8)",
         inverse: "#fff",
+        footer: "#000",
         menu: "rgb(44, 108, 43)",
         //menu: "rgba(45, 45, 45, 0.95)",
       },

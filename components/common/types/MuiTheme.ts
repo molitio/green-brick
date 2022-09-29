@@ -1,23 +1,21 @@
-/* import { Spacing } from '@mui/material'; */
-
 declare module "@mui/material" {
-    export interface TypeBackground {
-        background: {
-
-            inverse?: string;
-            menu?: string;
-        }
-    }
-    export type Spacing {
-      page?: {
-        height?: string;
-      };
-      header?: {
-        height?: string;
-      };
-    }
+  export interface TypeBackground {
+    background: {
+      inverse?: string;
+      menu?: string;
+      footer?: string;
+    };
   }
-    
-  export {};
+  export interface Theme {
+    dimensions: {
+      page: {
+        height: string;
+      };
+      header: {
+        height: string;
+      };
+    };
+  }
+}
 
-
+export {};

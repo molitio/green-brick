@@ -1,7 +1,7 @@
 import React from "react";
 import { NextPage } from "next";
 import styled from "styled-components";
-import { Home, Services, Contact, About, Page } from "../components";
+import { Home, Services, Contact, About, Page, Footer } from "../components";
 
 const StyledAppScaffolding = styled.div``;
 
@@ -20,6 +20,7 @@ const HomePage: NextPage = () => {
       <Page id="contact">
         <Contact />
       </Page>
+      <Footer maintainer="© 2022 All Rights Reserved | molitio llc." />
     </StyledAppScaffolding>
   );
 };

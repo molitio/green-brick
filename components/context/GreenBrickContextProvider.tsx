@@ -14,7 +14,6 @@ const GreenBrickContextProvider: React.FC<React.PropsWithChildren> = (
       value={{
         appName: "GreenBrick",
         theme: defaultTheme,
-        devHighlight: "3px dashed purple",
         navTree: {
           home: { label: "FŐOLDAL", path: "#home" },
           services: { label: "SZOLGÁLTATÁSOK", path: "#services" },

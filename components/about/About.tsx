@@ -77,8 +77,11 @@ const StyledLeaderImage = styled.section`
   background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg);
   min-height: ${(props) => props.theme.dimensions.page.height};
   background-size: cover;
-  background-position: center;
   width: 100vw;
+
+  @media (max-width: 834px) {
+    background-position: top 35% right 60%;
+  }
 `;
 
 const StyledLiderContent = styled.div`

@@ -4,7 +4,7 @@ import { StyledTheme } from "../common";
 
 const StyledPage = styled.div`
   min-height: calc(
-    100vh - ${(props) => props.theme?.dimensions?.header?.height}
+    max-content - ${(props) => props.theme?.dimensions?.header?.height}
   );
 `;
 

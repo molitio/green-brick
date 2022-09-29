@@ -1,20 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledTheme } from "../common";
+import ContactTableRow from "./ContactTableRow";
+import ContactTable from "./ContextTable";
 
 const StyledContact = styled.div`
-  height: ${(props) => props.theme?.dimensions?.page?.height};
+  height: auto;
   position: relative;
   display: flex;
+  height: max-content;
   justify-content: flex-end;
 `;
 
 const StyledContent = styled.div`
+  height: max-content;
   position: relative;
   width: 50vw;
   margin-left: 50vw;
-  background-color: rgba(45, 45, 45, 0.8);
-  height: ${(props) => props.theme?.dimensions?.page?.height};
+  background-color: ${(props) => props.theme.palette.background.default};
+
   @media (max-width: 834px) {
     margin-left: 0;
     width: 100vw;
@@ -35,19 +38,8 @@ const StyledTitle = styled.h1`
   }
 `;
 
-const StyledTextContainer = styled.div`
-  text-align: center;
+const StyledContactContainer = styled.div`
   margin: 0 2em 0 2em;
-`;
-
-const StyledContactInfo = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  color: white;
-  margin-left: 4em;
-  font-family: Roboto, sans-serif;
-  font-weight: lighter;
 `;
 
 const StyledImageSection = styled.section`
@@ -66,6 +58,7 @@ const StyledInlineTextNumbers = styled.p`
 `;
 
 const StyledInlineText = styled.p`
+  color: ${(props) => props.theme?.palette?.text?.primary};
   font-weight: 200;
   font-size: 1.2em;
   margin-left: 1em;
@@ -74,69 +67,104 @@ const StyleLogoContainer = styled.div`
   margin-top: 2.5em;
 `;
 
+const StyledContactInfoIcon = styled.img`
+  width: 50px;
+  height: 50px;
+`;
+
+const StyledContactInfoIconContainer = styled.div`
+  text-align: center;
+  width: auto;
+`;
+
+const StyledContactLogo = styled.img`
+  margin: 4em 0 2em 0;
+  width: 100px;
+  height: 100px;
+`;
+
+const StyledContactInfoAnchor = styled.a`
+  color: ${(props) => props.theme?.palette?.text?.primary};
+`;
+
 const Contact: React.FC = (props) => {
   return (
     <StyledContact>
       <StyledImageSection>
         <StyledContent>
           <StyledTitle>{`KAPCSOLAT`}</StyledTitle>
-
-          <StyledTextContainer>
-            <StyledContactInfo>
-              <img
-                src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/mobilephone.svg"
-                alt="logo"
-                width={50}
-                height={50}
-              />
-
-              <StyledInlineTextNumbers>
-                <a href="tel:+36205603031">{`+36 20 560 3031`}</a>
-              </StyledInlineTextNumbers>
-            </StyledContactInfo>
-            <StyledContactInfo>
-              <img
-                src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/mobilephone.svg"
-                alt="logo"
-                width={50}
-                height={50}
-              />
-
-              <StyledInlineTextNumbers>
-                <a href="tel:+36202812233">{`+36 20 281 2233`}</a>
-              </StyledInlineTextNumbers>
-            </StyledContactInfo>
-            <StyledContactInfo>
-              <img
-                src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/envelope.svg"
-                alt="logo"
-                width={50}
-                height={50}
-              />
-
-              <StyledInlineText>
-                <a href="mailto:bruderbau2021@gmail.com">{`bruderbau2021@gmail.com`}</a>
-              </StyledInlineText>
-            </StyledContactInfo>
-            <StyledContactInfo>
-              <img
-                src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/house.svg"
-                alt="logo"
-                width={50}
-                height={50}
-              />
-
-              <StyledInlineText>{`2030 Érd, Járom utca 10.`}</StyledInlineText>
-            </StyledContactInfo>
-
-            <img
-              style={{ margin: "2em 0 2em 0" }}
+          <StyledContactContainer>
+            <ContactTable
+              rows={[
+                <ContactTableRow
+                  key="phone1"
+                  icon={
+                    <StyledContactInfoIcon
+                      src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/mobilephone.svg"
+                      alt="logo"
+                    />
+                  }
+                  iconSpacing={{
+                    margin: "0 0 0 -8px",
+                  }}
+                  text={
+                    <StyledInlineTextNumbers>
+                      <StyledContactInfoAnchor href="tel:+36205603031">{`+36 20 560 3031`}</StyledContactInfoAnchor>
+                    </StyledInlineTextNumbers>
+                  }
+                />,
+                <ContactTableRow
+                  key="phone2"
+                  icon={
+                    <StyledContactInfoIcon
+                      src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/mobilephone.svg"
+                      alt="logo"
+                    />
+                  }
+                  iconSpacing={{
+                    margin: "0 0 0 -10px",
+                  }}
+                  text={
+                    <StyledInlineTextNumbers>
+                      <StyledContactInfoAnchor href="tel:+36202812233">{`+36 20 281 2233`}</StyledContactInfoAnchor>
+                    </StyledInlineTextNumbers>
+                  }
+                />,
+                <ContactTableRow
+                  key="email1"
+                  icon={
+                    <StyledContactInfoIcon
+                      src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/envelope.svg"
+                      alt="logo"
+                    />
+                  }
+                  text={
+                    <StyledInlineText>
+                      <StyledContactInfoAnchor href="mailto:bruderbau2021@gmail.com">{`bruderbau2021@gmail.com`}</StyledContactInfoAnchor>
+                    </StyledInlineText>
+                  }
+                />,
+                <ContactTableRow
+                  key="address1"
+                  icon={
+                    <StyledContactInfoIcon
+                      src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/contact-icons/house.svg"
+                      alt="logo"
+                    />
+                  }
+                  text={
+                    <StyledInlineText>{`2030 Érd, Járom utca 10.`}</StyledInlineText>
+                  }
+                />,
+              ]}
+            />
+          </StyledContactContainer>
+          <StyledContactInfoIconContainer>
+            <StyledContactLogo
               src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/logo/logo_white.svg"
               alt="logo"
-              width={100}
-              height={100}
             />
-          </StyledTextContainer>
+          </StyledContactInfoIconContainer>
         </StyledContent>
       </StyledImageSection>
     </StyledContact>

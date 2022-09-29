@@ -13,13 +13,14 @@ const StyledCallToAction = styled.div`
 type HeroSegmentContentProps = {
   title?: string;
   description?: string;
-  callToAction?: React.ReactElement;
+  callToAction?: React.ReactNode;
 };
 
 const StyledMainTitle = styled.h1`
   font-family: Impact;
   color: white;
   text-align: center;
+  margin-top: 2.6em;
 
   margin-bottom: 0.2em;
   font-size: 5rem;
