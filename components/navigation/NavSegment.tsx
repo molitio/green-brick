@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { useTheme } from "@mui/material";
 import { nanoid } from "nanoid";
 import { StyledTheme } from "../common/types";
 import { Dimensions } from "./types/Dimensions";
@@ -25,14 +24,17 @@ const StyledNavSegment = styled.li<NavSegmentProps>`
       : css`
           color: ${props.theme.palette?.text?.primary};
         `};
-  ${(props) =>
-    props.backgroundColor
-      ? css`
-          background-color: ${props.backgroundColor};
-        `
-      : css`
-          background-color: ${props.theme.palette?.background?.default};
-        `};
+
+  @media screen and (max-width: 830px) {
+    ${(props) =>
+      props.backgroundColor
+        ? css`
+            background-color: ${props.backgroundColor};
+          `
+        : css`
+            background-color: ${props.theme.palette?.background?.default};
+          `};
+  }
 
   ${(props) =>
     props.centered
@@ -51,7 +53,7 @@ export type NavSegmentProps = React.LiHTMLAttributes<HTMLUListElement> &
   Dimensions &
   Spacing &
   Typeography & {
-    key: string;
+    keyParam?: string;
     flex?: number;
     color?: string;
     visible?: boolean;
@@ -62,17 +64,13 @@ export type NavSegmentProps = React.LiHTMLAttributes<HTMLUListElement> &
 const NavSegment: React.FC<NavSegmentProps & React.PropsWithChildren> = (
   props
 ) => {
-  const defaultId = nanoid();
-  const { key = defaultId, children, visible, centered, padding } = props;
-
-  const theme = useTheme();
+  const { keyParam, children, visible, centered, padding } = props;
   return (
     <StyledNavSegment
-      key={key}
-      visible={visible}
+      keyParam={keyParam ?? nanoid()}
+      visible={visible ?? true}
       centered={centered}
       padding={padding}
-      theme={theme}
     >
       {children}
     </StyledNavSegment>

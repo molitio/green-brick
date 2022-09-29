@@ -1,14 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { createTheme, TypeBackground, ThemeProvider } from "@mui/material";
 import AppHeader from "./Header";
 import { NavBar, NavSegment } from "../navigation";
 import { GreenBrickContext, GreenBrickContextProvider } from "../context";
-import {
-  createTheme,
-  Theme,
-  ThemeProvider,
-  TypeBackground,
-} from "@mui/material";
+import StyledThemeProvider from "./StyledThemeProvider";
 
 const StyledLayout = styled.div`
   top: 0;
@@ -25,9 +21,9 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
 
   console.log("context: ", context.appName);
 
-  const defaultTheme = createTheme();
+  const muiDefault = createTheme();
 
-  const appTheme = createTheme(defaultTheme, {
+  const appTheme = createTheme(muiDefault, {
     palette: {
       primary: {
         main: "rgba(36, 171, 14, 0.5)",
@@ -35,9 +31,20 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
       background: {
         default: "rgba(45, 45, 45, 0.8)",
         inverse: "#fff",
+        footer: "#000",
+        menu: "rgb(44, 108, 43)",
+        //menu: "rgba(45, 45, 45, 0.95)",
       },
       text: {
         primary: "#fff",
+      },
+    },
+    dimensions: {
+      page: {
+        height: "930px",
+      },
+      header: {
+        height: "5em",
       },
     },
   });
@@ -45,19 +52,16 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
   return (
     <GreenBrickContextProvider>
       <ThemeProvider theme={appTheme}>
-        <StyledLayout>
-          <AppHeader />
-          <NavBar
-            height={"5em"}
-            state={"header"}
-            externalSegments={[
-              <NavSegment key={"ext"} flex={1}>
-                segment
-              </NavSegment>,
-            ]}
-          />
-          {children}
-        </StyledLayout>
+        <StyledThemeProvider>
+          <StyledLayout>
+            <AppHeader />
+            <NavBar
+              height={appTheme.dimensions.page.height}
+              menuState={"collapsed"}
+            />
+            {children}
+          </StyledLayout>
+        </StyledThemeProvider>
       </ThemeProvider>
     </GreenBrickContextProvider>
   );

@@ -1,20 +1,27 @@
 import React from "react";
 import { NextPage } from "next";
 import styled from "styled-components";
-import { Home, Services, Contact, About } from "../components/";
+import { Home, Services, Contact, About, Page, Footer } from "../components";
 
-const StyledAppSchaffolding = styled.div`
-  display: block;
-`;
+const StyledAppScaffolding = styled.div``;
 
 const HomePage: NextPage = () => {
   return (
-    <StyledAppSchaffolding>
-      <Home />
-      <Services />
-      <About />
-      <Contact />
-    </StyledAppSchaffolding>
+    <StyledAppScaffolding>
+      <Page id="home">
+        <Home />
+      </Page>
+      <Page id="services">
+        <Services />
+      </Page>
+      <Page id="about">
+        <About />
+      </Page>
+      <Page id="contact">
+        <Contact />
+      </Page>
+      <Footer maintainer="© 2022 All Rights Reserved | molitio llc." />
+    </StyledAppScaffolding>
   );
 };
 
