@@ -21,7 +21,6 @@ const StyledMainTitle = styled.h1`
   color: white;
   text-align: center;
   margin-top: 2.6em;
-
   margin-bottom: 0.2em;
   font-size: 5rem;
 
@@ -30,7 +29,7 @@ const StyledMainTitle = styled.h1`
   }
 
   @media (max-width: 400px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 `;
 
