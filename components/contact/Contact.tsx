@@ -28,7 +28,7 @@ const StyledTitle = styled.h1`
   text-align: center;
   color: white;
   padding: 3em 0em 2em 0em;
-  font-family: Impact, Haettenschweiler;
+  font-family: Impacto, Impact, sans-serif;
   font-size: 3rem;
   font-weight: lighter;
   margin: 0;

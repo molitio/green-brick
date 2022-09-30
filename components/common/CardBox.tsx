@@ -10,7 +10,7 @@ const StyledCardBox = styled.div`
 `;
 
 const StyledCardTitle = styled.h1`
-  font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;
+  font-family: Impacto, Impact, sans-serif;
   padding: 3.5em 0em 3.5em 0em;
   font-size: 3.5rem;
   margin: 0;
