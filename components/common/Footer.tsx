@@ -10,6 +10,8 @@ const StyledFooter = styled.footer`
   background-color: ${(props) => props?.theme?.palette?.background?.footer};
 `;
 const StyledFooterText = styled.p`
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1rem;
   opacity: 0.5;
   margin-right: 5em;
 `;

@@ -17,7 +17,6 @@ type HeroSegmentContentProps = {
 };
 
 const StyledMainTitle = styled.h1`
-  font-family: Impacto, Impact, sans-serif;
   color: white;
   text-align: center;
   margin-top: 2.6em;
@@ -34,7 +33,7 @@ const StyledMainTitle = styled.h1`
 `;
 
 const StyledDescription = styled.h3`
-  font-weight: 500;
+  font-weight: 400;
   font-family: Helvetica, sans-serif;
   color: white;
   margin: 0;

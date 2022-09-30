@@ -32,15 +32,17 @@ const StyledTitle = styled.h1`
 `;
 
 const StyledTextContainer = styled.div`
-  text-align: left;
+  text-align: center;
   padding: 0 0 0 4.375em;
   width: 60%;
 `;
 
 const StyledText = styled.h3`
+  text-align: start;
   color: white;
-  font-family: Roboto, sans-serif;
+  font-family: Helvetica, arial, sans-serif;
   font-weight: lighter;
+  font-size: 1.4rem;
 `;
 
 const StyledLogo = styled.div`
@@ -58,12 +60,16 @@ const StyledAboutImage = styled.section`
 `;
 
 const StyledParagraph = styled.p`
+  color: ${(props) => props.theme.palette.text.primary};
+  font-family: Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: center;
-  text-align: end;
+  text-align: start;
   padding-top: 1.875em;
   padding-bottom: 1.25em;
   margin: 0;
+  @media (max-width: 834px) {
+  }
 `;
 
 const StyledLeaderImage = styled.section`
@@ -88,6 +94,7 @@ const StyledLiderContent = styled.div`
 `;
 
 const StyledLiderName = styled.h3`
+  color: ${(props) => props.theme.palette.text.primary};
   margin: 0;
   text-align: end;
   padding: 1.56em;
@@ -122,11 +129,11 @@ const About: React.FC = (props) => {
         <StyledImageLayer>
           <StyledLiderContent>
             <StyledParagraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              {`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus
-              tortor, ullamcorper in pharetra congue, posuere nec neque.
+              tortor, ullamcorper in pharetra congue, posuere nec neque.`}
             </StyledParagraph>
-            <StyledLiderName>Kiss József, műszakvezető</StyledLiderName>
+            <StyledLiderName>{`Kiss József, műszakvezető`}</StyledLiderName>
           </StyledLiderContent>
         </StyledImageLayer>
       </StyledLeaderImage>
