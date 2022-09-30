@@ -14,7 +14,7 @@ const HomePage: NextPage = () => {
       <Page id="services">
         <Services />
       </Page>
-      <Page minHeight={`1300px`} id="about">
+      <Page minHeight={`1840px`} id="about">
         <About />
       </Page>
       <Page minHeight={`700px`} id="contact">

@@ -52,19 +52,20 @@ const StyledImageSection = styled.section`
 `;
 
 const StyledInlineTextNumbers = styled.p`
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 1.8rem;
   margin-left: 0.5em;
   @media (max-width: 400px) {
-    font-size: 2.5rem;
     font-size: 1.5rem;
   }
 `;
 
 const StyledInlineText = styled.p`
   color: ${(props) => props.theme?.palette?.text?.primary};
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 200;
-  font-size: 1.2em;
+  font-size: 1rem;
   margin-left: 1em;
   @media (max-width: 400px) {
     font-size: 1em;
@@ -91,6 +92,7 @@ const StyledContactLogo = styled.img`
 `;
 
 const StyledContactInfoAnchor = styled.a`
+  font-family: Helvetica, Arial, sans-serif;
   color: ${(props) => props.theme?.palette?.text?.primary};
 `;
 
