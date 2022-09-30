@@ -22,7 +22,7 @@ const ImageContainer = styled.div`
 const StyledNavLink = styled.a`
   color: ${(props) => props.theme?.palette?.text?.primary};
   text-decoration: none;
-  font-family: Helvetica;
+  font-family: Helvetica, Arial, sans-serif;
   margin: 2em 1em 0 0;
   font-size: large;
   font-weight: lighter;
@@ -35,7 +35,7 @@ const StyledNavLink = styled.a`
 const StyledNavLinkExtended = styled.a`
   color: ${(props) => props.theme?.palette?.text?.primary};
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   margin: 1.8em 1em 0 0;
   font-size: x-large;
   font-weight: lighter;
@@ -124,13 +124,16 @@ export type NavBarProps = {
 };
 
 const OpenLinksButton = styled.button`
-  margin: 25px;
-  width: 50px;
-  height: 50px;
+  font-family: system-ui;
+  font-weight: 100;
+  font-size: 4rem;
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 10px;
+  height: 20px;
   background: none;
   border: none;
-  color: white;
-  font-size: 2.8rem;
+  color: ${(props) => props.theme.palette.text.primary};
   cursor: pointer;
   position: absolute;
 
@@ -140,15 +143,17 @@ const OpenLinksButton = styled.button`
 `;
 
 const ContactInfoContainer = styled.div`
-  font-family: Regular;
+  font-family: Helvetica, Regular;
   text-align: center;
   color: white;
-  margin: 7em;
+  margin: 5em;
 `;
 
 const LogoLink = styled.a``;
 
-const ContactInfo = styled.p``;
+const ContactInfo = styled.p`
+  font-family: Helvetica, Arial, sans-serif;
+`;
 
 const NavBar: React.FC<NavBarProps> = (props) => {
   const { height, menuState: state } = props;

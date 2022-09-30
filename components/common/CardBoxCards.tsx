@@ -58,10 +58,12 @@ const StyledCardContent = styled.div`
 
 const StyledCardTitle = styled.h2`
   margin-top: 0;
-  font-family: Impact, Haettenschweiler;
+  margin-bottom: 0.5em;
 `;
 
 const StyledCardText = styled.p`
+  font-family: Helvetica, arial, sans-serif;
+  font-weight: normal;
   margin-top: 0;
   text-align: initial;
 `;

@@ -18,10 +18,11 @@ const StyledBox = styled.div`
 
 const StyledButton = styled.button`
   background-color: ${(props) => props.theme?.palette?.primary?.main};
-  color: white;
+  color: ${(props) => props.theme?.palette?.text?.primary};
+  font-family: Helvetica, Arial, sans-serif;
   padding: 0.93em 0.62em 0.93em 0.62em;
   border: 1px solid white;
-
+  cursor: pointer;
   @media (max-width: 834px) {
     padding: 0.68em 0.43em 0.68em 0.43em;
   }
@@ -34,6 +35,9 @@ const StyledImg = styled.section`
   background-size: cover;
   background-position: center;
   width: 100vw;
+
+  @media (max-width: 834px) {
+  }
 `;
 
 const HeroSegmentContainer = styled.div`
