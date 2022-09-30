@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import HeroSegmentContent from "../common/HeroSegmentContent";
+import { GreenBrickContext } from "../context";
 import { StyledTheme } from "./types";
 
 const StyledHeroSegment = styled.div`
@@ -43,7 +44,12 @@ const HeroSegmentContainer = styled.div`
   justify-content: flex-end;
 `;
 
+const ContactLink = styled.a``;
+
 const HeroSegment: React.FC = (props) => {
+  const greenBrickContext = React.useContext(GreenBrickContext);
+  const navTree = greenBrickContext.navTree ?? {};
+
   return (
     <StyledHeroSegment>
       <StyledImg>
@@ -54,7 +60,14 @@ const HeroSegment: React.FC = (props) => {
               description={
                 "BÍZZA OTTHONÁT, GYORS, PRECIZ, HOZZÁÉRTŐ SZAKEMBEREKRE!"
               }
-              callToAction={<StyledButton>{`KAPCSOLATFELVÉTEL`}</StyledButton>}
+              callToAction={
+                <ContactLink
+                  key={navTree.contact.path}
+                  href={navTree.contact.path}
+                >
+                  <StyledButton>{`KAPCSOLATFELVÉTEL`}</StyledButton>
+                </ContactLink>
+              }
             />
           </HeroSegmentContainer>
         </StyledBox>

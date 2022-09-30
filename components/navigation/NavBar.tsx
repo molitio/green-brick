@@ -6,6 +6,7 @@ import { Spacing } from "./types/Spacing";
 import { Typeography } from "./types/Typeography";
 import { GreenBrickContext } from "../context";
 import { StyledTheme, ExpandedOrCollapse } from "../common";
+import { log } from "console";
 
 const ImageContainer = styled.div`
   width: 6em;
@@ -145,6 +146,8 @@ const ContactInfoContainer = styled.div`
   margin: 7em;
 `;
 
+const LogoLink = styled.a``;
+
 const ContactInfo = styled.p``;
 
 const NavBar: React.FC<NavBarProps> = (props) => {
@@ -162,6 +165,8 @@ const NavBar: React.FC<NavBarProps> = (props) => {
     fontSize: "1.4em",
   };
 
+  console.log(navTree.home.path);
+
   return (
     <FixdNav>
       <NavBarContainer extendNavBar={extendNavBar}>
@@ -175,11 +180,13 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         <NavBarInnerContainer>
           <LeftContainer>
             <ImageContainer>
-              <img
-                style={{ marginTop: "17px" }}
-                src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/logo/logo_white.svg"
-                alt="logo"
-              />
+              <LogoLink key={navTree.home.path} href={navTree.home.path}>
+                <img
+                  style={{ marginTop: "17px" }}
+                  src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/logo/logo_white.svg"
+                  alt="logo"
+                />
+              </LogoLink>
             </ImageContainer>
           </LeftContainer>
           <RightContainer>
