@@ -21,7 +21,7 @@ const StyledContent = styled.div`
 const StyledTitle = styled.h1`
   color: white;
   padding: 1em 0 0 1.5em;
-  font-family: Impact, Haettenschweiler;
+  font-family: Impacto, Impact, sans-serif;
   font-size: 3rem;
   font-weight: lighter;
 
