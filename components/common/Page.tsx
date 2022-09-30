@@ -1,18 +1,29 @@
 import React from "react";
-import styled from "styled-components";
-import { StyledTheme } from "../common";
+import styled, { css } from "styled-components";
+import { Dimensions } from "../navigation";
 
-const StyledPage = styled.div`
-  min-height: calc(
-    max-content - ${(props) => props.theme?.dimensions?.header?.height}
-  );
+const StyledPage = styled.div<Dimensions>`
+  ${(props) =>
+    props.minHeight
+      ? css`
+          min-height: ${props.minHeight};
+        `
+      : css`
+          min-height: calc(
+            max-content - ${(props) => props.theme?.dimensions?.header?.height}
+          );
+        `}
 `;
 
 const Page: React.FC<
-  React.PropsWithChildren & React.HTMLProps<HTMLDivElement>
+  React.PropsWithChildren & React.HTMLProps<HTMLDivElement> & Dimensions
 > = (props) => {
-  const { children, id } = props;
-  return <StyledPage id={id}>{children}</StyledPage>;
+  const { children, minHeight, id } = props;
+  return (
+    <StyledPage minHeight={minHeight} id={id}>
+      {children}
+    </StyledPage>
+  );
 };
 
 export default Page;
