@@ -142,7 +142,7 @@ const ContactInfoContainer = styled.div`
   font-family: Regular;
   text-align: center;
   color: white;
-  margin: 8em;
+  margin: 7em;
 `;
 
 const ContactInfo = styled.p``;

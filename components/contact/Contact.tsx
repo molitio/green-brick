@@ -55,6 +55,10 @@ const StyledInlineTextNumbers = styled.p`
   font-weight: 300;
   font-size: 1.8rem;
   margin-left: 0.5em;
+  @media (max-width: 400px) {
+    font-size: 2.5rem;
+    font-size: 1.5rem;
+  }
 `;
 
 const StyledInlineText = styled.p`
@@ -62,6 +66,9 @@ const StyledInlineText = styled.p`
   font-weight: 200;
   font-size: 1.2em;
   margin-left: 1em;
+  @media (max-width: 400px) {
+    font-size: 1em;
+  }
 `;
 const StyleLogoContainer = styled.div`
   margin-top: 2.5em;

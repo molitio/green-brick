@@ -59,10 +59,9 @@ const StyledAboutImage = styled.section`
 `;
 
 const StyledParagraph = styled.p`
-  width: 70vw;
   display: flex;
-  flex-direction: row;
-  text-align: start;
+  flex-direction: center;
+  text-align: end;
   padding-top: 1.875em;
   padding-bottom: 1.25em;
   margin: 0;
