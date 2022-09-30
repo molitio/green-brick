@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledTheme } from "../common";
 
 const StyledAbout = styled.div`
   position: relative;

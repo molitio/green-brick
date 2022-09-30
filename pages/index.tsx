@@ -17,7 +17,7 @@ const HomePage: NextPage = () => {
       <Page id="about">
         <About />
       </Page>
-      <Page id="contact">
+      <Page minHeight={`1024px`} id="contact">
         <Contact />
       </Page>
       <Footer maintainer="© 2022 All Rights Reserved | molitio llc." />
