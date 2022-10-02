@@ -19,8 +19,6 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
   const { children } = props;
   const context = React.useContext(GreenBrickContext);
 
-  console.log("context: ", context.appName);
-
   const muiDefault = createTheme();
 
   const appTheme = createTheme(muiDefault, {
