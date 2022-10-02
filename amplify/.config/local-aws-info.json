@@ -1,0 +1,7 @@
+{
+  "pilot": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "molitio-amplify-agent"
+  }
+}

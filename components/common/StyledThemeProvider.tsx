@@ -7,8 +7,6 @@ const StyledThemeProvider: React.FC<React.PropsWithChildren> = (props) => {
 
   const theme = useTheme();
 
-  console.log(theme.palette.primary.main);
-
   return <ThemeProvider theme={theme}>{children} </ThemeProvider>;
 };
 
