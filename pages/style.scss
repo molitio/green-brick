@@ -1,9 +1,10 @@
 @font-face {
   font-family: Impacto;
   font-weight: lighter;
+  src: url("https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/fonts/impact.ttf"),
+    url("https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/fonts/Impacted.ttf"),
+    url("https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/fonts/unicode.impact.ttf");
 }
-
-//todo import font src
 
 html,
 body {
@@ -14,7 +15,7 @@ html {
   box-sizing: border-box;
 }
 * {
-  font-family: Impacto, Impact;
+  font-family: Impacto, Impact, Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
 
