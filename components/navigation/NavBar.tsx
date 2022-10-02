@@ -170,8 +170,6 @@ const NavBar: React.FC<NavBarProps> = (props) => {
     fontSize: "1.4em",
   };
 
-  console.log(navTree.home.path);
-
   return (
     <FixdNav>
       <NavBarContainer extendNavBar={extendNavBar}>
