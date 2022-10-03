@@ -95,7 +95,7 @@ const StyledLeaderImage = styled.section`
   }
 `;
 
-const StyledLiderContent = styled.div`
+const StyledLeaderContent = styled.div`
   padding: 0 6.25em 0 6.25em;
   background-color: ${(props) => props.theme?.palette?.primary?.main};
 
@@ -104,7 +104,7 @@ const StyledLiderContent = styled.div`
   }
 `;
 
-const StyledLiderName = styled.h3`
+const StyledLeaderName = styled.h3`
   color: ${(props) => props.theme.palette.text.primary};
   margin: 0;
   text-align: end;
@@ -115,6 +115,7 @@ const StyledLiderName = styled.h3`
 
 const StyledImageLayer = styled.div`
   background-color: #2d2d2d;
+  margin-top: auto;
 `;
 
 const About: React.FC = (props) => {
@@ -138,14 +139,14 @@ const About: React.FC = (props) => {
       </StyledAboutImage>
       <StyledLeaderImage>
         <StyledImageLayer>
-          <StyledLiderContent>
+          <StyledLeaderContent>
             <StyledParagraph>
               {`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus
               tortor, ullamcorper in pharetra congue, posuere nec neque.`}
             </StyledParagraph>
-            <StyledLiderName>{`Kiss József, műszakvezető`}</StyledLiderName>
-          </StyledLiderContent>
+            <StyledLeaderName>{`Kiss József, műszakvezető`}</StyledLeaderName>
+          </StyledLeaderContent>
         </StyledImageLayer>
       </StyledLeaderImage>
     </StyledAbout>
