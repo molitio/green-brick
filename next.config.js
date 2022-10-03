@@ -5,7 +5,6 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  crossOrigin: "anonymous",
   async headers() {
     return [
       {
@@ -43,10 +42,8 @@ const nextConfig = {
           },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org",
-            /*     process.env.NODE_ENV === "development"
-                ? "*"
-                : "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org", */
+            value:
+              "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org https://fonts.googleapis.com https://fonts.gstatic.com ",
           },
           {
             key: "Content-Security-Policy",
@@ -55,11 +52,11 @@ const nextConfig = {
               process.env.NODE_ENV === "development"
                 ? ``
                 : `
-                    default-src 'self' http://localhost:3000 https://localhost:3000;
-                    script-src 'self' http://localhost:3000 https://localhost:3000;
+                    default-src 'self';
+                    script-src 'self';
                     child-src 'self';
                     style-src 'self';
-                    font-src 'self' https://s3.eu-west-1.amazonaws.com/filestore.molitio.org;  
+                    font-src 'self' https://fonts.googleapis.com https://s3.eu-west-1.amazonaws.com/filestore.molitio.org https://fonts.gstatic.com;  
                   `
                     .replace(/\s{2,}/g, " ")
                     .trim(),

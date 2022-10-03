@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import MenuIcon from "@mui/icons-material/Menu";
+/* import MenuIcon from "@mui/icons-material/Menu"; */
+import DehazeIcon from "@mui/icons-material/Dehaze";
+import CloseIcon from "@mui/icons-material/Close";
 import NavSegment from "./NavSegment";
 import { Spacing } from "./types/Spacing";
 import { Typeography } from "./types/Typeography";
 import { GreenBrickContext } from "../context";
 import { StyledTheme, ExpandedOrCollapse } from "../common";
-import { log } from "console";
 
 const ImageContainer = styled.div`
   width: 6em;
@@ -14,8 +15,7 @@ const ImageContainer = styled.div`
   margin-left: 35px;
 
   @media screen and (max-width: 834px) {
-    margin-left: 0;
-    padding-left: 16px;
+    margin-left: 12px;
   }
 `;
 
@@ -124,13 +124,8 @@ export type NavBarProps = {
 };
 
 const OpenLinksButton = styled.button`
-  font-family: system-ui;
-  font-weight: 100;
-  font-size: 4rem;
   margin-left: 20px;
-  margin-top: 10px;
-  width: 10px;
-  height: 20px;
+  margin-top: 33px;
   background: none;
   border: none;
   color: ${(props) => props.theme.palette.text.primary};
@@ -178,7 +173,11 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             setExtendNavBar((curr) => !curr);
           }}
         >
-          {extendNavBar ? <> &#10005;</> : <> &#8801; </>}
+          {extendNavBar ? (
+            <CloseIcon fontSize="large" />
+          ) : (
+            <DehazeIcon fontSize="large" />
+          )}
         </OpenLinksButton>
         <NavBarInnerContainer>
           <LeftContainer>

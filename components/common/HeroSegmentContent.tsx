@@ -19,7 +19,7 @@ type HeroSegmentContentProps = {
 const StyledMainTitle = styled.h1`
   color: white;
   text-align: center;
-  margin-top: 2.6em;
+  margin-top: 0.7em;
   margin-bottom: 0.2em;
   font-size: 5rem;
 
@@ -48,11 +48,22 @@ const StyledDescription = styled.h3`
   }
 `;
 
+const StyledHorizontalLine = styled.hr`
+  color: white;
+  width: 200px;
+  margin-top: 8em;
+
+  @media (max-width: 400px) {
+    width: 100px;
+  }
+`;
+
 const HeroSegmentContent: React.FC<HeroSegmentContentProps> = (props) => {
   const { title, description, callToAction } = props;
 
   return (
     <StyledCoverImage>
+      <StyledHorizontalLine />
       <StyledMainTitle>{`${title}`}</StyledMainTitle>
       <StyledDescription>{`${description}`}</StyledDescription>
       <StyledCallToAction>{callToAction}</StyledCallToAction>
