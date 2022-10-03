@@ -7,7 +7,6 @@ const StyledContact = styled.div`
   height: auto;
   position: relative;
   display: flex;
-  height: max-content;
   justify-content: flex-end;
 `;
 
@@ -28,9 +27,7 @@ const StyledTitle = styled.h1`
   text-align: center;
   color: white;
   padding: 3em 0em 2em 0em;
-  font-family: Impacto, Impact, sans-serif;
   font-size: 3rem;
-  font-weight: lighter;
   margin: 0;
 
   @media (max-width: 834px) {
@@ -65,14 +62,11 @@ const StyledInlineText = styled.p`
   color: ${(props) => props.theme?.palette?.text?.primary};
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 200;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-left: 1em;
   @media (max-width: 400px) {
-    font-size: 1em;
+    font-size: 0.91em;
   }
-`;
-const StyleLogoContainer = styled.div`
-  margin-top: 2.5em;
 `;
 
 const StyledContactInfoIcon = styled.img`
@@ -96,6 +90,18 @@ const StyledContactInfoAnchor = styled.a`
   color: ${(props) => props.theme?.palette?.text?.primary};
 `;
 
+const StyledInlineTextAddress = styled.p`
+  color: ${(props) => props.theme?.palette?.text?.primary};
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  margin-left: 1em;
+  margin-bottom: 0;
+
+  @media (max-width: 400px) {
+    font-size: 0.99em;
+  }
+`;
+
 const Contact: React.FC = (props) => {
   return (
     <StyledContact>
@@ -114,7 +120,7 @@ const Contact: React.FC = (props) => {
                     />
                   }
                   iconSpacing={{
-                    margin: "0 0 0 -8px",
+                    margin: "0 0 0 -10px",
                   }}
                   text={
                     <StyledInlineTextNumbers>
@@ -161,8 +167,11 @@ const Contact: React.FC = (props) => {
                       alt="logo"
                     />
                   }
+                  iconSpacing={{
+                    margin: "0 0 0 -5px",
+                  }}
                   text={
-                    <StyledInlineText>{`2030 Érd, Járom utca 10.`}</StyledInlineText>
+                    <StyledInlineTextAddress>{`2030 Érd, Járom utca 10.`}</StyledInlineTextAddress>
                   }
                 />,
               ]}

@@ -2,10 +2,14 @@ import React from "react";
 import { NextPage } from "next";
 import styled from "styled-components";
 import { Home, Services, Contact, About, Page, Footer } from "../components";
-
+import * as smoothscroll from "smoothscroll-polyfill";
 const StyledAppScaffolding = styled.div``;
 
 const HomePage: NextPage = () => {
+  if (typeof window !== "undefined") {
+    smoothscroll.polyfill();
+  }
+
   return (
     <StyledAppScaffolding>
       <Page id="home">

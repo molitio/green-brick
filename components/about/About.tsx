@@ -21,9 +21,7 @@ const StyledContent = styled.div`
 const StyledTitle = styled.h1`
   color: white;
   padding: 1em 0 0 1.5em;
-  font-family: Impacto, Impact, sans-serif;
   font-size: 3rem;
-  font-weight: lighter;
 
   @media (max-width: 834px) {
     padding: 2em 0 0 1.5em;
@@ -82,15 +80,28 @@ const StyledLeaderImage = styled.section`
   min-height: ${(props) => props.theme.dimensions.page.height};
   background-size: cover;
   width: 100vw;
+  background-position: top 35% right 60%;
 
   @media (max-width: 834px) {
+    background-size: cover;
     background-position: top 35% right 60%;
+  }
+
+  @media (max-width: 400px) {
+    background-position: top 0% right 60%;
+    background-size: 41.25em;
+    background-repeat: no-repeat;
+    padding-top: 0em;
   }
 `;
 
 const StyledLiderContent = styled.div`
   padding: 0 6.25em 0 6.25em;
   background-color: ${(props) => props.theme?.palette?.primary?.main};
+
+  @media (max-width: 400px) {
+    height: 490px;
+  }
 `;
 
 const StyledLiderName = styled.h3`
