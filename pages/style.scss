@@ -1,20 +1,12 @@
-@font-face {
-  font-family: Impacto;
-  font-weight: lighter;
-  src: url("../public/fonts/impact.ttf"), url("../public/fonts/Impacted.ttf"),
-    url("../public/fonts/unicode.impact.ttf");
-}
-
-html,
-body {
-  scroll-behavior: smooth;
-}
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
 * {
-  font-family: Impacto, Impact, Arial, Helvetica, sans-serif;
+  font-family: "Anton", sans-serif;
   font-weight: lighter;
 }
 

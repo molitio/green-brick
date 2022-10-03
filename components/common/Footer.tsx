@@ -14,6 +14,10 @@ const StyledFooterText = styled.p`
   font-size: 1rem;
   opacity: 0.5;
   margin-right: 5em;
+
+  @media (max-width: 400px) {
+    font-size: 0.9rem;
+  }
 `;
 
 type FooterProps = {

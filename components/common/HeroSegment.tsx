@@ -6,7 +6,6 @@ import { StyledTheme } from "./types";
 
 const StyledHeroSegment = styled.div`
   position: relative;
-  //margin-top: -5em;
 `;
 
 const StyledBox = styled.div`
@@ -22,6 +21,7 @@ const StyledButton = styled.button`
   font-family: Helvetica, Arial, sans-serif;
   padding: 0.93em 0.62em 0.93em 0.62em;
   border: 1px solid white;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.673);
   cursor: pointer;
   @media (max-width: 834px) {
     padding: 0.68em 0.43em 0.68em 0.43em;

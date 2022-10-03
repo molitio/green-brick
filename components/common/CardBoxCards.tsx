@@ -48,6 +48,7 @@ const StyledCardImageContainer = styled.div`
   height: 8.125em;
   margin-right: 0.938em;
   justify-content: center;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.565);
 `;
 
 const StyledCardContent = styled.div`
