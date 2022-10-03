@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-/* import MenuIcon from "@mui/icons-material/Menu"; */
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import CloseIcon from "@mui/icons-material/Close";
 import NavSegment from "./NavSegment";
@@ -115,6 +114,10 @@ const NavBarExtendedContainer = styled.div`
   @media (min-width: 834px) {
     display: none;
   }
+
+  @media (max-width: 400px) {
+    overflow: scroll;
+  }
 `;
 
 export type NavBarProps = {
@@ -141,7 +144,7 @@ const ContactInfoContainer = styled.div`
   font-family: Helvetica, Regular;
   text-align: center;
   color: white;
-  margin: 5em;
+  margin-top: 7em;
 `;
 
 const LogoLink = styled.a``;
