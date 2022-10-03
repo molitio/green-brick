@@ -99,7 +99,12 @@ const StyledLeaderContent = styled.div`
   padding: 0 6.25em 0 6.25em;
   background-color: ${(props) => props.theme?.palette?.primary?.main};
 
+  @media (max-width: 834px) {
+    padding: 0 4.25em 4.25em;
+  }
+
   @media (max-width: 400px) {
+    padding: 0 2.25em 2.25em;
     height: 490px;
   }
 `;
