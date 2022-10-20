@@ -66,6 +66,7 @@ const StyledParagraph = styled.p`
   padding-top: 1.875em;
   padding-bottom: 1.25em;
   margin: 0;
+  font-size: 1.3rem;
   @media (max-width: 834px) {
   }
 `;
@@ -111,6 +112,7 @@ const StyledLiderName = styled.h3`
   padding: 1.56em;
   font-family: Helvetica, sans-serif;
   font-weight: 300;
+  font-size: 1.3rem;
 `;
 
 const StyledImageLayer = styled.div`
@@ -124,7 +126,13 @@ const About: React.FC = (props) => {
         <StyledContent>
           <StyledTitle>{`RÓLUNK`}</StyledTitle>
           <StyledTextContainer>
-            <StyledText>{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus tortor, ullamcorper in pharetra congue, posuere nec neque. Donec semper, magna sed pellentesque fringilla, quam leo porttitor ante, et fringilla nunc velit eu arcu. Nam sit amet felis tortor.`}</StyledText>
+            <StyledText>{`A fellendülő piacnak köszönhetően az elmúlt években lehetőségünk 
+adódott több, igazán nagyszerű projektet véghez vinni! Lendületünk azóta 
+is töretlen, legtöbb megbízásunkat ajánlás útján szereztük. 
+Szolgáltatásaink között szerepelnek új házak építése, lakóházak bővítése, 
+generál kivitelezés és családi házak szerkezet építése is. Legutóbbi az ami 
+mind közül a leglátványosabb rész, így bátran kijelenthetjük, hogy ezt a 
+folyamatot szeretjük a legjobban!`}</StyledText>
           </StyledTextContainer>
           <StyledLogo>
             <img
@@ -140,11 +148,11 @@ const About: React.FC = (props) => {
         <StyledImageLayer>
           <StyledLiderContent>
             <StyledParagraph>
-              {`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus
-              tortor, ullamcorper in pharetra congue, posuere nec neque.`}
+              {`„A legtöbb munkánkat személyes ajánlás alapján kapjuk, mivel minden 
+munkánkat úgy végezzük mintha magunknak csinálnánk!”`}
             </StyledParagraph>
-            <StyledLiderName>{`Kiss József, műszakvezető`}</StyledLiderName>
+            <StyledLiderName>{`
+- Idézet a Brüder Bau Kft. munkatársától `}</StyledLiderName>
           </StyledLiderContent>
         </StyledImageLayer>
       </StyledLeaderImage>
