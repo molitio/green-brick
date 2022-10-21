@@ -1,7 +1,15 @@
 import React from "react";
 import { NextPage } from "next";
 import styled from "styled-components";
-import { Home, Services, Contact, About, Page, Footer } from "../components";
+import {
+  Home,
+  Services,
+  Contact,
+  About,
+  Page,
+  Footer,
+  Introduction,
+} from "../components";
 import * as smoothscroll from "smoothscroll-polyfill";
 const StyledAppScaffolding = styled.div``;
 
@@ -18,8 +26,11 @@ const HomePage: NextPage = () => {
       <Page id="services">
         <Services />
       </Page>
-      <Page minHeight={`1840px`} id="about">
+      <Page id="about">
         <About />
+      </Page>
+      <Page id="introduction">
+        <Introduction />
       </Page>
       <Page minHeight={`700px`} id="contact">
         <Contact />
