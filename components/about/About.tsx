@@ -64,7 +64,13 @@ const About: React.FC = () => {
         <StyledContent>
           <StyledTitle>{`RÓLUNK`}</StyledTitle>
           <StyledTextContainer>
-            <StyledText>{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus tortor, ullamcorper in pharetra congue, posuere nec neque. Donec semper, magna sed pellentesque fringilla, quam leo porttitor ante, et fringilla nunc velit eu arcu. Nam sit amet felis tortor.`}</StyledText>
+            <StyledText>{`A fellendülő piacnak köszönhetően az elmúlt években lehetőségünk 
+adódott több, igazán nagyszerű projektet véghez vinni! Lendületünk azóta 
+is töretlen, legtöbb megbízásunkat ajánlás útján szereztük. 
+Szolgáltatásaink között szerepelnek új házak építése, lakóházak bővítése, 
+generál kivitelezés és családi házak szerkezet építése is. Legutóbbi az ami 
+mind közül a leglátványosabb rész, így bátran kijelenthetjük, hogy ezt a 
+folyamatot szeretjük a legjobban!`}</StyledText>
           </StyledTextContainer>
           <StyledLogo>
             <img

@@ -39,6 +39,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mui/icons-material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.3"],\
             ["@mui/material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.2"],\
             ["@mui/styled-engine-sc", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.1"],\
+            ["@types/material-ui", "npm:0.21.12"],\
             ["@types/node", "npm:18.7.11"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-dom", "npm:18.0.6"],\
@@ -1137,6 +1138,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/material-ui", [\
+        ["npm:0.21.12", {\
+          "packageLocation": "./.yarn/cache/@types-material-ui-npm-0.21.12-5775acd73a-008c7a528e.zip/node_modules/@types/material-ui/",\
+          "packageDependencies": [\
+            ["@types/material-ui", "npm:0.21.12"],\
+            ["@types/react", "npm:18.0.17"],\
+            ["@types/react-addons-linked-state-mixin", "npm:0.14.22"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/node", [\
         ["npm:18.7.11", {\
           "packageLocation": "./.yarn/cache/@types-node-npm-18.7.11-f39f364ab6-66f200a559.zip/node_modules/@types/node/",\
@@ -1172,6 +1184,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/prop-types", "npm:15.7.5"],\
             ["@types/scheduler", "npm:0.16.2"],\
             ["csstype", "npm:3.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/react-addons-linked-state-mixin", [\
+        ["npm:0.14.22", {\
+          "packageLocation": "./.yarn/cache/@types-react-addons-linked-state-mixin-npm-0.14.22-c6d6ca4a74-f0216424ee.zip/node_modules/@types/react-addons-linked-state-mixin/",\
+          "packageDependencies": [\
+            ["@types/react-addons-linked-state-mixin", "npm:0.14.22"],\
+            ["@types/react", "npm:18.0.17"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3020,6 +3042,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mui/icons-material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.3"],\
             ["@mui/material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.2"],\
             ["@mui/styled-engine-sc", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.1"],\
+            ["@types/material-ui", "npm:0.21.12"],\
             ["@types/node", "npm:18.7.11"],\
             ["@types/react", "npm:18.0.17"],\
             ["@types/react-dom", "npm:18.0.6"],\
