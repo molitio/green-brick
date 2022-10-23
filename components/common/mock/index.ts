@@ -1,1 +1,1 @@
-export { cardContentMock } from "./cardContent";
+export { cardContentMock } from "./cardContentMock";

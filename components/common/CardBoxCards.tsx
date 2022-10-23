@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledTheme } from "./types";
 import { cardContentMock } from "./mock";
 
 const StyledCardBoxCards = styled.div`
@@ -126,8 +125,6 @@ const StyledCardTextGeneral = styled.p`
   margin-bottom: 0;
   width: 135px;
 `;
-
-console.log(cardContentMock[0]);
 
 const CardBoxCard: React.FC = () => {
   return (
