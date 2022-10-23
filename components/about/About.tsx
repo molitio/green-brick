@@ -14,7 +14,7 @@ const StyledContent = styled.div`
   background-color: rgba(45, 45, 45, 0.8);
 
   @media (max-width: 834px) {
-    width: 100vw;
+    width: 100%;
   }
 `;
 
@@ -40,13 +40,13 @@ const StyledText = styled.h3`
   color: white;
   font-family: Helvetica, arial, sans-serif;
   font-weight: lighter;
-  font-size: 1.4rem;
 `;
 
 const StyledLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  margin-bottom: 20px;
 `;
 
 const StyledAboutImage = styled.section`
@@ -54,7 +54,7 @@ const StyledAboutImage = styled.section`
   background: url(https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/grindingmachine.jpg);
   background-size: cover;
   background-position: center;
-  width: 100vw;
+  width: 100%;
 `;
 
 const About: React.FC = () => {

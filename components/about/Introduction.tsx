@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledAbout = styled.div`
   position: relative;
   display: block;
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
 const StyledLeaderImage = styled.img`
@@ -44,7 +44,7 @@ const StyledLeaderName = styled.h3`
   font-weight: 300;
 `;
 
-const StyledParagraph = styled.p`
+const StyledParagraph = styled.h3`
   color: ${(props) => props.theme.palette.text.primary};
   font-family: Helvetica, Arial, sans-serif;
   display: flex;
@@ -71,9 +71,9 @@ const Introduction: React.FC = () => {
       <StyledImageLayer>
         <StyledLeaderContent>
           <StyledParagraph>
-            {`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus
-              tortor, ullamcorper in pharetra congue, posuere nec neque.`}
+            {`„A legtöbb munkánkat személyes ajánlás alapján kapjuk, mivel minden 
+munkánkat úgy végezzük mintha magunknak csinálnánk!”
+- Idézet a Brüder Bau Kft. munkatársától`}
           </StyledParagraph>
           <StyledLeaderName>{`Kiss József, műszakvezető`}</StyledLeaderName>
         </StyledLeaderContent>

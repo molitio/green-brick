@@ -31,7 +31,6 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
         inverse: "#fff",
         footer: "#000",
         menu: "rgb(44, 108, 43)",
-        //menu: "rgba(45, 45, 45, 0.95)",
       },
       text: {
         primary: "#fff",

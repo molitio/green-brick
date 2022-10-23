@@ -7,7 +7,7 @@ const StyledContact = styled.div`
   height: auto;
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 `;
 
 const StyledContent = styled.div`
@@ -19,7 +19,7 @@ const StyledContent = styled.div`
 
   @media (max-width: 834px) {
     margin-left: 0;
-    width: 100vw;
+    width: 100%;
   }
 `;
 
@@ -36,7 +36,7 @@ const StyledTitle = styled.h1`
 `;
 
 const StyledContactContainer = styled.div`
-  margin: 0 2em 0 2em;
+  margin: 0;
 `;
 
 const StyledImageSection = styled.section`
@@ -75,8 +75,9 @@ const StyledContactInfoIcon = styled.img`
 `;
 
 const StyledContactInfoIconContainer = styled.div`
-  text-align: center;
-  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledContactLogo = styled.img`
