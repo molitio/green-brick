@@ -36,7 +36,7 @@ const StyledTextContainer = styled.div`
 `;
 
 const StyledText = styled.h3`
-  text-align: start;
+  text-align: left;
   color: white;
   font-family: Helvetica, arial, sans-serif;
   font-weight: lighter;

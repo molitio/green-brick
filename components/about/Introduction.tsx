@@ -4,14 +4,16 @@ import styled from "styled-components";
 const StyledAbout = styled.div`
   position: relative;
   display: block;
-  /* overflow: hidden; */
+  overflow: hidden;
 `;
 
 const StyledLeaderImage = styled.img`
   margin-bottom: -0.5em;
+
   width: 100vw;
   @media (max-width: 834px) {
     transform: scale(1.2);
+    margin-top: 0.5em;
   }
   @media (max-width: 400px) {
     margin-bottom: 0;
@@ -49,7 +51,7 @@ const StyledParagraph = styled.h3`
   font-family: Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: center;
-  text-align: start;
+  text-align: left;
   padding-top: 2em;
   padding-bottom: 1em;
   margin: 0;
@@ -73,9 +75,9 @@ const Introduction: React.FC = () => {
           <StyledParagraph>
             {`„A legtöbb munkánkat személyes ajánlás alapján kapjuk, mivel minden 
 munkánkat úgy végezzük mintha magunknak csinálnánk!”
-- Idézet a Brüder Bau Kft. munkatársától`}
+`}
           </StyledParagraph>
-          <StyledLeaderName>{`Kiss József, műszakvezető`}</StyledLeaderName>
+          <StyledLeaderName>{`- Idézet a Brüder Bau Kft. munkatársától`}</StyledLeaderName>
         </StyledLeaderContent>
       </StyledImageLayer>
     </StyledAbout>
