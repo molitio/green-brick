@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledTheme } from "./types";
 import { cardContentMock } from "./mock";
 
 const StyledCardBoxCards = styled.div`
@@ -63,13 +62,13 @@ const StyledCardTitleNewBuild = styled.h2`
   margin-top: 0;
   margin-bottom: 0em;
   font-size: 1.3rem;
-  margin-bottom: 1.9em;
+  margin-bottom: 0.8em;
 `;
 const StyledCardTitleExpansion = styled.h2`
   margin-top: 0;
   margin-bottom: 0em;
   font-size: 1.3rem;
-  margin-bottom: 1.9em;
+  margin-bottom: 0.8em;
 `;
 const StyledCardTitleFenceConstruction = styled.h2`
   margin-top: 0;
@@ -94,6 +93,7 @@ const StyledCardTextNewBuild = styled.p`
   padding-right: 1em;
   margin-bottom: 0;
   width: 130px;
+  margin-bottom: 2.2em;
 `;
 const StyledCardTextExpansion = styled.p`
   font-family: Helvetica, arial, sans-serif;
@@ -104,6 +104,7 @@ const StyledCardTextExpansion = styled.p`
   padding-right: 1em;
   margin-bottom: 0;
   width: 130px;
+  margin-bottom: 2.2em;
 `;
 const StyledCardTextFenceConstruction = styled.p`
   font-family: Helvetica, arial, sans-serif;
@@ -114,6 +115,7 @@ const StyledCardTextFenceConstruction = styled.p`
   padding-right: 1em;
   margin-bottom: 0;
   width: 130px;
+  margin-bottom: 0.2em;
 `;
 const StyledCardTextGeneral = styled.p`
   font-family: Helvetica, arial, sans-serif;
@@ -122,12 +124,9 @@ const StyledCardTextGeneral = styled.p`
   text-align: initial;
   padding-right: 1em;
   font-size: 0.9rem;
-
-  margin-bottom: 0;
+  margin-bottom: 0.2em;
   width: 135px;
 `;
-
-console.log(cardContentMock[0]);
 
 const CardBoxCard: React.FC = () => {
   return (

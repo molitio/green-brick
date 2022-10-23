@@ -22,6 +22,7 @@ const StyledMainTitle = styled.h1`
   margin-top: 0.7em;
   margin-bottom: 0.2em;
   font-size: 5rem;
+  padding: 0 1em 0 1em;
 
   @media (max-width: 834px) {
     font-size: 3rem;

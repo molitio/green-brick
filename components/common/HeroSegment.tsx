@@ -34,7 +34,7 @@ const StyledImg = styled.section`
   min-height: ${(props) => props.theme.dimensions.page.height};
   background-size: cover;
   background-position: center;
-  width: 100vw;
+  width: 100%;
 
   @media (max-width: 834px) {
   }
