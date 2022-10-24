@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 import HeroSegment from "../common/HeroSegment";
 
-const StyeledDiv = styled.div``;
+const StyledDiv = styled.div``;
 
 const Home: React.FC = (props) => {
   return (
-    <StyeledDiv>
+    <StyledDiv>
       <HeroSegment />
-    </StyeledDiv>
+    </StyledDiv>
   );
 };
 

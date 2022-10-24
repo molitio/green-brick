@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { createTheme, TypeBackground, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material";
 import AppHeader from "./Header";
-import { NavBar, NavSegment } from "../navigation";
+import { NavBar } from "../navigation";
 import { GreenBrickContext, GreenBrickContextProvider } from "../context";
 import StyledThemeProvider from "./StyledThemeProvider";
 
