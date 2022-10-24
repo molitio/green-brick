@@ -50,6 +50,6 @@ const HomePage: NextPage<HomePageProps> = (props) => {
 
 export default HomePage;
 
-export async function getStaticPaths() {
+export async function getStaticProps() {
   return { props: { appName: "green-brick" } };
 }
