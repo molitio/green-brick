@@ -8,7 +8,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Apply these headers to all routes in your application.
         source: "/:path*",
         headers: [
           {
@@ -47,7 +46,6 @@ const nextConfig = {
           },
           {
             key: "Content-Security-Policy",
-
             value:
               process.env.NODE_ENV === "development"
                 ? ``
