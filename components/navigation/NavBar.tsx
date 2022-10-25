@@ -149,6 +149,10 @@ const ContactInfoContainer = styled.div`
 
 const LogoLink = styled.a``;
 
+const StyledImage = styled.img`
+  margin-top: "17px";
+`;
+
 const ContactInfo = styled.p`
   font-family: Helvetica, Arial, sans-serif;
 `;
@@ -186,8 +190,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
           <LeftContainer>
             <ImageContainer>
               <LogoLink key={navTree.home.path} href={navTree.home.path}>
-                <img
-                  style={{ marginTop: "17px" }}
+                <StyledImage
                   src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/logo/logo_white.svg"
                   alt="logo"
                 />
