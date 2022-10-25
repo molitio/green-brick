@@ -6,15 +6,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        - yarn install --immutable --frozen-lockfile
     build:
       commands:
-        - npm run build
+        - yarn build
   artifacts:
     baseDirectory: out
     files:
       - "**/*"
   cache:
     paths:
-      - node_modules/**/*
       - .next/cache
