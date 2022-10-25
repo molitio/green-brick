@@ -42,22 +42,14 @@ const nextConfig = {
           {
             key: "Access-Control-Allow-Origin",
             value:
-              "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org https://fonts.googleapis.com https://fonts.gstatic.com ",
+              "https://s3.eu-west-1.amazonaws.com https://fonts.googleapis.com https://fonts.gstatic.com",
           },
           {
             key: "Content-Security-Policy",
             value:
               process.env.NODE_ENV === "development"
-                ? ``
-                : `
-                    default-src 'self';
-                    script-src 'self';
-                    child-src 'self';
-                    style-src 'self' 'unsafe-inline';
-                    font-src 'self' https://fonts.googleapis.com https://s3.eu-west-1.amazonaws.com/filestore.molitio.org https://fonts.gstatic.com;  
-                  `
-                    .replace(/\s{2,}/g, " ")
-                    .trim(),
+                ? ""
+                : "default-src 'self' https://s3.eu-west-1.amazonaws.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com  https://fonts.gstatic.com  https://s3.eu-west-1.amazonaws.com; font-src 'self' https://fonts.googleapis.com  https://fonts.gstatic.com",
           },
         ],
       },
