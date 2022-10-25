@@ -13,7 +13,7 @@ const StyledCardBoxCards = styled.div`
   margin-right: 20px;
 `;
 
-const StyledImage = styled.div`
+const StyledImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,6 +21,10 @@ const StyledImage = styled.div`
   height: 9.5em;
   background-color: ${(props) =>
     props && props.theme ? props.theme.palette.primary.main : "none"};
+`;
+
+const StyledImage = styled.img`
+  opacity: 0.4;
 `;
 
 const StyledCardContainer = styled.div`
@@ -133,15 +137,14 @@ const CardBoxCard: React.FC = () => {
     <StyledCardBoxCards>
       <StyledCardContainer>
         <StyledCardImageContainer>
-          <StyledImage>
-            <img
-              style={{ opacity: "0.4" }}
+          <StyledImageContainer>
+            <StyledImage
               width={92.15}
               height={76.02}
               src={`${cardContentMock[0].url}`}
               alt={`${cardContentMock[0].title}`}
             />
-          </StyledImage>
+          </StyledImageContainer>
         </StyledCardImageContainer>
         <StyledCardContent>
           <StyledCardTitleNewBuild>
@@ -154,15 +157,14 @@ const CardBoxCard: React.FC = () => {
       </StyledCardContainer>
       <StyledCardContainer>
         <StyledCardImageContainer>
-          <StyledImage>
-            <img
-              style={{ opacity: "0.4" }}
+          <StyledImageContainer>
+            <StyledImage
               width={92.15}
               height={76.02}
               src={`${cardContentMock[1].url}`}
               alt={`${cardContentMock[1].title}`}
             />
-          </StyledImage>
+          </StyledImageContainer>
         </StyledCardImageContainer>
         <StyledCardContent>
           <StyledCardTitleExpansion>
@@ -175,15 +177,14 @@ const CardBoxCard: React.FC = () => {
       </StyledCardContainer>
       <StyledCardContainer>
         <StyledCardImageContainer>
-          <StyledImage>
-            <img
-              style={{ opacity: "0.4" }}
+          <StyledImageContainer>
+            <StyledImage
               width={92.15}
               height={76.02}
               src={`${cardContentMock[2].url}`}
               alt={`${cardContentMock[2].title}`}
             />
-          </StyledImage>
+          </StyledImageContainer>
         </StyledCardImageContainer>
         <StyledCardContent>
           <StyledCardTitleFenceConstruction>
@@ -196,15 +197,14 @@ const CardBoxCard: React.FC = () => {
       </StyledCardContainer>
       <StyledCardContainer>
         <StyledCardImageContainer>
-          <StyledImage>
-            <img
-              style={{ opacity: "0.4" }}
+          <StyledImageContainer>
+            <StyledImage
               width={92.15}
               height={76.02}
               src={`${cardContentMock[3].url}`}
               alt={`${cardContentMock[3].title}`}
             />
-          </StyledImage>
+          </StyledImageContainer>
         </StyledCardImageContainer>
         <StyledCardContent>
           <StyledCardTitleGeneral>

@@ -1,4 +1,9 @@
 import React from "react";
+import styled from "styled-components";
+
+const StyledTable = styled.table`
+  margin: auto;
+`;
 
 type ContactTableRowProps = {
   rows: React.ReactNode[];
@@ -8,9 +13,9 @@ const ContactTable: React.FC<ContactTableRowProps> = (props) => {
   const { rows } = props;
 
   return (
-    <table style={{ margin: "auto" }}>
+    <StyledTable>
       <tbody>{rows?.map((row) => row)}</tbody>
-    </table>
+    </StyledTable>
   );
 };
 
