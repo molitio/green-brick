@@ -53,7 +53,7 @@ const nextConfig = {
                     default-src 'self';
                     script-src 'self';
                     child-src 'self';
-                    style-src 'self';
+                    style-src 'self' 'unsafe-inline';
                     font-src 'self' https://fonts.googleapis.com https://s3.eu-west-1.amazonaws.com/filestore.molitio.org https://fonts.gstatic.com;  
                   `
                     .replace(/\s{2,}/g, " ")
