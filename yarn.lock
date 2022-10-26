@@ -979,7 +979,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.0.17":
+"@types/react@npm:*":
   version: 18.0.17
   resolution: "@types/react@npm:18.0.17"
   dependencies:
@@ -987,6 +987,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 18cae64f5bfd6bb58fbd8ee2ba52ec82de844f114254e26de7b513e4b86621f643f9b71d7066958cd571b0d78cb86cbceda449c5289f9349ca573df29ab69252
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.0.23":
+  version: 18.0.23
+  resolution: "@types/react@npm:18.0.23"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 8b915793b9d6d53c19d76aab35d50a407cac6f4fb1e349cf037196302e8a7661d6c75870dc2fcb0b029c6f0db89d23fee910b777d28dd0e26becf8b312ddb61b
   languageName: node
   linkType: hard
 
@@ -3042,7 +3053,7 @@ __metadata:
     "@mui/styled-engine-sc": ^5.10.1
     "@types/material-ui": ^0.21.12
     "@types/node": 18.7.11
-    "@types/react": 18.0.17
+    "@types/react": ^18.0.23
     "@types/react-dom": 18.0.6
     "@types/smoothscroll-polyfill": ^0.3.1
     "@types/styled-components": ^5.1.26
