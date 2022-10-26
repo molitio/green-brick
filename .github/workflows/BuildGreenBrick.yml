@@ -31,5 +31,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
-      - run: yarn install --immutable --immutable-cache
+      - run: yarn install --immutable --frozen-lockfile
       - run: yarn build
