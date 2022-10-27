@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material";
 import React from "react";
 import { GreenBrickContext } from "./GreenBrickContext";
 
-const GreenBrickContextProvider: React.FC<React.PropsWithChildren> = (
+const GreenBrickContextProvider: React.FC<React.PropsWithChildren<any>> = (
   props
 ) => {
   const { children } = props;

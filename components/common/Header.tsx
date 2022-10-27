@@ -1,9 +1,12 @@
 import React from "react";
 import Header from "next/head";
 
-const AppHeader: React.FC<React.PropsWithChildren> = (props) => {
-  const { children } = props;
-  return <Header>{children}</Header>;
+const AppHeader: React.FC = () => {
+  return (
+    <Header>
+      <></>
+    </Header>
+  );
 };
 
 export default AppHeader;

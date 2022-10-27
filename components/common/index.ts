@@ -7,4 +7,5 @@ export { default as HeroSegmentContent } from "./HeroSegmentContent";
 export { default as Page } from "./Page";
 export { default as Footer } from "./Footer";
 export { default as StyledThemeProvider } from "./StyledThemeProvider";
+export { staticCardContent } from "./mock/staticCardContent";
 export * from "./types";

@@ -16,7 +16,7 @@ const StyledPage = styled.div<Dimensions>`
 `;
 
 const Page: React.FC<
-  React.PropsWithChildren & React.HTMLProps<HTMLDivElement> & Dimensions
+  React.PropsWithChildren<React.HTMLProps<HTMLDivElement> & Dimensions>
 > = (props) => {
   const { children, minHeight, id } = props;
   return (
