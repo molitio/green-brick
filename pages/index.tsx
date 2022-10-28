@@ -1,20 +1,23 @@
 import React from "react";
 import { NextPage } from "next";
-import styled from "styled-components";
 import {
   Home,
   Services,
   Contact,
   About,
-  Page,
   Footer,
   Introduction,
+  staticCardContent,
+  CardContent,
 } from "../components";
+import Page from "../components/common/Page";
 import * as smoothscroll from "smoothscroll-polyfill";
-const StyledAppScaffolding = styled.div``;
 
 type HomePageProps = {
   appName: string;
+  content: {
+    services: CardContent[];
+  };
 };
 
 const HomePage: NextPage<HomePageProps> = (props) => {
@@ -25,12 +28,12 @@ const HomePage: NextPage<HomePageProps> = (props) => {
   const { appName } = props;
 
   return (
-    <StyledAppScaffolding>
+    <main>
       <Page id="home">
         <Home />
       </Page>
       <Page id="services">
-        <Services />
+        <Services content={props?.content?.services} />
       </Page>
       <Page id="about">
         <About />
@@ -44,12 +47,14 @@ const HomePage: NextPage<HomePageProps> = (props) => {
       <Footer
         maintainer={`© 2022 All Rights Reserved | molitio llc. - ${appName}`}
       />
-    </StyledAppScaffolding>
+    </main>
   );
 };
 
 export default HomePage;
 
 export async function getStaticProps() {
-  return { props: { appName: "green-brick" } };
+  return {
+    props: { appName: "green-brick", content: { services: staticCardContent } },
+  };
 }

@@ -1,2 +1,3 @@
 export type { StyledTheme } from "./StyledTheme";
 export type { ExpandedOrCollapse } from "./ExpandedOrCollapse";
+export type { CardContent } from "./CardContent";

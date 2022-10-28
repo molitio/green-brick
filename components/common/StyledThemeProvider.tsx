@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "@mui/material";
 import { ThemeProvider } from "styled-components";
 
-const StyledThemeProvider: React.FC<React.PropsWithChildren> = (props) => {
+const StyledThemeProvider: React.FC<React.PropsWithChildren<any>> = (props) => {
   const { children } = props;
 
   const theme = useTheme();

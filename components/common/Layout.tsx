@@ -15,7 +15,12 @@ const StyledLayout = styled.div`
   min-height: 100vh;
 `;
 
-const Layout: React.FC<React.PropsWithChildren> = (props) => {
+const StyledContainer: React.FC<React.PropsWithChildren<any>> = (props) => {
+  const { children } = props;
+  return <StyledLayout>{children}</StyledLayout>;
+};
+
+const Layout: React.FC<React.PropsWithChildren<any>> = (props) => {
   const { children } = props;
   const context = React.useContext(GreenBrickContext);
 
@@ -50,14 +55,14 @@ const Layout: React.FC<React.PropsWithChildren> = (props) => {
     <GreenBrickContextProvider>
       <ThemeProvider theme={appTheme}>
         <StyledThemeProvider>
-          <StyledLayout>
+          <StyledContainer>
             <AppHeader />
             <NavBar
               height={appTheme.dimensions.page.height}
               menuState={"collapsed"}
             />
             {children}
-          </StyledLayout>
+          </StyledContainer>
         </StyledThemeProvider>
       </ThemeProvider>
     </GreenBrickContextProvider>

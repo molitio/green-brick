@@ -61,7 +61,7 @@ export type NavSegmentProps = React.LiHTMLAttributes<HTMLUListElement> &
     backgroundColor?: string;
   };
 
-const NavSegment: React.FC<NavSegmentProps & React.PropsWithChildren> = (
+const NavSegment: React.FC<NavSegmentProps & React.PropsWithChildren<any>> = (
   props
 ) => {
   const { keyParam, children, visible, centered, padding } = props;

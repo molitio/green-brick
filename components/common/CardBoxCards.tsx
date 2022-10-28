@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { cardContentMock } from "./mock";
+import { CardContent } from "./types";
 
 const StyledCardBoxCards = styled.div`
   display: flex;
@@ -132,7 +132,12 @@ const StyledCardTextGeneral = styled.p`
   width: 135px;
 `;
 
-const CardBoxCard: React.FC = () => {
+type CardBoxCardProps = {
+  content?: CardContent[];
+};
+
+const CardBoxCard: React.FC<CardBoxCardProps> = (props) => {
+  const { content = [] } = props;
   return (
     <StyledCardBoxCards>
       <StyledCardContainer>
@@ -141,18 +146,14 @@ const CardBoxCard: React.FC = () => {
             <StyledImage
               width={92.15}
               height={76.02}
-              src={`${cardContentMock[0].url}`}
-              alt={`${cardContentMock[0].title}`}
+              src={`${content[0]?.url}`}
+              alt={`${content[0]?.title}`}
             />
           </StyledImageContainer>
         </StyledCardImageContainer>
         <StyledCardContent>
-          <StyledCardTitleNewBuild>
-            {cardContentMock[0].title}
-          </StyledCardTitleNewBuild>
-          <StyledCardTextNewBuild>
-            {cardContentMock[0].content}
-          </StyledCardTextNewBuild>
+          <StyledCardTitleNewBuild>{content[0]?.title}</StyledCardTitleNewBuild>
+          <StyledCardTextNewBuild>{content[0]?.content}</StyledCardTextNewBuild>
         </StyledCardContent>
       </StyledCardContainer>
       <StyledCardContainer>
@@ -161,17 +162,17 @@ const CardBoxCard: React.FC = () => {
             <StyledImage
               width={92.15}
               height={76.02}
-              src={`${cardContentMock[1].url}`}
-              alt={`${cardContentMock[1].title}`}
+              src={`${content[1]?.url}`}
+              alt={`${content[1]?.title}`}
             />
           </StyledImageContainer>
         </StyledCardImageContainer>
         <StyledCardContent>
           <StyledCardTitleExpansion>
-            {cardContentMock[1].title}
+            {content[1]?.title}
           </StyledCardTitleExpansion>
           <StyledCardTextExpansion>
-            {cardContentMock[1].content}
+            {content[1]?.content}
           </StyledCardTextExpansion>
         </StyledCardContent>
       </StyledCardContainer>
@@ -181,17 +182,17 @@ const CardBoxCard: React.FC = () => {
             <StyledImage
               width={92.15}
               height={76.02}
-              src={`${cardContentMock[2].url}`}
-              alt={`${cardContentMock[2].title}`}
+              src={`${content[2]?.url}`}
+              alt={`${content[2]?.title}`}
             />
           </StyledImageContainer>
         </StyledCardImageContainer>
         <StyledCardContent>
           <StyledCardTitleFenceConstruction>
-            {cardContentMock[2].title}
+            {content[2]?.title}
           </StyledCardTitleFenceConstruction>
           <StyledCardTextFenceConstruction>
-            {cardContentMock[2].content}
+            {content[2]?.content}
           </StyledCardTextFenceConstruction>
         </StyledCardContent>
       </StyledCardContainer>
@@ -201,18 +202,14 @@ const CardBoxCard: React.FC = () => {
             <StyledImage
               width={92.15}
               height={76.02}
-              src={`${cardContentMock[3].url}`}
-              alt={`${cardContentMock[3].title}`}
+              src={`${content[3]?.url}`}
+              alt={`${content[3]?.title}`}
             />
           </StyledImageContainer>
         </StyledCardImageContainer>
         <StyledCardContent>
-          <StyledCardTitleGeneral>
-            {cardContentMock[3].title}
-          </StyledCardTitleGeneral>
-          <StyledCardTextGeneral>
-            {cardContentMock[3].content}
-          </StyledCardTextGeneral>
+          <StyledCardTitleGeneral>{content[3]?.title}</StyledCardTitleGeneral>
+          <StyledCardTextGeneral>{content[3]?.content}</StyledCardTextGeneral>
         </StyledCardContent>
       </StyledCardContainer>
     </StyledCardBoxCards>

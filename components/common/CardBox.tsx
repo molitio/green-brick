@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Box from "@mui/material/Box";
 import CardBoxCards from "./CardBoxCards";
+import { CardContent } from "./types";
 
 const StyledCardBox = styled.div`
   display: flex;
@@ -20,13 +21,19 @@ const StyledCardTitle = styled.h1`
   }
 `;
 
-const CardBox: React.FC = () => {
+type CardBoxProps = {
+  content: CardContent[];
+};
+
+const CardBox: React.FC<CardBoxProps> = (props) => {
+  const { content } = props;
+
   return (
     <Box>
       <StyledCardBox>
         <StyledCardTitle>{`SZOLGÁLTATÁSAINK`}</StyledCardTitle>
       </StyledCardBox>
-      <CardBoxCards />
+      <CardBoxCards content={content} />
     </Box>
   );
 };
