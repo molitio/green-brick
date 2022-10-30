@@ -1,0 +1,1 @@
+export { staticCardContent } from "./staticCardContent";
