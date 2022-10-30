@@ -49,6 +49,14 @@ module.exports = {
   compiler: {
     styledComponents: true,
   },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: securityHeaders,
+      },
+    ];
+  },
   experimental: {
     images: {
       remotePatterns: [
