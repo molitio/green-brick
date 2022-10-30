@@ -32,14 +32,14 @@ const StyledTitle = styled.h1`
 const StyledTextContainer = styled.div`
   text-align: center;
   padding: 0 0 0 4.375em;
-  width: 60%;
+  width: 72%;
 `;
 
-const StyledText = styled.h3`
+const StyledText = styled.p`
   text-align: left;
   color: white;
   font-family: Helvetica, arial, sans-serif;
-  font-weight: lighter;
+  font-size: 1.3em;
 `;
 
 const StyledLogo = styled.div`

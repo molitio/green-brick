@@ -21,6 +21,11 @@ const StyledImageContainer = styled.div`
   height: 9.5em;
   background-color: ${(props) =>
     props && props.theme ? props.theme.palette.primary.main : "none"};
+
+  @media (max-width: 800px) {
+    width: 8.5em;
+    height: 8.5em;
+  }
 `;
 
 const StyledImage = styled.img`
@@ -40,9 +45,10 @@ const StyledCardContainer = styled.div`
   }
   @media (max-width: 800px) {
     flex: 100%;
+    margin-bottom: 1.5em;
   }
 `;
-
+////////////////////////////////
 const StyledCardImageContainer = styled.div`
   background-color: ${(props) =>
     props && props.theme
@@ -54,12 +60,22 @@ const StyledCardImageContainer = styled.div`
   margin-right: 0.938em;
   justify-content: center;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.565);
+
+  @media (max-width: 800px) {
+    width: 8.5em;
+    height: 8.5em;
+  }
 `;
 
 const StyledCardContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 11em;
+
+  @media (max-width: 800px) {
+    width: 8em;
+    height: 8em;
+  }
 `;
 
 const StyledCardTitleNewBuild = styled.h2`
@@ -67,25 +83,50 @@ const StyledCardTitleNewBuild = styled.h2`
   margin-bottom: 0em;
   font-size: 1.3rem;
   margin-bottom: 0.8em;
+
+  @media (max-width: 800px) {
+    margin-top: -0.5em;
+    font-size: 1.15rem;
+    margin-bottom: 0.6em;
+  }
 `;
 const StyledCardTitleExpansion = styled.h2`
   margin-top: 0;
   margin-bottom: 0em;
   font-size: 1.3rem;
   margin-bottom: 0.8em;
+
+  @media (max-width: 800px) {
+    margin-top: -0.5em;
+    font-size: 1.15rem;
+    margin-bottom: 0.6em;
+  }
 `;
+
 const StyledCardTitleFenceConstruction = styled.h2`
   margin-top: 0;
   margin-bottom: 0em;
   font-size: 1.3rem;
   margin-bottom: 0.8em;
+
+  @media (max-width: 800px) {
+    margin-bottom: 0.6em;
+    margin-top: -0.5em;
+    font-size: 1.15rem;
+  }
 `;
+
 const StyledCardTitleGeneral = styled.h2`
-  margin-top: 0;
-  margin-bottom: 1.2em;
+  margin-top: -0.15em;
   font-size: 1.25rem;
   margin-bottom: 0.8em;
   white-space: nowrap;
+
+  @media (max-width: 800px) {
+    margin-top: -0.5em;
+    margin-bottom: 0.6em;
+    font-size: 1.1rem;
+  }
 `;
 
 const StyledCardTextNewBuild = styled.p`
@@ -98,6 +139,10 @@ const StyledCardTextNewBuild = styled.p`
   margin-bottom: 0;
   width: 130px;
   margin-bottom: 2.2em;
+
+  @media (max-width: 800px) {
+    font-size: 0.8rem;
+  }
 `;
 const StyledCardTextExpansion = styled.p`
   font-family: Helvetica, arial, sans-serif;
@@ -109,6 +154,10 @@ const StyledCardTextExpansion = styled.p`
   margin-bottom: 0;
   width: 130px;
   margin-bottom: 2.2em;
+
+  @media (max-width: 800px) {
+    font-size: 0.8rem;
+  }
 `;
 const StyledCardTextFenceConstruction = styled.p`
   font-family: Helvetica, arial, sans-serif;
@@ -120,6 +169,10 @@ const StyledCardTextFenceConstruction = styled.p`
   margin-bottom: 0;
   width: 130px;
   margin-bottom: 0.2em;
+
+  @media (max-width: 800px) {
+    font-size: 0.8rem;
+  }
 `;
 const StyledCardTextGeneral = styled.p`
   font-family: Helvetica, arial, sans-serif;
@@ -130,6 +183,10 @@ const StyledCardTextGeneral = styled.p`
   font-size: 0.9rem;
   margin-bottom: 0.2em;
   width: 135px;
+
+  @media (max-width: 800px) {
+    font-size: 0.8rem;
+  }
 `;
 
 type CardBoxCardProps = {
