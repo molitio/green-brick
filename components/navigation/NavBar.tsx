@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import CloseIcon from "@mui/icons-material/Close";
-import NavSegment from "./NavSegment";
 import { Spacing } from "./types/Spacing";
 import { Typeography } from "./types/Typeography";
 import { GreenBrickContext } from "../context";
@@ -12,6 +11,7 @@ const ImageContainer = styled.div`
   width: 6em;
   height: 100%;
   margin-left: 35px;
+  padding-top: 2em;
 
   @media screen and (max-width: 834px) {
     margin-left: 0px;

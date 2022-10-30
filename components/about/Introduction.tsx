@@ -46,7 +46,7 @@ const StyledLeaderName = styled.h3`
   font-weight: 300;
 `;
 
-const StyledParagraph = styled.h3`
+const StyledParagraph = styled.p`
   color: ${(props) => props.theme.palette.text.primary};
   font-family: Helvetica, Arial, sans-serif;
   display: flex;
@@ -55,6 +55,7 @@ const StyledParagraph = styled.h3`
   padding-top: 2em;
   padding-bottom: 1em;
   margin: 0;
+  font-size: 1.2em;
 
   @media (max-width: 834px) {
     padding: 4.5em 4.25em 4.25em;
@@ -73,8 +74,8 @@ const Introduction: React.FC = () => {
       <StyledImageLayer>
         <StyledLeaderContent>
           <StyledParagraph>
-            {`„A legtöbb munkánkat személyes ajánlás alapján kapjuk, mivel minden 
-munkánkat úgy végezzük mintha magunknak csinálnánk!”
+            {`„ A legtöbb munkánkat személyes ajánlás alapján kapjuk, mivel minden 
+munkánkat úgy végezzük mintha magunknak csinálnánk! ”
 `}
           </StyledParagraph>
           <StyledLeaderName>{`- Idézet a Brüder Bau Kft. munkatársától`}</StyledLeaderName>
