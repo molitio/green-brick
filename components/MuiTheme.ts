@@ -1,3 +1,8 @@
+import { Theme } from "@mui/material";
+
+export type StyledTheme = {
+  theme?: Theme;
+};
 declare module "@mui/material" {
   export interface TypeBackground {
     background: {
