@@ -1,24 +1,41 @@
-import styled from "styled-components";
-import AppHeader from "../components/Header";
-import { createTheme, useTheme, ThemeProvider } from "@mui/material";
+import { createTheme, useTheme, ThemeProvider, Theme } from "@mui/material";
+import { SystemContextProvider, StyledLayout, NavBar } from "@molitio/ui-core";
 import type { AppProps } from "next/app";
+import Header from "next/head";
 import "./style.scss";
 
-const StyledLayout = styled.div`
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
+export type StyledTheme = {
+  theme?: Theme;
+};
+declare module "@mui/material" {
+  export interface TypeBackground {
+    background: {
+      inverse?: string;
+      menu?: string;
+      footer?: string;
+    };
+  }
+  export interface Theme {
+    dimensions: {
+      page: {
+        height: string;
+      };
+      header: {
+        height: string;
+      };
+    };
+  }
+}
 
-const StyledContainer: React.FC<React.PropsWithChildren<any>> = (props) => {
-  const { children } = props;
-  return <StyledLayout>{children}</StyledLayout>;
+const AppHeader: React.FC = () => {
+  return (
+    <Header>
+      <></>
+    </Header>
+  );
 };
 
-const StyledThemeProvider: React.FC<React.PropsWithChildren<any>> = (props) => {
+const MuiThemeProvider: React.FC<React.PropsWithChildren<any>> = (props) => {
   const { children } = props;
 
   const theme = useTheme();
@@ -36,9 +53,8 @@ function GreenBrick({ Component, pageProps }: AppProps) {
       },
       background: {
         default: "rgba(45, 45, 45, 0.8)",
+        secondary: "rgb(44, 108, 43)",
         inverse: "#fff",
-        footer: "#000",
-        menu: "rgb(44, 108, 43)",
       },
       text: {
         primary: "#fff",
@@ -55,21 +71,29 @@ function GreenBrick({ Component, pageProps }: AppProps) {
   });
 
   return (
-    <GreenBrickContextProvider>
+    <SystemContextProvider
+      externalTheme={appTheme}
+      appName={"GreenBrick"}
+      navTree={{
+        home: { label: "FŐOLDAL", path: "#home" },
+        services: { label: "SZOLGÁLTATÁSOK", path: "#services" },
+        about: { label: "RÓLUNK", path: "#about" },
+        contact: { label: "KAPCSOLAT", path: "#contact" },
+      }}
+    >
       <ThemeProvider theme={appTheme}>
-        <StyledThemeProvider>
-          <StyledContainer>
+        <MuiThemeProvider>
+          <StyledLayout>
             <AppHeader />
             <NavBar
-              height={appTheme.dimensions.page.height}
+              height={appTheme?.dimensions?.page?.height}
               menuState={"collapsed"}
             />
-            {/* TODO: build layout in _app */}
             <Component {...pageProps} />
-          </StyledContainer>
-        </StyledThemeProvider>
+          </StyledLayout>
+        </MuiThemeProvider>
       </ThemeProvider>
-    </GreenBrickContextProvider>
+    </SystemContextProvider>
   );
 }
 

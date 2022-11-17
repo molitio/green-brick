@@ -1,15 +1,16 @@
 import React from "react";
 import { NextPage } from "next";
 import {
+  CardContent,
+  Page,
   Home,
   Services,
-  Contact,
   About,
-  Footer,
   Introduction,
-  CardContent,
-} from "../components";
-import Page from "../components/common/Page";
+  Contact,
+  Footer,
+} from "@molitio/ui-core";
+
 import * as smoothscroll from "smoothscroll-polyfill";
 
 type HomePageProps = {
