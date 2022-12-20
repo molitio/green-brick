@@ -9,11 +9,9 @@ const StyledAbout = styled.div`
 
 const StyledLeaderImage = styled.img`
   margin-bottom: -0.5em;
-
   width: 100vw;
   @media (max-width: 834px) {
     transform: scale(1.2);
-    margin-top: 0.5em;
   }
   @media (max-width: 400px) {
     margin-bottom: 0;
@@ -51,11 +49,10 @@ const StyledParagraph = styled.p`
   font-family: Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: center;
-  text-align: left;
+  text-align: start;
   padding-top: 2em;
   padding-bottom: 1em;
   margin: 0;
-  font-size: 1.2em;
 
   @media (max-width: 834px) {
     padding: 4.5em 4.25em 4.25em;
@@ -74,11 +71,11 @@ const Introduction: React.FC = () => {
       <StyledImageLayer>
         <StyledLeaderContent>
           <StyledParagraph>
-            {`„ A legtöbb munkánkat személyes ajánlás alapján kapjuk, mivel minden 
-munkánkat úgy végezzük mintha magunknak csinálnánk! ”
-`}
+            {`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque sollicitudin diam et pulvinar accumsan. Aenean risus
+              tortor, ullamcorper in pharetra congue, posuere nec neque.`}
           </StyledParagraph>
-          <StyledLeaderName>{`- Idézet a Brüder Bau Kft. munkatársától`}</StyledLeaderName>
+          <StyledLeaderName>{`Kiss József, műszakvezető`}</StyledLeaderName>
         </StyledLeaderContent>
       </StyledImageLayer>
     </StyledAbout>

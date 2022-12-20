@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@emotion/react", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:11.10.5"],\
             ["@emotion/styled", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:11.10.5"],\
+            ["@molitio/ui-core", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:0.13.8"],\
             ["@mui/icons-material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.9"],\
             ["@mui/material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.11"],\
             ["@mui/styled-engine-sc", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.6"],\
@@ -44,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/smoothscroll-polyfill", "npm:0.3.1"],\
             ["@types/styled-components", "npm:5.1.26"],\
+            ["device-detector-js", "npm:3.0.3"],\
             ["eslint", "npm:8.26.0"],\
             ["eslint-config-next", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:12.2.5"],\
             ["nanoid", "npm:4.0.0"],\
@@ -615,6 +617,48 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@jridgewell/trace-mapping", "npm:0.3.17"],\
             ["@jridgewell/resolve-uri", "npm:3.1.0"],\
             ["@jridgewell/sourcemap-codec", "npm:1.4.14"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@molitio/ui-core", [\
+        ["npm:0.13.8", {\
+          "packageLocation": "./.yarn/cache/@molitio-ui-core-npm-0.13.8-91e59b25d3-ecaff8530e.zip/node_modules/@molitio/ui-core/",\
+          "packageDependencies": [\
+            ["@molitio/ui-core", "npm:0.13.8"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:0.13.8", {\
+          "packageLocation": "./.yarn/__virtual__/@molitio-ui-core-virtual-f9b62ea9ed/0/cache/@molitio-ui-core-npm-0.13.8-91e59b25d3-ecaff8530e.zip/node_modules/@molitio/ui-core/",\
+          "packageDependencies": [\
+            ["@molitio/ui-core", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:0.13.8"],\
+            ["@types/device-detector-js", null],\
+            ["@types/nanoid", null],\
+            ["@types/react", "npm:18.0.17"],\
+            ["@types/react-dom", "npm:18.0.6"],\
+            ["@types/react-is", null],\
+            ["@types/styled-components", "npm:5.1.26"],\
+            ["device-detector-js", "npm:3.0.3"],\
+            ["nanoid", "npm:4.0.0"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:18.2.0"],\
+            ["react-is", "npm:17.0.2"],\
+            ["styled-components", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.3.6"]\
+          ],\
+          "packagePeers": [\
+            "@types/device-detector-js",\
+            "@types/nanoid",\
+            "@types/react-dom",\
+            "@types/react-is",\
+            "@types/react",\
+            "@types/styled-components",\
+            "device-detector-js",\
+            "nanoid",\
+            "react-dom",\
+            "react-is",\
+            "react",\
+            "styled-components"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2081,6 +2125,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["device-detector-js", [\
+        ["npm:3.0.3", {\
+          "packageLocation": "./.yarn/cache/device-detector-js-npm-3.0.3-460e366f14-331f8a6f2e.zip/node_modules/device-detector-js/",\
+          "packageDependencies": [\
+            ["device-detector-js", "npm:3.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["dir-glob", [\
         ["npm:3.0.1", {\
           "packageLocation": "./.yarn/cache/dir-glob-npm-3.0.1-1aea628b1b-fa05e18324.zip/node_modules/dir-glob/",\
@@ -2967,6 +3020,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["green-brick", "workspace:."],\
             ["@emotion/react", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:11.10.5"],\
             ["@emotion/styled", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:11.10.5"],\
+            ["@molitio/ui-core", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:0.13.8"],\
             ["@mui/icons-material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.9"],\
             ["@mui/material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.11"],\
             ["@mui/styled-engine-sc", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.6"],\
@@ -2976,6 +3030,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/smoothscroll-polyfill", "npm:0.3.1"],\
             ["@types/styled-components", "npm:5.1.26"],\
+            ["device-detector-js", "npm:3.0.3"],\
             ["eslint", "npm:8.26.0"],\
             ["eslint-config-next", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:12.2.5"],\
             ["nanoid", "npm:4.0.0"],\

@@ -449,6 +449,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@molitio/ui-core@npm:0.13.8":
+  version: 0.13.8
+  resolution: "@molitio/ui-core@npm:0.13.8"
+  peerDependencies:
+    device-detector-js: "*"
+    nanoid: "*"
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-is: "*"
+    styled-components: "*"
+  checksum: ecaff8530e4d341169294f7164556e42e306b8f4f56f239f8486111a6d737b792bed14591853d8ba1886b6949409522c61bb9cd79f5ff47e92a68a2626882b4d
+  languageName: node
+  linkType: hard
+
 "@mui/base@npm:5.0.0-alpha.103":
   version: 5.0.0-alpha.103
   resolution: "@mui/base@npm:5.0.0-alpha.103"
@@ -1594,6 +1608,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"device-detector-js@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "device-detector-js@npm:3.0.3"
+  checksum: 331f8a6f2e21c510027091b1155cedf1b109ecbb764f39e038244c4049fa502bc217754ad376b7585ff7112c78c1a4d21c026056578058adcfade959cb084795
+  languageName: node
+  linkType: hard
+
 "dir-glob@npm:^3.0.1":
   version: 3.0.1
   resolution: "dir-glob@npm:3.0.1"
@@ -2312,6 +2333,7 @@ __metadata:
   dependencies:
     "@emotion/react": ^11.10.0
     "@emotion/styled": ^11.10.0
+    "@molitio/ui-core": 0.13.8
     "@mui/icons-material": ^5.10.3
     "@mui/material": ^5.10.2
     "@mui/styled-engine-sc": ^5.10.1
@@ -2321,6 +2343,7 @@ __metadata:
     "@types/react-dom": 18.0.6
     "@types/smoothscroll-polyfill": ^0.3.1
     "@types/styled-components": ^5.1.26
+    device-detector-js: ^3.0.3
     eslint: ^8.26.0
     eslint-config-next: 12.2.5
     nanoid: ^4.0.0
