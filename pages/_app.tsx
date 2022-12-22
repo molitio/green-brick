@@ -1,59 +1,36 @@
-import { createTheme, useTheme, ThemeProvider, Theme } from "@mui/material";
-import { SystemContextProvider, StyledLayout, NavBar } from "@molitio/ui-core";
+import { createTheme, Theme } from "@mui/material";
+import { StyledLayout, NavBar, AppShell } from "@molitio/ui-core";
 import type { AppProps } from "next/app";
 import Header from "next/head";
 import "./style.scss";
+import { GreenBrickContextRoot } from "../context";
+import { MuiThemeProvider } from "../components";
+import Script from "next/script";
 
 export type StyledTheme = {
   theme?: Theme;
 };
-declare module "@mui/material" {
-  export interface TypeBackground {
-    background: {
-      inverse?: string;
-      menu?: string;
-      footer?: string;
-    };
-  }
-  export interface Theme {
-    dimensions: {
-      page: {
-        height: string;
-      };
-      header: {
-        height: string;
-      };
-    };
-  }
-}
 
 const AppHeader: React.FC = () => {
   return (
     <Header>
-      <></>
+      <title>Bruderbau Kft.</title>
+      <meta property="og:title" content="Bruderbau Kft." key="title" />
     </Header>
   );
 };
 
-const MuiThemeProvider: React.FC<React.PropsWithChildren<any>> = (props) => {
-  const { children } = props;
-
-  const theme = useTheme();
-
-  return <ThemeProvider theme={theme}>{children} </ThemeProvider>;
-};
-
-function GreenBrick({ Component, pageProps }: AppProps) {
+const GreenBrick = ({ Component, pageProps }: AppProps) => {
   const muiDefault = createTheme();
 
   const appTheme = createTheme(muiDefault, {
     palette: {
       primary: {
-        main: "rgba(36, 171, 14, 0.5)",
+        main: "#2c6c2bf2",
       },
       background: {
-        default: "rgba(45, 45, 45, 0.8)",
-        secondary: "rgb(44, 108, 43)",
+        default: "#2d2d2dcc",
+        secondary: "#000000fa",
         inverse: "#fff",
       },
       text: {
@@ -71,30 +48,27 @@ function GreenBrick({ Component, pageProps }: AppProps) {
   });
 
   return (
-    <SystemContextProvider
+    <AppShell
+      applyGlobalStyleRules={true}
       externalTheme={appTheme}
-      appName={"GreenBrick"}
-      navTree={{
-        home: { label: "FŐOLDAL", path: "#home" },
-        services: { label: "SZOLGÁLTATÁSOK", path: "#services" },
-        about: { label: "RÓLUNK", path: "#about" },
-        contact: { label: "KAPCSOLAT", path: "#contact" },
-      }}
+      externalAppContextRoot={GreenBrickContextRoot}
+      fontFamily="'Anton, sans-serif'"
+      fontFamilyHref="https://fonts.googleapis.com/css2?family=Anton&display=swap"
     >
-      <ThemeProvider theme={appTheme}>
-        <MuiThemeProvider>
-          <StyledLayout>
-            <AppHeader />
-            <NavBar
-              height={appTheme?.dimensions?.page?.height}
-              menuState={"collapsed"}
-            />
-            <Component {...pageProps} />
-          </StyledLayout>
-        </MuiThemeProvider>
-      </ThemeProvider>
-    </SystemContextProvider>
+      <MuiThemeProvider externalTheme={appTheme}>
+        <StyledLayout>
+          <Script
+            strategy="lazyOnload"
+            src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
+          />
+          <AppHeader />
+          <NavBar height={appTheme?.dimensions?.header?.height} />
+
+          <Component {...pageProps} />
+        </StyledLayout>
+      </MuiThemeProvider>
+    </AppShell>
   );
-}
+};
 
 export default GreenBrick;
