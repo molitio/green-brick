@@ -50,7 +50,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <div>
-      <StyledMessage>{`Kedves Látogató! Ha bármilyen kérdésed, észrevételed van, nyugodtan írj nekünk a kapcsolati űrlap segítségével. Várjuk üzeneted és hamarosan válaszolunk rá!"`}</StyledMessage>
+      <StyledMessage>{`Kedves Látogató! Ha bármilyen kérdésed, észrevételed van, nyugodtan írj nekünk a kapcsolati űrlap segítségével. Várjuk üzeneted és hamarosan válaszolunk rá!`}</StyledMessage>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
