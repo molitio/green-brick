@@ -1,0 +1,1 @@
+export { handleRecaptcha } from "./handleReCaptcha";

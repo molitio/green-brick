@@ -3,55 +3,82 @@ import { NextPage } from "next";
 import {
   CardContent,
   Page,
-  Home,
-  Services,
-  About,
-  Introduction,
-  Contact,
   Footer,
+  AboutPage,
+  ContactPage,
+  IntroductionPage,
+  ServicesPage,
+  SystemContext,
+  HomePage,
 } from "@molitio/ui-core";
 
 import * as smoothscroll from "smoothscroll-polyfill";
+import { ContactForm } from "../components";
 
-type HomePageProps = {
-  appName: string;
-  content: {
-    services: CardContent[];
-  };
-};
-
-const HomePage: NextPage<HomePageProps> = (props) => {
+const Home: NextPage = (props) => {
   if (typeof window !== "undefined") {
     smoothscroll.polyfill();
   }
 
-  const { appName } = props;
+  const systemContext = React.useContext(SystemContext);
+  const contactLeafs = systemContext?.contentRoot?.contact?.leafs;
+  const textContent = contactLeafs?.contactInfo?.textContent;
+  const assetUrls = contactLeafs?.contactInfo?.assetUrls;
 
   return (
     <main>
       <Page id="home">
-        <Home />
+        <HomePage />
       </Page>
       <Page id="services">
-        <Services content={props?.content?.services} />
+        <ServicesPage />
       </Page>
       <Page id="about">
-        <About />
+        <AboutPage />
       </Page>
       <Page id="introduction">
-        <Introduction />
+        <IntroductionPage />
       </Page>
       <Page minHeight={`700px`} id="contact">
-        <Contact />
+        <ContactPage
+          title={textContent?.title ?? ""}
+          logoUrl={assetUrls?.logo ?? ""}
+          backgroundImageUrl={assetUrls?.backgroundImage ?? ""}
+          contactForm={<ContactForm />}
+          contactInfoCollection={{
+            phoneMain: {
+              type: "tel",
+              iconUrl: assetUrls?.phoneMainIcon ?? "",
+              displayedText: textContent?.phoneMain ?? "",
+              href: assetUrls?.phoneMainHref ?? "",
+            },
+            phoneSecondary: {
+              type: "tel",
+              iconUrl: assetUrls?.phoneSecondaryIcon ?? "",
+              displayedText: textContent?.phoneSecondary ?? "",
+              href: assetUrls?.phoneSecondaryHref ?? "",
+            },
+            email: {
+              type: "email",
+              iconUrl: assetUrls?.emailIcon ?? "",
+              displayedText: textContent?.email ?? "",
+              href: assetUrls?.emailHref ?? "",
+            },
+            address: {
+              type: "address",
+              iconUrl: assetUrls?.addressIcon ?? "",
+              displayedText: textContent?.address ?? "",
+              href: assetUrls?.addressHref ?? "",
+            },
+          }}
+        />
       </Page>
-      <Footer
-        maintainer={`© 2022 All Rights Reserved | molitio llc. - ${appName}`}
-      />
+      <Footer />
     </main>
   );
 };
 
-export default HomePage;
+export default Home;
 
 export async function getStaticProps() {
   const staticCardContent: CardContent[] = [
