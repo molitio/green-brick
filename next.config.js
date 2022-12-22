@@ -39,7 +39,7 @@ const securityHeaders = [
     value:
       process.env.NODE_ENV === "development"
         ? ""
-        : "default-src 'self' https://s3.eu-west-1.amazonaws.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com  https://fonts.gstatic.com  https://s3.eu-west-1.amazonaws.com; font-src 'self' https://fonts.googleapis.com  https://fonts.gstatic.com; object-src 'self' https://s3.eu-west-1.amazonaws.com;",
+        : "default-src 'self' https://s3.eu-west-1.amazonaws.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'  https://www.google.com/recaptcha https://vercel.live; child-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com  https://fonts.gstatic.com  https://s3.eu-west-1.amazonaws.com; font-src 'self' https://fonts.googleapis.com  https://fonts.gstatic.com; object-src 'self' https://s3.eu-west-1.amazonaws.com;",
   },
 ];
 
