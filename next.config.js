@@ -32,7 +32,7 @@ const securityHeaders = [
   {
     key: "Access-Control-Allow-Origin",
     value:
-      "https://s3.eu-west-1.amazonaws.com https://fonts.googleapis.com https://fonts.gstatic.com http://localhost:3000",
+      "https://s3.eu-west-1.amazonaws.com https://fonts.googleapis.com https://fonts.gstatic.com",
   },
   {
     key: "Content-Security-Policy",
