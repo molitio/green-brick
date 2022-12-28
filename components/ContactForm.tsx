@@ -33,16 +33,30 @@ const ContactForm: React.FC = () => {
   };
 
   const handleSubmit = async (values: FormValues, actions: any) => {
-    const isRecaptchaPass = await handleRecaptcha(
-      "CONTACT_FORM",
-      process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY ?? ""
-    );
+    try {
+      const isRecaptchaPass = await handleRecaptcha(
+        "CONTACT_FORM",
+        process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY ?? ""
+      );
 
-    if (!isRecaptchaPass) {
-      return;
-    } else {
-      console.log("//TODO: submit form");
-      //TODO: submit form
+      if (!isRecaptchaPass) {
+        return;
+      } else {
+        console.log("//TODO: submit form");
+        const response = await fetch("/api/email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: { name, from, message } }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error sending email: ${response.statusText}`);
+        }
+      }
+    } catch (error) {
+      console.error(error.message);
     }
 
     actions.setSubmitting(false);

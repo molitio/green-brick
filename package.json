@@ -17,6 +17,7 @@
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.2",
     "@mui/styled-engine-sc": "^5.10.1",
+    "@types/axios": "^0.14.0",
     "@types/grecaptcha": "^3.0.4",
     "@types/material-ui": "^0.21.12",
     "@types/smoothscroll-polyfill": "^0.3.1",

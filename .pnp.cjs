@@ -40,6 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mui/icons-material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.9"],\
             ["@mui/material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.11"],\
             ["@mui/styled-engine-sc", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.6"],\
+            ["@types/axios", "npm:0.14.0"],\
             ["@types/grecaptcha", "npm:3.0.4"],\
             ["@types/material-ui", "npm:0.21.12"],\
             ["@types/node", "npm:18.7.11"],\
@@ -2271,6 +2272,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@tootallnate-once-npm-2.0.0-e36cf4f140-ad87447820.zip/node_modules/@tootallnate/once/",\
           "packageDependencies": [\
             ["@tootallnate/once", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/axios", [\
+        ["npm:0.14.0", {\
+          "packageLocation": "./.yarn/cache/@types-axios-npm-0.14.0-42f41917ea-12a230b940.zip/node_modules/@types/axios/",\
+          "packageDependencies": [\
+            ["@types/axios", "npm:0.14.0"],\
+            ["axios", "npm:1.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4670,6 +4681,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mui/icons-material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.9"],\
             ["@mui/material", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.11"],\
             ["@mui/styled-engine-sc", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:5.10.6"],\
+            ["@types/axios", "npm:0.14.0"],\
             ["@types/grecaptcha", "npm:3.0.4"],\
             ["@types/material-ui", "npm:0.21.12"],\
             ["@types/node", "npm:18.7.11"],\
