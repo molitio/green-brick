@@ -1,10 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { RecaptchaEnterpriseServiceClient } from "@google-cloud/recaptcha-enterprise";
 
-export default async function createAssessment(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+const createAssessment = async (req: NextApiRequest, res: NextApiResponse) => {
   const client = new RecaptchaEnterpriseServiceClient({
     credentials: {
       client_id: process?.env?.GOOGLE_RECAPTCHA_CLIENT_ID,
@@ -49,4 +46,6 @@ export default async function createAssessment(
       status: "Fail",
     });
   }
-}
+};
+
+export default createAssessment;
