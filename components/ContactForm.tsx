@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
 
 import {
   StyledFormButton,
@@ -10,25 +11,28 @@ import {
   StyledSingleLineTextField,
 } from "../styles";
 import { handleRecaptcha } from "./utils";
+import { EmailJsConfig } from "../types";
 
 type FormValues = {
-  userName: string;
-  emailAddress: string;
+  from_name: string;
+  from_email: string;
   message: string;
 };
 
-const ContactForm: React.FC = () => {
+const ContactForm: React.FC<EmailJsConfig> = (props) => {
+  const { serviceId, templateId, apiKey } = props;
+
   const validationSchema = Yup.object().shape({
-    userName: Yup.string().required("User name is required"),
-    emailAddress: Yup.string()
+    from_name: Yup.string().required("User name is required"),
+    from_email: Yup.string()
       .email("Invalid email")
       .required("Email is required"),
     message: Yup.string().required("Message is required"),
   });
 
   const initialValues: FormValues = {
-    userName: "",
-    emailAddress: "",
+    from_name: "",
+    from_email: "",
     message: "",
   };
 
@@ -42,20 +46,40 @@ const ContactForm: React.FC = () => {
       if (!isRecaptchaPass) {
         return;
       } else {
-        console.log("//TODO: submit form");
+        const { from_name, from_email, message } = values;
+        console.log("form values", values);
+
+        /*         console.log("values", values);
+        console.log("service id", serviceId);
+        console.log("template id", templateId);
+
+        const result = await emailjs.send(
+          serviceId ?? "",
+          templateId ?? "",
+          {
+            message: message,
+            from_name: from_name,
+            from_email: from_email,
+          },
+          apiKey ?? ""
+        ); */
+
         const response = await fetch("/api/email", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email: { name, from, message } }),
+          body: JSON.stringify({
+            from_name: from_name,
+            from_email: from_email,
+            message: message,
+          }),
         });
 
-        if (!response.ok) {
-          throw new Error(`Error sending email: ${response.statusText}`);
-        }
+        const result = response.json();
+        console.log("result", result);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error(error.message);
     }
 
@@ -76,12 +100,12 @@ const ContactForm: React.FC = () => {
               <StyledSingleLineTextField
                 type="text"
                 placeholder="Az Ön neve"
-                name="userName"
+                name="from_name"
               />
               <StyledSingleLineTextField
                 type="email"
                 placeholder="E-mail címe"
-                name="emailAddress"
+                name="from_email"
               />
               <StyledMultiLineTextField
                 component="textarea"

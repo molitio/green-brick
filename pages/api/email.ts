@@ -2,39 +2,30 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { emailClient } from "../../components";
 
 const submitEmail = async (req: NextApiRequest, res: NextApiResponse) => {
-  try {
-    const { email } = req?.body;
+  const { from_name, from_email, message } = req?.body;
 
-    if (!email) {
-      return res.status(500)?.json({
-        message: "Missing email",
-      });
-    }
+  const emailData = {
+    service_id: process.env.EMAILJS_SERVICE_ID ?? "",
+    template_id: process.env.EMAILJS_TEMPLATE_ID ?? "",
+    user_id: process.env.EMAILJS_API_KEY ?? "",
+    template_params: {
+      from_name,
+      from_email,
+      message,
+    },
+  };
 
-    const client = emailClient();
+  const result = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    method: "POST",
+    body: JSON.stringify(emailData),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-    const textConstruct = `bruderbau.hu kapcsolat felvétel üzenet: 
-      
-      ${email.text}`;
+  console.log("send result", result);
 
-    const messageConstruct = `Üzenet ${email.from} feladótól, bruderbau.hu kapcsolat felvétel`;
-    const from = email.from;
-
-    const message = await client.sendAsync({
-      text: textConstruct,
-      from: from,
-      to: process.env.EMAILJS_DEFAULT_RECIPENT ?? "",
-      subject: messageConstruct,
-    });
-
-    return res.status(200)?.json({
-      message: message.text,
-    });
-  } catch (error) {
-    res.status(500)?.json({
-      message: "Error submitting email",
-    });
-  }
+  res.status(200).json({ result });
 };
 
 export default submitEmail;

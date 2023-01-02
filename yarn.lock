@@ -1090,6 +1090,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emailjs/browser@npm:^3.10.0":
+  version: 3.10.0
+  resolution: "@emailjs/browser@npm:3.10.0"
+  checksum: e54784bb938b333dc2ba3d68ddf1c7322071651372da9a23ee0f5a9eb444c6b6a65155aec9c4570f3db7bac4926e30627b052ea90f0994e7be57298b9964b781
+  languageName: node
+  linkType: hard
+
 "@emotion/babel-plugin@npm:^11.10.5":
   version: 11.10.5
   resolution: "@emotion/babel-plugin@npm:11.10.5"
@@ -2889,18 +2896,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"emailjs@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "emailjs@npm:4.0.1"
-  peerDependencies:
-    typescript: ">=4.3.5"
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: ea03a36fd069574591ed14f6cdaacf114ce2542a36eeca9bb3f76920fb6f80a48d41612dca2b342268d0e35294712cfaae2b9a26ea2c1fc28e82b85bf85bc8af
-  languageName: node
-  linkType: hard
-
 "emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"
@@ -3809,6 +3804,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "green-brick@workspace:."
   dependencies:
+    "@emailjs/browser": ^3.10.0
     "@emotion/react": ^11.10.0
     "@emotion/styled": ^11.10.0
     "@google-cloud/recaptcha-enterprise": ^3.2.0
@@ -3826,7 +3822,6 @@ __metadata:
     "@types/styled-components": ^5.1.26
     axios: ^1.2.1
     device-detector-js: ^3.0.3
-    emailjs: ^4.0.1
     eslint: ^8.26.0
     eslint-config-next: 12.2.5
     formik: ^2.2.9
