@@ -18,10 +18,11 @@ const submitEmail = async (req: NextApiRequest, res: NextApiResponse) => {
       ${email.text}`;
 
     const messageConstruct = `Üzenet ${email.from} feladótól, bruderbau.hu kapcsolat felvétel`;
+    const from = email.from;
 
     const message = await client.sendAsync({
       text: textConstruct,
-      from: email.from,
+      from: from,
       to: process.env.EMAILJS_DEFAULT_RECIPENT ?? "",
       subject: messageConstruct,
     });
