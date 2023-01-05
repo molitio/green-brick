@@ -39,4 +39,8 @@ export const StyledFormButton = styled.button`
   background-color: transparent;
   font-family: Helvetica, Arial, sans-serif;
   color: ${(props) => props?.theme?.palette?.text?.primary};
+  &:hover {
+    border: 2px solid ${(props) => props?.theme?.palette?.text?.primary};
+    cursor: pointer;
+  }
 `;

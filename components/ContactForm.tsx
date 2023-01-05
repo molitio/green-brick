@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import emailjs from "@emailjs/browser";
 
 import {
   StyledFormButton,
@@ -11,7 +10,6 @@ import {
   StyledSingleLineTextField,
 } from "../styles";
 import { handleRecaptcha } from "./utils";
-import { EmailJsConfig } from "../types";
 
 type FormValues = {
   from_name: string;
@@ -19,9 +17,7 @@ type FormValues = {
   message: string;
 };
 
-const ContactForm: React.FC<EmailJsConfig> = (props) => {
-  const { serviceId, templateId, apiKey } = props;
-
+const ContactForm: React.FC = () => {
   const validationSchema = Yup.object().shape({
     from_name: Yup.string().required("User name is required"),
     from_email: Yup.string()
@@ -38,6 +34,10 @@ const ContactForm: React.FC<EmailJsConfig> = (props) => {
 
   const handleSubmit = async (values: FormValues, actions: any) => {
     try {
+      console.log(
+        "site key",
+        process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY
+      );
       const isRecaptchaPass = await handleRecaptcha(
         "CONTACT_FORM",
         process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY ?? ""
@@ -47,22 +47,6 @@ const ContactForm: React.FC<EmailJsConfig> = (props) => {
         return;
       } else {
         const { from_name, from_email, message } = values;
-        console.log("form values", values);
-
-        /*         console.log("values", values);
-        console.log("service id", serviceId);
-        console.log("template id", templateId);
-
-        const result = await emailjs.send(
-          serviceId ?? "",
-          templateId ?? "",
-          {
-            message: message,
-            from_name: from_name,
-            from_email: from_email,
-          },
-          apiKey ?? ""
-        ); */
 
         const response = await fetch("/api/email", {
           method: "POST",
@@ -77,13 +61,13 @@ const ContactForm: React.FC<EmailJsConfig> = (props) => {
         });
 
         const result = response.json();
-        console.log("result", result);
       }
     } catch (error: any) {
       console.error(error.message);
     }
 
     actions.setSubmitting(false);
+    actions.resetForm();
   };
 
   return (

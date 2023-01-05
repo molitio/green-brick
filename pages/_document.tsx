@@ -20,7 +20,9 @@ export default function Document() {
       <Script
         id="emailClient"
         strategy="beforeInteractive"
-        onLoad={() => emailjs.init(process.env.EMAILJS_API_KEY ?? "")}
+        onLoad={() =>
+          emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_API_KEY ?? "")
+        }
       />
     </Html>
   );

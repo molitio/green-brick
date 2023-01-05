@@ -15,10 +15,12 @@ export const emailClient = async (email: Email): Promise<SendResult> => {
         from_name: email.from_name,
         from_email: email.from_email,
       },
-      process.env.EMAILJS_API_KEY ?? ""
+      process.env.NEXT_PUBLIC_EMAILJS_API_KEY ?? ""
     );
 
-    return "success";
+    const result = message.status === 200 ? "success" : "error";
+
+    return result;
   } catch (error: any) {
     console.error("client error: ", error);
     return "error";

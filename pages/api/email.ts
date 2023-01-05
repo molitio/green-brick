@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { emailClient } from "../../components";
 
 const submitEmail = async (req: NextApiRequest, res: NextApiResponse) => {
   const { from_name, from_email, message } = req?.body;
@@ -7,7 +6,7 @@ const submitEmail = async (req: NextApiRequest, res: NextApiResponse) => {
   const emailData = {
     service_id: process.env.EMAILJS_SERVICE_ID ?? "",
     template_id: process.env.EMAILJS_TEMPLATE_ID ?? "",
-    user_id: process.env.EMAILJS_API_KEY ?? "",
+    user_id: process.env.NEXT_PUBLIC_EMAILJS_API_KEY ?? "",
     template_params: {
       from_name,
       from_email,
@@ -23,8 +22,7 @@ const submitEmail = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   });
 
-  console.log("send result", result);
-
+  console.log("message sent result: ", result);
   res.status(200).json({ result });
 };
 
