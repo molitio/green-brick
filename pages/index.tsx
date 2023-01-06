@@ -11,9 +11,10 @@ import {
   SystemContext,
   HomePage,
 } from "@molitio/ui-core";
-
 import * as smoothscroll from "smoothscroll-polyfill";
 import { ContactForm } from "../components";
+import styled from "styled-components";
+
 
 type HomeProps = {
   googleApiKey: string;
@@ -42,7 +43,7 @@ const Home: NextPage<HomeProps> = (props) => {
         <AboutPage />
       </Page>
       <Page id="introduction">
-        <IntroductionPage />
+     {/*    <StyledIntroductionPage /> */}
       </Page>
       <Page minHeight={`700px`} id="contact">
         <ContactPage
