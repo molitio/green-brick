@@ -15,7 +15,12 @@ import {
 import * as smoothscroll from "smoothscroll-polyfill";
 import { ContactForm } from "../components";
 
-const Home: NextPage = (props) => {
+type HomeProps = {
+  googleApiKey: string;
+};
+
+const Home: NextPage<HomeProps> = (props) => {
+  const { googleApiKey } = props;
   if (typeof window !== "undefined") {
     smoothscroll.polyfill();
   }
@@ -108,7 +113,12 @@ export async function getStaticProps() {
     },
   ];
 
+  const apiKey = process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY ?? "";
   return {
-    props: { appName: "green-brick", content: { services: staticCardContent } },
+    props: {
+      appName: "green-brick",
+      content: { services: staticCardContent },
+      googleApiKey: apiKey,
+    },
   };
 }

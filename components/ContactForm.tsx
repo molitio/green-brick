@@ -12,40 +12,62 @@ import {
 import { handleRecaptcha } from "./utils";
 
 type FormValues = {
-  userName: string;
-  emailAddress: string;
+  from_name: string;
+  from_email: string;
   message: string;
 };
 
 const ContactForm: React.FC = () => {
   const validationSchema = Yup.object().shape({
-    userName: Yup.string().required("User name is required"),
-    emailAddress: Yup.string()
+    from_name: Yup.string().required("User name is required"),
+    from_email: Yup.string()
       .email("Invalid email")
       .required("Email is required"),
     message: Yup.string().required("Message is required"),
   });
 
   const initialValues: FormValues = {
-    userName: "",
-    emailAddress: "",
+    from_name: "",
+    from_email: "",
     message: "",
   };
 
   const handleSubmit = async (values: FormValues, actions: any) => {
-    const isRecaptchaPass = await handleRecaptcha(
-      "CONTACT_FORM",
-      process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY ?? ""
-    );
+    try {
+      console.log(
+        "site key",
+        process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY
+      );
+      const isRecaptchaPass = await handleRecaptcha(
+        "CONTACT_FORM",
+        process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY ?? ""
+      );
 
-    if (!isRecaptchaPass) {
-      return;
-    } else {
-      console.log("//TODO: submit form");
-      //TODO: submit form
+      if (!isRecaptchaPass) {
+        return;
+      } else {
+        const { from_name, from_email, message } = values;
+
+        const response = await fetch("/api/email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from_name: from_name,
+            from_email: from_email,
+            message: message,
+          }),
+        });
+
+        const result = response.json();
+      }
+    } catch (error: any) {
+      console.error(error.message);
     }
 
     actions.setSubmitting(false);
+    actions.resetForm();
   };
 
   return (
@@ -62,12 +84,12 @@ const ContactForm: React.FC = () => {
               <StyledSingleLineTextField
                 type="text"
                 placeholder="Az Ön neve"
-                name="userName"
+                name="from_name"
               />
               <StyledSingleLineTextField
                 type="email"
                 placeholder="E-mail címe"
-                name="emailAddress"
+                name="from_email"
               />
               <StyledMultiLineTextField
                 component="textarea"
