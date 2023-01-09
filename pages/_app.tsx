@@ -1,11 +1,11 @@
 import { createTheme, Theme } from "@mui/material";
 import { StyledLayout, NavBar, AppShell } from "@molitio/ui-core";
 import type { AppProps } from "next/app";
-import Header from "next/head";
-import "./style.scss";
-import { GreenBrickContextRoot } from "../context";
-import { MuiThemeProvider } from "../components";
 import Script from "next/script";
+import Header from "next/head";
+import { GreenBrickContextRoot } from "../context";
+import { MuiThemeProvider, getNonce } from "../components";
+import "./style.scss";
 
 export type StyledTheme = {
   theme?: Theme;
@@ -59,6 +59,7 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
         <StyledLayout>
           <Script
             strategy="lazyOnload"
+            nonce={getNonce()}
             src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
           />
           <AppHeader />
