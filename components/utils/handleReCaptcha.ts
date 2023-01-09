@@ -1,5 +1,6 @@
 export const handleRecaptcha = async (action: string, key: string) => {
   try {
+    console.log("key:", key);
     const token = await grecaptcha.enterprise?.execute(key, {
       action: action,
     });

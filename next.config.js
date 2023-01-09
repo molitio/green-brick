@@ -32,20 +32,28 @@ const securityHeaders = [
   {
     key: "Access-Control-Allow-Origin",
     value:
-      "https://s3.eu-west-1.amazonaws.com https://fonts.googleapis.com https://fonts.gstatic.com",
+      "s3.eu-west-1.amazonaws.com fonts.googleapis.com fonts.gstatic.com",
   },
   {
     key: "Content-Security-Policy",
     value:
       process.env.NODE_ENV === "development"
         ? ""
-        : "default-src 'self' https://s3.eu-west-1.amazonaws.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://www.google.com https://vercel.live; child-src 'self' https://www.gstatic.com https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com  https://fonts.gstatic.com  https://s3.eu-west-1.amazonaws.com; font-src 'self' https://fonts.googleapis.com  https://fonts.gstatic.com; object-src 'self' https://s3.eu-west-1.amazonaws.com;",
+        : "default-src 'self' s3.eu-west-1.amazonaws.com; script-src 'self' 'strict-dynamic' 'unsafe-eval' www.gstatic.com www.google.com vercel.live; child-src 'self' www.gstatic.com www.google.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com  fonts.gstatic.com  s3.eu-west-1.amazonaws.com; font-src 'self' fonts.googleapis.com  fonts.gstatic.com; object-src 'self' s3.eu-west-1.amazonaws.com;",
   },
 ];
 
 module.exports = {
   reactStrictMode: true,
   swcMinify: true,
+  webpack: (config) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false, net: false, tls: false
+    };
+
+    return config;
+  },
   compiler: {
     styledComponents: true,
   },
