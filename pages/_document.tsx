@@ -9,7 +9,7 @@ const generateCsp = (): [csp: string, nonce: string] => {
   const nonce = getNonce();
 
   const csp = `default-src 'self' s3.eu-west-1.amazonaws.com; script-src 'strict-dynamic' 'nonce-${nonce}' ${
-    production ? "" : "'unsafe-eval'"
+    production ? "" : "'unsafe-eval';"
   } ${
     production ? "" : "connect-src 'self';"
   } base-uri 'self'; child-src 'self' www.gstatic.com www.google.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com s3.eu-west-1.amazonaws.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com; object-src 'none';`;
@@ -27,18 +27,24 @@ export default function Document() {
         <meta httpEquiv="Content-Security-Policy" content={csp} />
         <meta
           name="description"
-          content={`„ A legtöbb munkánkat személyes ajánlás alapján kapjuk, mivel minden 
-munkánkat úgy végezzük mintha magunknak csinálnánk! ”
-- Idézet a Brüder Bau Kft. munkatársától
-`}
+          content={
+            (`„ A legtöbb munkánkat személyes ajánlás alapján kapjuk,` +=
+              ` mivel minden munkánkat úgy végezzük` +=
+              ` mintha magunknak csinálnánk! ”` +=
+                ` Idézet a Brüder Bau Kft. munkatársától
+            `)
+          }
         />
         <meta property="og:title" content={"Bruderbau Kft"} />
         <meta
           property="og:description"
-          content={`„ A legtöbb munkánkat személyes ajánlás alapján kapjuk, mivel minden 
-munkánkat úgy végezzük mintha magunknak csinálnánk! ”
-- Idézet a Brüder Bau Kft. munkatársától
-`}
+          content={
+            (`„ A legtöbb munkánkat személyes ajánlás alapján kapjuk,` +=
+              ` mivel minden munkánkat úgy végezzük` +=
+              ` mintha magunknak csinálnánk! ”` +=
+                ` Idézet a Brüder Bau Kft. munkatársától
+            `)
+          }
         />
         <meta property="og:image" content={socialImage} />
         <meta
