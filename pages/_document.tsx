@@ -2,6 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 import emailjs from "@emailjs/browser";
 import { getNonce } from "../components";
+import socialImage from "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg";
 
 const generateCsp = (): [csp: string, nonce: string] => {
   const production = process.env.NODE_ENV === "production";
@@ -39,12 +40,7 @@ munkánkat úgy végezzük mintha magunknak csinálnánk! ”
 - Idézet a Brüder Bau Kft. munkatársától
 `}
         />
-        <meta
-          property="og:image"
-          content={
-            "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg"
-          }
-        />
+        <meta property="og:image" content={socialImage} />
         <meta
           property="og:url"
           content="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg"
