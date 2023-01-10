@@ -58,7 +58,7 @@ module.exports = {
       },
     ];
   },
-  experimental: {
+/*   experimental: {
     images: {
       remotePatterns: [
         {
@@ -68,5 +68,5 @@ module.exports = {
         },
       ],
     },
-  },
+  }, */
 };

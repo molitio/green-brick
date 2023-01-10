@@ -20,32 +20,22 @@ const generateCsp = (): [csp: string, nonce: string] => {
 export default function Document() {
   const [csp, nonce] = generateCsp();
 
+  const textContent = "".concat(
+    `„ A legtöbb munkánkat személyes ajánlás alapján kapjuk,`,
+    ` mivel minden munkánkat úgy végezzük`,
+    ` mintha magunknak csinálnánk! ”`,
+    ` Idézet a Brüder Bau Kft. munkatársától
+            `
+  );
+
   return (
     <Html lang="hu">
       <Head nonce={nonce}>
         <meta property="csp-nonce" content={nonce} />
         <meta httpEquiv="Content-Security-Policy" content={csp} />
-        <meta
-          name="description"
-          content={
-            (`„ A legtöbb munkánkat személyes ajánlás alapján kapjuk,` +=
-              ` mivel minden munkánkat úgy végezzük` +=
-              ` mintha magunknak csinálnánk! ”` +=
-                ` Idézet a Brüder Bau Kft. munkatársától
-            `)
-          }
-        />
+        <meta name="description" content={textContent} />
         <meta property="og:title" content={"Bruderbau Kft"} />
-        <meta
-          property="og:description"
-          content={
-            (`„ A legtöbb munkánkat személyes ajánlás alapján kapjuk,` +=
-              ` mivel minden munkánkat úgy végezzük` +=
-              ` mintha magunknak csinálnánk! ”` +=
-                ` Idézet a Brüder Bau Kft. munkatársától
-            `)
-          }
-        />
+        <meta property="og:description" content={textContent} />
         <meta property="og:image" content={socialImage} />
         <meta
           property="og:url"
