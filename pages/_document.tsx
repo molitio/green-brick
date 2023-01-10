@@ -7,9 +7,9 @@ const generateCsp = (): [csp: string, nonce: string] => {
   const production = process.env.NODE_ENV === "production";
   const nonce = getNonce();
 
-  const csp = `default-src 'self' s3.eu-west-1.amazonaws.com; script-src 'self' 'strict-dynamic' 'nonce-${nonce}' ${
+  const csp = `default-src 'self' s3.eu-west-1.amazonaws.com; script-src 'strict-dynamic' 'nonce-${nonce}' ${
     production ? "" : "'unsafe-eval'"
-  } www.gstatic.com www.google.com vercel.live; ${
+  } ${
     production ? "" : "connect-src 'self';"
   } base-uri 'self'; child-src 'self' www.gstatic.com www.google.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com s3.eu-west-1.amazonaws.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com; object-src 'none';`;
 
@@ -24,6 +24,32 @@ export default function Document() {
       <Head nonce={nonce}>
         <meta property="csp-nonce" content={nonce} />
         <meta httpEquiv="Content-Security-Policy" content={csp} />
+        <meta
+          name="description"
+          content={`„ A legtöbb munkánkat személyes ajánlás alapján kapjuk, mivel minden 
+munkánkat úgy végezzük mintha magunknak csinálnánk! ”
+- Idézet a Brüder Bau Kft. munkatársától
+`}
+        />
+        <meta property="og:title" content={"Bruderbau Kft"} />
+        <meta
+          property="og:description"
+          content={`„ A legtöbb munkánkat személyes ajánlás alapján kapjuk, mivel minden 
+munkánkat úgy végezzük mintha magunknak csinálnánk! ”
+- Idézet a Brüder Bau Kft. munkatársától
+`}
+        />
+        <meta
+          property="og:image"
+          content={
+            "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg"
+          }
+        />
+        <meta
+          property="og:url"
+          content="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg"
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <body>
@@ -47,15 +73,4 @@ export default function Document() {
       />
     </Html>
   );
-}
-
-{
-  /*   <script type="text/javascript"
-          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-        </script>
-        <script type="text/javascript">
-          (function(){
-            ;
-   })();
-        </script> */
 }
