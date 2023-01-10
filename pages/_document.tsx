@@ -2,7 +2,6 @@ import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 import emailjs from "@emailjs/browser";
 import { getNonce } from "../components";
-import socialImage from "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg";
 
 const generateCsp = (): [csp: string, nonce: string] => {
   const production = process.env.NODE_ENV === "production";
@@ -28,6 +27,9 @@ export default function Document() {
             `
   );
 
+  const imageUrl =
+    "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg";
+
   return (
     <Html lang="hu">
       <Head nonce={nonce}>
@@ -36,7 +38,7 @@ export default function Document() {
         <meta name="description" content={textContent} />
         <meta property="og:title" content={"Bruderbau Kft"} />
         <meta property="og:description" content={textContent} />
-        <meta property="og:image" content={socialImage} />
+        <meta property="og:image" content={imageUrl} />
         <meta
           property="og:url"
           content="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg"
