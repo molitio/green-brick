@@ -11,7 +11,7 @@ const generateCsp = (): [csp: string, nonce: string] => {
     production ? "" : "'unsafe-eval';"
   } ${
     production ? "" : "connect-src 'self';"
-  } base-uri 'self'; child-src 'self' www.gstatic.com www.google.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com s3.eu-west-1.amazonaws.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com; object-src 'none';`;
+  } child-src 'self' www.gstatic.com www.google.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com s3.eu-west-1.amazonaws.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com; object-src 'none';`;
 
   return [csp, nonce];
 };
@@ -23,8 +23,7 @@ export default function Document() {
     `„ A legtöbb munkánkat személyes ajánlás alapján kapjuk,`,
     ` mivel minden munkánkat úgy végezzük`,
     ` mintha magunknak csinálnánk! ”`,
-    ` Idézet a Brüder Bau Kft. munkatársától
-            `
+    ` Idézet a Brüder Bau Kft. munkatársától.`
   );
 
   const imageUrl =

@@ -22,7 +22,6 @@ const submitEmail = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   });
 
-  console.log("message sent result: ", result);
   res.status(200).json({ result });
 };
 
