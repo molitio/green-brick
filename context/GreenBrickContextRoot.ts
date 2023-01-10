@@ -128,7 +128,7 @@ folyamatot szeretjük a legjobban!`,
       leafs: {
         maintainer: {
           textContent: {
-            maintainer: `© 2022 All Rights Reserved | molitio llc. - ${"Green Brick v0.16.14"}`,
+            maintainer: `© 2022 All Rights Reserved | molitio llc. - ${"Green Brick v0.16.15"}`,
           },
         },
       },
