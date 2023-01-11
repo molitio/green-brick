@@ -11,7 +11,7 @@ const generateCsp = (): [csp: string, nonce: string] => {
     production ? "" : "'unsafe-eval';"
   } ${
     production ? "" : "connect-src 'self';"
-  } style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com s3.eu-west-1.amazonaws.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com; object-src 'none';`;
+  } child-src 'self' gstatic.com google.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com s3.eu-west-1.amazonaws.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com; object-src 'none';`;
 
   return [csp, nonce];
 };
