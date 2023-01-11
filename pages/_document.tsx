@@ -7,7 +7,7 @@ const generateCsp = (): [csp: string, nonce: string] => {
   const production = process.env.NODE_ENV === "production";
   const nonce = getNonce();
 
-  const csp = `default-src 'self' s3.eu-west-1.amazonaws.com; script-src 'strict-dynamic' 'nonce-${nonce}' ${
+  const csp = `default-src 'self' google.com s3.eu-west-1.amazonaws.com; script-src 'strict-dynamic' 'nonce-${nonce}'; ${
     production ? "" : "'unsafe-eval';"
   } ${
     production ? "" : "connect-src 'self';"
