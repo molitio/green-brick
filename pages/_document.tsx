@@ -29,6 +29,8 @@ export default function Document() {
   const imageUrl =
     "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg";
 
+  console.log("nonce at _document", nonce);
+
   return (
     <Html lang="hu">
       <Head nonce={nonce}>

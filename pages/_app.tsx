@@ -49,6 +49,8 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
 
   const nonce = getNonce();
 
+  console.log("nonce at _app", nonce);
+
   return (
     <AppShell
       applyGlobalStyleRules={true}
