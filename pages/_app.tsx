@@ -47,6 +47,8 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
     },
   });
 
+  const nonce = getNonce();
+
   return (
     <AppShell
       applyGlobalStyleRules={true}
@@ -59,7 +61,7 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
         <StyledLayout>
           <Script
             strategy="lazyOnload"
-            nonce={getNonce()}
+            nonce={nonce}
             src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
           />
           <AppHeader />
