@@ -52,12 +52,12 @@ export default function Document() {
         <NextScript nonce={nonce} />
       </body>
 
-      <Script
+      {/*  <Script
         nonce={nonce}
         strategy="beforeInteractive"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
       />
-      {/* 
+      
       <Script
         nonce={nonce}
         id="emailClient"
