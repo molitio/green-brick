@@ -57,7 +57,7 @@ export default function Document() {
         strategy="beforeInteractive"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
       />
-
+      {/* 
       <Script
         nonce={nonce}
         id="emailClient"
@@ -65,7 +65,7 @@ export default function Document() {
         onLoad={() =>
           emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_API_KEY ?? "")
         }
-      />
+      /> */}
     </Html>
   );
 }
