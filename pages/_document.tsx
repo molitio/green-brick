@@ -52,12 +52,12 @@ export default function Document() {
         <NextScript nonce={nonce} />
       </body>
 
-      {/*  <Script
+      <Script
         nonce={nonce}
         strategy="beforeInteractive"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
       />
-      
+
       <Script
         nonce={nonce}
         id="emailClient"
@@ -65,7 +65,12 @@ export default function Document() {
         onLoad={() =>
           emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_API_KEY ?? "")
         }
-      /> */}
+      />
+      <Script
+        strategy="lazyOnload"
+        nonce={nonce}
+        src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
+      />
     </Html>
   );
 }
