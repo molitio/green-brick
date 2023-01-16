@@ -1,10 +1,10 @@
 import { createTheme, Theme } from "@mui/material";
 import { StyledLayout, NavBar, AppShell } from "@molitio/ui-core";
 import type { AppProps } from "next/app";
-import Script from "next/script";
+
 import Header from "next/head";
 import { GreenBrickContextRoot } from "../context";
-import { MuiThemeProvider, getNonce } from "../components";
+import { MuiThemeProvider } from "../components";
 import "./style.scss";
 
 export type StyledTheme = {
@@ -46,10 +46,6 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
       },
     },
   });
-
-  const nonce = getNonce();
-
-  console.log("nonce at _app", nonce);
 
   return (
     <AppShell
