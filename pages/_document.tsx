@@ -8,7 +8,7 @@ const generateCsp = (): [csp: string, nonce: string] => {
   const nonce = getNonce();
   console.log("nonce at _document", nonce);
 
-  const csp = `default-src 'self' www.google.com s3.eu-west-1.amazonaws.com; script-src 'nonce-${nonce}'; ${
+  const csp = `default-src 'none'; script-src 'self' 'nonce-${nonce}'; ${
     production ? "" : "'unsafe-eval';"
   } ${
     production ? "" : "connect-src 'self';"
