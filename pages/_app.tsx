@@ -68,12 +68,12 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
     >
       <MuiThemeProvider externalTheme={appTheme}>
         <StyledLayout>
-          <AppHeader />
           <Script
             strategy="lazyOnload"
             /* nonce={nonce} */
             src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
           />
+          <AppHeader />
           <NavBar height={appTheme?.dimensions?.header?.height} />
 
           <Component {...pageProps} />
