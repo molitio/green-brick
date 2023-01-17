@@ -1,24 +1,33 @@
+import React from "react";
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 import emailjs from "@emailjs/browser";
-import { getNonce } from "../components";
+import { getNonce, NonceContextProvider } from "../components";
+import { NonceContext } from "../context";
 
-const generateCsp = (): [csp: string, nonce: string] => {
+const generateCsp = (nonce: string): [csp: string] => {
   const production = process.env.NODE_ENV === "production";
-  const nonce = getNonce();
-  console.log("nonce at _document", nonce);
 
-  const csp = `default-src 'none'; script-src 'self' 'nonce-${nonce}'; ${
-    production ? "" : "'unsafe-eval';"
-  } ${
-    production ? "" : "connect-src 'self';"
-  } style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com s3.eu-west-1.amazonaws.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com; object-src 'none';`;
+  const policies = [
+    "default-src 'self'",
+    `script-src 'self' ${production ? "" : "'unsafe-eval'"}`,
+    `${production ? "" : "connect-src 'self'"}`,
+    "style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com s3.eu-west-1.amazonaws.com",
+    "font-src 'self' fonts.googleapis.com fonts.gstatic.com",
+    "object-src 'none'",
+    "img-src 'self' data: s3.eu-west-1.amazonaws.com",
+  ];
+
+  const csp = policies?.join("; ");
 
   return [csp, nonce];
 };
 
 export default function Document() {
-  const [csp, nonce] = generateCsp();
+  const nonceContext = React.useContext(NonceContext);
+
+  const nonce = nonceContext.nonce;
+  const [csp] = generateCsp(nonce);
 
   const textContent = "".concat(
     `„ A legtöbb munkánkat személyes ajánlás alapján kapjuk,`,
@@ -30,48 +39,48 @@ export default function Document() {
   const imageUrl =
     "https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg";
 
-  console.log("nonce at _document", nonce);
-
   return (
     <Html lang="hu">
-      <Head nonce={nonce}>
-        <meta property="csp-nonce" content={nonce} />
-        <meta httpEquiv="Content-Security-Policy" content={csp} />
-        <meta name="description" content={textContent} />
-        <meta property="og:title" content={"Bruderbau Kft"} />
-        <meta property="og:description" content={textContent} />
-        <meta property="og:image" content={imageUrl} />
-        <meta
-          property="og:url"
-          content="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg"
+      <NonceContextProvider>
+        <Head nonce={nonce}>
+          <meta property="csp-nonce" content={nonce} />
+          <meta httpEquiv="Content-Security-Policy" content={csp} />
+          <meta name="description" content={textContent} />
+          <meta property="og:title" content={"Bruderbau Kft"} />
+          <meta property="og:description" content={textContent} />
+          <meta property="og:image" content={imageUrl} />
+          <meta
+            property="og:url"
+            content="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg"
+          />
+          <meta property="og:type" content="website" />
+        </Head>
+
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+
+        <Script
+          nonce={nonce}
+          strategy="beforeInteractive"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
         />
-        <meta property="og:type" content="website" />
-      </Head>
 
-      <body>
-        <Main />
-        <NextScript nonce={nonce} />
-      </body>
-
-      <Script
-        nonce={nonce}
-        strategy="beforeInteractive"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-      />
-
-      <Script
-        nonce={nonce}
-        id="emailClient"
-        strategy="beforeInteractive"
-        onLoad={() =>
-          emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_API_KEY ?? "")
-        }
-      />
-      <Script
-        strategy="lazyOnload"
-        nonce={nonce}
-        src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
-      />
+        <Script
+          nonce={nonce}
+          id="emailClient"
+          strategy="beforeInteractive"
+          onLoad={() =>
+            emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_API_KEY ?? "")
+          }
+        />
+        <Script
+          strategy="lazyOnload"
+          nonce={nonce}
+          src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
+        />
+      </NonceContextProvider>
     </Html>
   );
 }
