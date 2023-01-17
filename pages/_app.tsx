@@ -18,12 +18,12 @@ const AppHeader: React.FC = () => {
     <Header>
       <title>Bruderbau Kft.</title>
       <meta property="og:title" content="Bruderbau Kft." key="title" />
-      <script
+      {/*       <script
         nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: `window.__webpack_nonce__ = "${nonce}"`,
         }}
-      />
+      /> */}
     </Header>
   );
 };
@@ -71,7 +71,7 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
           <AppHeader />
           <Script
             strategy="onLazyLoad"
-            nonce={nonce}
+            /* nonce={nonce} */
             src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
           />
           <NavBar height={appTheme?.dimensions?.header?.height} />
