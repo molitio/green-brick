@@ -6,7 +6,9 @@ const NonceContextProvider: React.FC<React.PropsWithChildren> = (props) => {
   const { children } = props;
   const nonce = getNonce();
   return (
-    <NonceContext.Provider value={nonce}>{children}</NonceContext.Provider>
+    <NonceContext.Provider value={{ nonce: nonce }}>
+      {children}
+    </NonceContext.Provider>
   );
 };
 
