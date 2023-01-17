@@ -60,6 +60,12 @@ export default function Document() {
           content="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/green-brick/web-content/img/constructor.jpg"
         />
         <meta property="og:type" content="website" />
+        <script
+          nonce={nonce}
+          dangerouslySetInnerHTML={{
+            __html: `window.__webpack_nonce__ = "${nonce}"`,
+          }}
+        />
       </Head>
 
       <body>
