@@ -12,8 +12,8 @@ const generateCsp = (nonce: string): [csp: string] => {
 
   const policies = [
     "default-src 'self' google.com gstatic.com",
-    `script-src 'self' vercel.live google.com/recaptcha/ gstatic.com/recaptcha/ 'unsafe-eval'`,
-    "frame-src google.com/recaptcha/, recaptcha.google.com/recaptcha/",
+    `script-src 'self' vercel.live google.com gstatic.com 'unsafe-eval'`,
+    "frame-src google.com, recaptcha.google.com",
     `${production ? "" : "connect-src 'self'"}`,
     "style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com s3.eu-west-1.amazonaws.com",
     "font-src 'self' fonts.googleapis.com fonts.gstatic.com",
