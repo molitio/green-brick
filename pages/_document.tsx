@@ -20,7 +20,7 @@ const generateCsp = (nonce: string): [csp: string] => {
 
   const csp = policies?.join("; ");
 
-  return [csp, nonce];
+  return [csp];
 };
 
 export default function Document() {
