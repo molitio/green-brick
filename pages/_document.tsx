@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 import emailjs from "@emailjs/browser";
 import { getNonce } from "../components";
-import NonceContextProvider from "../components";
+import { NonceContextProvider } from "../components";
 import { NonceContext } from "../context";
 
 const generateCsp = (nonce: string): [csp: string] => {
