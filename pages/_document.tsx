@@ -69,10 +69,8 @@ export default function Document() {
       </Head>
 
       <body>
-        {/*      <NonceContextProvider nonce={nonce}> */}
         <Main />
-        <NextScript />
-        {/*         </NonceContextProvider> */}
+        <NextScript nonce={nonce} />
       </body>
 
       <Script
