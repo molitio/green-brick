@@ -10,7 +10,7 @@ const generateCsp = (nonce: string): [csp: string] => {
 
   const policies = [
     "default-src 'self'",
-    `script-src 'self' ${production ? "" : "'unsafe-eval'"}`,
+    `script-src 'self' vercel.live ${production ? "" : "'unsafe-eval'"}`,
     `${production ? "" : "connect-src 'self'"}`,
     "style-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com s3.eu-west-1.amazonaws.com",
     "font-src 'self' fonts.googleapis.com fonts.gstatic.com",
