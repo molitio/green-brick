@@ -70,7 +70,7 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
         <StyledLayout>
           <AppHeader />
           <Script
-            strategy="onLazyLoad"
+            strategy="lazyOnload"
             /* nonce={nonce} */
             src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
           />
