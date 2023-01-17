@@ -1,7 +1,9 @@
+import React from "react";
 import { createTheme, Theme } from "@mui/material";
 import { StyledLayout, NavBar, AppShell } from "@molitio/ui-core";
 import type { AppProps } from "next/app";
-
+import Script from "next/script";
+import { NonceContext } from "../context";
 import Header from "next/head";
 import { GreenBrickContextRoot } from "../context";
 import { MuiThemeProvider } from "../components";
@@ -22,6 +24,9 @@ const AppHeader: React.FC = () => {
 
 const GreenBrick = ({ Component, pageProps }: AppProps) => {
   const muiDefault = createTheme();
+  const nonceContext = React.useContext(NonceContext);
+
+  const nonce = nonceContext?.nonce;
 
   const appTheme = createTheme(muiDefault, {
     palette: {
@@ -58,6 +63,11 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
       <MuiThemeProvider externalTheme={appTheme}>
         <StyledLayout>
           <AppHeader />
+          <Script
+            strategy="beforeInteractive"
+            nonce={nonce}
+            src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
+          />
           <NavBar height={appTheme?.dimensions?.header?.height} />
 
           <Component {...pageProps} />
