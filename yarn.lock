@@ -1391,16 +1391,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@molitio/ui-core@npm:0.16.14":
-  version: 0.16.14
-  resolution: "@molitio/ui-core@npm:0.16.14"
+"@molitio/ui-core@npm:0.16.15":
+  version: 0.16.15
+  resolution: "@molitio/ui-core@npm:0.16.15"
   peerDependencies:
     device-detector-js: "*"
     react: ^18.2.0
     react-dom: ^18.2.0
     react-is: "*"
     styled-components: "*"
-  checksum: 41a3cbda2adf79b2747cc337c772c31d98cd90e64e025b5b30cdc95078f648ced1fc2f3a5ed90b912957d5714f4d633c2a15223a8e99871c2449c946b2604362
+  checksum: dce477e634307560709a713edf1359ce1ddf4818bd136936dd8f4d91e7e9a2d3f5703d727eb5203189d045b89513f6b86e1c866bda518b63f8911ad6809fbe91
   languageName: node
   linkType: hard
 
@@ -2038,6 +2038,13 @@ __metadata:
     "@types/react": "*"
     csstype: ^3.0.2
   checksum: 84f53b3101739b20d1731554fb7735bc2f3f5d050a8b392e9845403c8c8bbd729737d033978649f9195a97b557875b010d46e35a4538564a2d0dbcce661dbf76
+  languageName: node
+  linkType: hard
+
+"@types/uuid@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@types/uuid@npm:9.0.0"
+  checksum: 59ae56d9547c8758588659da2a2b4c97cce79c2aae1798c892bb29452ef08e87859dea2ec3a66bfa88d0d2153147520be2b1893be920f9f0bc9c53a3207ea6aa
   languageName: node
   linkType: hard
 
@@ -3808,7 +3815,7 @@ __metadata:
     "@emotion/react": ^11.10.0
     "@emotion/styled": ^11.10.0
     "@google-cloud/recaptcha-enterprise": ^3.2.0
-    "@molitio/ui-core": 0.16.14
+    "@molitio/ui-core": 0.16.15
     "@mui/icons-material": ^5.10.3
     "@mui/material": ^5.10.2
     "@mui/styled-engine-sc": ^5.10.1
@@ -3820,6 +3827,7 @@ __metadata:
     "@types/react-dom": 18.0.6
     "@types/smoothscroll-polyfill": ^0.3.1
     "@types/styled-components": ^5.1.26
+    "@types/uuid": ^9.0.0
     axios: ^1.2.1
     device-detector-js: ^3.0.3
     eslint: ^8.26.0
@@ -3836,6 +3844,7 @@ __metadata:
     smoothscroll-polyfill: ^0.4.4
     styled-components: ^5.3.5
     typescript: 4.7.4
+    uuid: ^9.0.0
     yup: ^0.32.11
   languageName: unknown
   linkType: soft
@@ -6183,6 +6192,15 @@ __metadata:
   bin:
     uuid: dist/bin/uuid
   checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "uuid@npm:9.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 8dd2c83c43ddc7e1c71e36b60aea40030a6505139af6bee0f382ebcd1a56f6cd3028f7f06ffb07f8cf6ced320b76aea275284b224b002b289f89fe89c389b028
   languageName: node
   linkType: hard
 

@@ -1,11 +1,13 @@
+import React from "react";
 import { createTheme, Theme } from "@mui/material";
 import { StyledLayout, NavBar, AppShell } from "@molitio/ui-core";
 import type { AppProps } from "next/app";
+import Script from "next/script";
+import { NonceContext } from "../context";
 import Header from "next/head";
-import "./style.scss";
 import { GreenBrickContextRoot } from "../context";
 import { MuiThemeProvider } from "../components";
-import Script from "next/script";
+import "./style.scss";
 
 export type StyledTheme = {
   theme?: Theme;
@@ -16,12 +18,21 @@ const AppHeader: React.FC = () => {
     <Header>
       <title>Bruderbau Kft.</title>
       <meta property="og:title" content="Bruderbau Kft." key="title" />
+      {/*       <script
+        nonce={nonce}
+        dangerouslySetInnerHTML={{
+          __html: `window.__webpack_nonce__ = "${nonce}"`,
+        }}
+      /> */}
     </Header>
   );
 };
 
 const GreenBrick = ({ Component, pageProps }: AppProps) => {
   const muiDefault = createTheme();
+  const nonceContext = React.useContext(NonceContext);
+
+  const nonce = nonceContext?.nonce;
 
   const appTheme = createTheme(muiDefault, {
     palette: {
@@ -59,6 +70,7 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
         <StyledLayout>
           <Script
             strategy="lazyOnload"
+            /* nonce={nonce} */
             src={`https://www.google.com/recaptcha/enterprise.js?render=${process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}`}
           />
           <AppHeader />

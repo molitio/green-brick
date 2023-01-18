@@ -34,10 +34,6 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = async (values: FormValues, actions: any) => {
     try {
-      console.log(
-        "site key",
-        process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY
-      );
       const isRecaptchaPass = await handleRecaptcha(
         "CONTACT_FORM",
         process?.env?.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY ?? ""
