@@ -22,11 +22,17 @@ export const StyledMessage = styled.p`
 
 export const StyledSingleLineTextField = styled(Field)`
   height: 3em;
+  padding-left: 0.5em;
+  color: ${(props) => props?.theme?.palette?.text?.secondary};
+  font-weight: 800;
   font-family: Helvetica, Arial, sans-serif;
-`;
+  `;
 
 export const StyledMultiLineTextField = styled(Field)`
   resize: none;
+  padding: 0.5em;
+  color: ${(props) => props?.theme?.palette?.text?.secondary};
+  font-weight: 800;
   height: 12em;
   font-family: Helvetica, Arial, sans-serif;
 `;
