@@ -14,7 +14,7 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@google-cloud/recaptcha-enterprise": "^3.2.0",
-    "@molitio/ui-core": "0.16.17",
+    "@molitio/ui-core": "0.16.18",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.2",
     "@mui/styled-engine-sc": "^5.10.1",
