@@ -46,6 +46,7 @@ const GreenBrick = ({ Component, pageProps }: AppProps) => {
       },
       text: {
         primary: "#fff",
+        secondary: "#000",
       },
     },
     dimensions: {

@@ -3,7 +3,7 @@ import { Field } from "formik";
 
 export const StyledFormFieldContainer = styled.div`
   gap: 1em;
-  width: 24em;
+  width: 20em;
   display: flex;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -13,7 +13,7 @@ export const StyledFormFieldContainer = styled.div`
 `;
 
 export const StyledMessage = styled.p`
-  width: 28em;
+  width: 26em;
   text-align: left;
   font-size: 0.8rem;
   font-weight: lighter;
@@ -27,15 +27,14 @@ export const StyledSingleLineTextField = styled(Field)`
   font-weight: 800;
   font-family: Helvetica, Arial, sans-serif;
   `;
-
-export const StyledMultiLineTextField = styled(Field)`
-  resize: none;
+  
+  export const StyledMultiLineTextField = styled(Field)`
   padding: 0.5em;
   color: ${(props) => props?.theme?.palette?.text?.secondary};
   font-weight: 800;
   height: 12em;
   font-family: Helvetica, Arial, sans-serif;
-`;
+  `;
 
 export const StyledFormButton = styled.button`
   width: 8em;
