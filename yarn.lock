@@ -1391,16 +1391,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@molitio/ui-core@npm:0.16.19":
-  version: 0.16.19
-  resolution: "@molitio/ui-core@npm:0.16.19"
+"@molitio/ui-core@npm:0.16.20":
+  version: 0.16.20
+  resolution: "@molitio/ui-core@npm:0.16.20"
   peerDependencies:
     device-detector-js: "*"
     react: ^18.2.0
     react-dom: ^18.2.0
     react-is: "*"
     styled-components: "*"
-  checksum: 595dc50b67b3ee4f8f093330621539eb74158d2f6f5d4e90d4e7ef3644a014353f6b943a113b438574cdf11a2b394f19e60551a260d21f72e9e7367fb7e1baec
+  checksum: c6258f1e7bd4a8ba67057026263422844aa0f0254768635a60b3c4fb5e47a1af47834470c5938d0cd129db22eb87a572cd7da81429be2804e51735ab73854334
   languageName: node
   linkType: hard
 
@@ -3815,7 +3815,7 @@ __metadata:
     "@emotion/react": ^11.10.0
     "@emotion/styled": ^11.10.0
     "@google-cloud/recaptcha-enterprise": ^3.2.0
-    "@molitio/ui-core": 0.16.19
+    "@molitio/ui-core": 0.16.20
     "@mui/icons-material": ^5.10.3
     "@mui/material": ^5.10.2
     "@mui/styled-engine-sc": ^5.10.1
