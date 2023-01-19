@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Field } from "formik";
 
 export const StyledFormFieldContainer = styled.div`
-  gap: 1em;
   width: 20em;
   display: flex;
   margin-top: 2em;
@@ -26,15 +25,17 @@ export const StyledSingleLineTextField = styled(Field)`
   color: ${(props) => props?.theme?.palette?.text?.secondary};
   font-weight: 800;
   font-family: Helvetica, Arial, sans-serif;
-  `;
-  
-  export const StyledMultiLineTextField = styled(Field)`
+  margin-bottom: 1em;
+`;
+
+export const StyledMultiLineTextField = styled(Field)`
   padding: 0.5em;
   color: ${(props) => props?.theme?.palette?.text?.secondary};
   font-weight: 800;
   height: 12em;
   font-family: Helvetica, Arial, sans-serif;
-  `;
+  margin-bottom: 1em;
+`;
 
 export const StyledFormButton = styled.button`
   width: 8em;
