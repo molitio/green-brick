@@ -1,5 +1,7 @@
 import type { AppProps } from "next/app";
-import Layout from "../components/common/Layout";
+import Layout from "../components";
+import Header from "../components";
+
 import "./style.scss";
 
 function GreenBrick({ Component, pageProps }: AppProps) {
@@ -15,6 +17,6 @@ function GreenBrick({ Component, pageProps }: AppProps) {
       /> */}
     </Header>
   );
-};
+}
 
 export default GreenBrick;

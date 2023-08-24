@@ -18,6 +18,7 @@
     "@mui/styled-engine-sc": "^5.10.1",
     "@types/material-ui": "^0.21.12",
     "@types/smoothscroll-polyfill": "^0.3.1",
+    "formik": "^2.4.3",
     "nanoid": "^4.0.0",
     "next": "12.2.5",
     "react": "18.2.0",
@@ -25,7 +26,8 @@
     "react-icons": "^4.4.0",
     "react-is": "17.0.2",
     "smoothscroll-polyfill": "^0.4.4",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "18.7.11",
