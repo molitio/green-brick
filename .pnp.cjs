@@ -50,7 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/smoothscroll-polyfill", "npm:0.3.1"],\
             ["@types/styled-components", "npm:5.1.26"],\
             ["@types/uuid", "npm:9.0.0"],\
-            ["axios", "npm:1.2.1"],\
+            ["axios", "npm:1.6.1"],\
             ["device-detector-js", "npm:3.0.3"],\
             ["eslint", "npm:8.26.0"],\
             ["eslint-config-next", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:12.2.5"],\
@@ -2975,6 +2975,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["proxy-from-env", "npm:1.1.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:1.6.1", {\
+          "packageLocation": "./.yarn/cache/axios-npm-1.6.1-ffaff76449-573f03f59b.zip/node_modules/axios/",\
+          "packageDependencies": [\
+            ["axios", "npm:1.6.1"],\
+            ["follow-redirects", "virtual:4056ddcb4c2d270bf0963fb84906c3564ee7d8e9416b8378cd3a237ff189f972aa64453a2488a5a795feebb3d7aabad002a7493097d1b2c78991f626dc379bd9#npm:1.15.2"],\
+            ["form-data", "npm:4.0.0"],\
+            ["proxy-from-env", "npm:1.1.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["axobject-query", [\
@@ -4766,7 +4776,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/smoothscroll-polyfill", "npm:0.3.1"],\
             ["@types/styled-components", "npm:5.1.26"],\
             ["@types/uuid", "npm:9.0.0"],\
-            ["axios", "npm:1.2.1"],\
+            ["axios", "npm:1.6.1"],\
             ["device-detector-js", "npm:3.0.3"],\
             ["eslint", "npm:8.26.0"],\
             ["eslint-config-next", "virtual:35abbd2ecaf340c5e2d7ca394649b69c7c483f5a5429aeb2984dcb854fab8dabd508cf8e640e7839671e83334109d66bb77fb6df33154eb61d36453004dcff95#npm:12.2.5"],\
